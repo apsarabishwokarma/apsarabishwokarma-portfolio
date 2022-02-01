@@ -1,5 +1,5 @@
 "use client";
-import Logo from "@/components/icons/logo.icon";
+import Logo from "@/components/ui/icons/logo.icon";
 import {
   HoveredLink,
   Menu,
@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
 
-export function NavbarDemo() {
+export function Header() {
   return (
     <>
       <div className="flex px-4">

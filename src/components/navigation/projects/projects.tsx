@@ -8,7 +8,7 @@ export function ProjectsGrid() {
   return (
     <>
       <div id="projects">
-        <p className="max-w-7xl  mb-4 mx-auto  w-full  text-neutral-400">
+        <p className="max-w-7xl mb-4 mx-auto  w-full  text-neutral-400">
           portfolio
         </p>
         <div className="flex max-w-7xl mx-auto  w-full items-center  justify-between ">

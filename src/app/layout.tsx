@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/footer";
-import { NavbarDemo } from "@/components/navigation/navbar/navbar";
+import Footer from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter, Preahvihear, Source_Serif_4 } from "next/font/google";
@@ -42,7 +42,7 @@ export default function RootLayout({
           <div className="absolute bottom-0 right-[-9%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
         </div>
         <div className="px-4">
-          <NavbarDemo />
+          <Header />
           {children}
           <Footer />
         </div>

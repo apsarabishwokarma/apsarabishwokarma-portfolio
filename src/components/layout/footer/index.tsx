@@ -1,3 +1,4 @@
+import Logo from "@/components/ui/icons/logo.icon";
 import {
   FaFacebook,
   FaInstagram,
@@ -7,7 +8,6 @@ import {
 } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { SiGmail } from "react-icons/si";
-import Logo from "../icons/logo.icon";
 
 export default function Footer() {
   return (
