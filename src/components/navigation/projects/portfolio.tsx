@@ -39,7 +39,7 @@ export const Portfolio = () => {
   return (
     <section className="container mx-auto pt-20">
       <div className="pt-14 md:pt-24 pb-52 md:pb-64">
-        <div className="container px-6">
+        <div className="container md:px-4">
           <div id="projects">
             <p className="max-w-7xl mb-4 mx-auto w-full  text-neutral-400">
               portfolio
@@ -50,7 +50,7 @@ export const Portfolio = () => {
                 &darr; Featured Projects
               </h1>
               <Link href="https://github.com/apsarabishwokarma" target="_blank">
-                <Button className="">
+                <Button className="md:flex hidden">
                   <GitHubLogoIcon className="mr-2 h-4 w-4" />
                   View My Github
                 </Button>
@@ -85,7 +85,7 @@ export const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="mx-8 container px-6 md:-mt-60 -mt-44">
+      <div className="container md:-mt-60 -mt-44">
         <div className="grid grid-cols-12 gap-x-6">
           {filteredPortfolio.map((portfolio, i) => (
             <div
@@ -106,7 +106,7 @@ export const Portfolio = () => {
                     alt={portfolio.title}
                     className="w-full rounded-lg object-cover"
                   />
-                  <div className="absolute left-2 right-2 bottom-2 rounded-lg bg-white bg-opacity-80 opacity-100 transition duration-300 text-center justify-center p-3">
+                  <div className="absolute left-2 right-2 bottom-2 rounded-lg bg-gray-300 bg-opacity-80 opacity-100 transition duration-300 text-center p-3">
                     <h5 className="text-lg font-medium mb-1">
                       {portfolio.title}
                     </h5>

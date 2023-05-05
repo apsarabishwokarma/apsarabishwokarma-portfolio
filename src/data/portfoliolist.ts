@@ -34,7 +34,7 @@ export const portfolioList: PortfolioItem[] = [
     image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio25.jpg",
     title: "ShopHub - Ecommerce Website",
     subtitle:
-      "ShopHub is an e-commerce platform offering a wide range of products including clothings, perfumes and electronics",
+      "E-commerce platform offering a wide range of products including clothings, perfumes and electronics",
     categories: ["Web Portal Design "],
     liveLink: "https://shophub-ecommerce.vercel.app/",
     githubLink: "https://github.com/apsarabishwokarma/ecommerce-shophub",
