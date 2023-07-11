@@ -22,7 +22,7 @@ export function Header() {
         </div>
         <div className="w-full max-w-max z-[51]">
           <a
-            href="/Apsara Bishwokarma  - Resume.pdf"
+            href="/ApsaraBishwokarma-resume.pdf"
             target="_blank"
             className="cursor-pointer"
           >
