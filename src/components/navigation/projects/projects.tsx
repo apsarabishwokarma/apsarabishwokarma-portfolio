@@ -6,8 +6,11 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 export function ProjectsGrid() {
   return (
     <>
-      <div className=" px-10 flex space-x-4 w-full items-center justify-between">
-        <h1 className="text-white font-bold text-2xl">My Projects</h1>
+      <div className=" px-10 flex  w-full items-center justify-between">
+        <h1 className="text-white font-bold text-2xl">
+          My Creative Works <br />
+          Latest Projects
+        </h1>
         <Button>
           <GitHubLogoIcon className="mr-2 h-4 w-4" />
           View My Github
@@ -22,40 +25,58 @@ export function ProjectsGrid() {
 
 const SkeletonOne = () => {
   return (
-    <div>
-      <p className="font-bold text-4xl text-white">House in the woods</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A serene and tranquil retreat, this house in the woods offers a peaceful
-        escape from the hustle and bustle of city life.
-      </p>
-    </div>
+    <>
+      <div>
+        <p className="font-bold text-4xl text-white">House in the woods</p>
+        <p className="font-normal text-base text-white"></p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          A serene and tranquil retreat, this house in the woods offers a
+          peaceful escape from the hustle and bustle of city life.
+        </p>
+      </div>
+      <Button>
+        <GitHubLogoIcon className="mr-2 h-4 w-4" />
+        Github
+      </Button>
+    </>
   );
 };
 
 const SkeletonTwo = () => {
   return (
-    <div>
-      <p className="font-bold text-4xl text-white">House above the clouds</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        Perched high above the world, this house offers breathtaking views and a
-        unique living experience. It&apos;s a place where the sky meets home,
-        and tranquility is a way of life.
-      </p>
-    </div>
+    <>
+      <div>
+        <p className="font-bold text-4xl text-white">House above the clouds</p>
+        <p className="font-normal text-base text-white"></p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          Perched high above the world, this house offers breathtaking views and
+          a unique living experience. It&apos;s a place where the sky meets
+          home, and tranquility is a way of life.
+        </p>
+      </div>
+      <Button>
+        <GitHubLogoIcon className="mr-2 h-4 w-4" />
+        Github
+      </Button>
+    </>
   );
 };
 const SkeletonThree = () => {
   return (
-    <div>
-      <p className="font-bold text-4xl text-white">Greens all over</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
-      </p>
-    </div>
+    <>
+      <div>
+        <p className="font-bold text-4xl text-white">Greens all over</p>
+        <p className="font-normal text-base text-white"></p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          A house surrounded by greenery and nature&apos;s beauty. It&apos;s the
+          perfect place to relax, unwind, and enjoy life.
+        </p>
+      </div>
+      <Button>
+        <GitHubLogoIcon className="mr-2 h-4 w-4" />
+        Github
+      </Button>
+    </>
   );
 };
 const SkeletonFour = () => {

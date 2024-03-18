@@ -15,7 +15,7 @@ export function NavbarDemo() {
       <div className="flex px-4">
         <Logo className="mt-2 w-10 h-10 stroke-white" />
         <div className="relative w-full flex items-center justify-center">
-          <Navbar className="top-2" />
+          <Navbar className="top-4" />
         </div>
 
         <div className="w-full max-w-max z-[51]">
