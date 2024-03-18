@@ -1,11 +1,22 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import { LayoutGrid } from "@/components/ui/layout-grid";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export function ProjectsGrid() {
   return (
-    <div className="h-screen py-20 w-full">
-      <LayoutGrid cards={cards} />
-    </div>
+    <>
+      <div className=" px-10 flex space-x-4 w-full items-center justify-between">
+        <h1 className="text-white font-bold text-2xl">My Projects</h1>
+        <Button>
+          <GitHubLogoIcon className="mr-2 h-4 w-4" />
+          View My Github
+        </Button>
+      </div>
+      <div className="h-screen py-4 w-full">
+        <LayoutGrid cards={cards} />
+      </div>
+    </>
   );
 }
 
@@ -49,14 +60,21 @@ const SkeletonThree = () => {
 };
 const SkeletonFour = () => {
   return (
-    <div>
-      <p className="font-bold text-4xl text-white">Rivers are serene</p>
-      <p className="font-normal text-base text-white"></p>
-      <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-        A house by the river is a place of peace and tranquility. It&apos;s the
-        perfect place to relax, unwind, and enjoy life.
-      </p>
-    </div>
+    <>
+      <div>
+        <p className="font-bold text-4xl text-white">Rivers are serene</p>
+        <p className="font-normal text-base text-white"></p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          A house by the river is a place of peace and tranquility. It&apos;s
+          the perfect place to relax, unwind, and enjoy life.
+        </p>
+      </div>
+
+      <Button>
+        <GitHubLogoIcon className="mr-2 h-4 w-4" />
+        Github
+      </Button>
+    </>
   );
 };
 

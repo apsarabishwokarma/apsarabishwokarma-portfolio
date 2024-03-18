@@ -1,4 +1,5 @@
 "use client";
+import Logo from "@/components/icons/logo.icon";
 import {
   HoveredLink,
   Menu,
@@ -10,28 +11,45 @@ import { useState } from "react";
 
 export function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
-    </div>
+    <>
+      <div className="flex px-4">
+        <Logo className="mt-2 w-10 h-10 stroke-white" />
+        <div className="relative w-full flex items-center justify-center">
+          <Navbar className="top-2" />
+        </div>
+
+        <div className="w-full max-w-max z-[51]">
+          <a
+            href="/apsarabishwokarma-resume.pdf"
+            target="_blank"
+            className="cursor-pointer"
+          >
+            <button className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 ">
+              <span>Download CV &darr; </span>
+              <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+            </button>
+          </a>
+        </div>
+      </div>
+    </>
   );
 }
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-    >
+    <div className={cn("fixed top-10 inset-x-0 w-full z-50", className)}>
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
+            <HoveredLink href="/web-dev">Mobile App Development</HoveredLink>
             <HoveredLink href="/interface-design">Interface Design</HoveredLink>
             <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
+        <MenuItem setActive={setActive} active={active} item="Portfolio">
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Algochurn"
@@ -59,12 +77,12 @@ function Navbar({ className }: { className?: string }) {
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
+        <MenuItem setActive={setActive} active={active} item="Contact">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+            <HoveredLink href="/hobby">Linkedin</HoveredLink>
+            <HoveredLink href="/individual">Email</HoveredLink>
+            <HoveredLink href="/team">Instagram</HoveredLink>
+            <HoveredLink href="/enterprise">Facebook</HoveredLink>
           </div>
         </MenuItem>
       </Menu>
