@@ -6,11 +6,8 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 export function ProjectsGrid() {
   return (
     <>
-      <div className=" px-10 flex  w-full items-center justify-between">
-        <h1 className="text-white font-bold text-2xl">
-          My Creative Works <br />
-          Latest Projects
-        </h1>
+      <div className="flex max-w-7xl mx-auto  w-full items-center justify-between">
+        <h1 className="text-white text-xl font-normal">Latest Projects</h1>
         <Button>
           <GitHubLogoIcon className="mr-2 h-4 w-4" />
           View My Github
