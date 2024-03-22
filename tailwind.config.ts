@@ -53,6 +53,11 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        inter: "var(--font-inter)",
+        preahvihear: "var(--font-preahvihear)",
+        serif: "var(--font-serif),",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

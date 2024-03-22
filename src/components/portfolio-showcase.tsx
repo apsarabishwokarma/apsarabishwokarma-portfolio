@@ -1,12 +1,16 @@
 import { SparklesCore } from "@/components/ui/sparkles";
 
+import { FaCss3Alt, FaFigma, FaHtml5, FaJava, FaReact } from "react-icons/fa";
+import { FaJs } from "react-icons/fa6";
+
 export default function PortfolioShowcase() {
   return (
-    <div className="h-[45rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[50rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <img src="/nobgkti.png" width={250} height={250} alt="kti"></img>
-      <h6 className=" pt-2 md:text-4xl text-xl lg:text-3xl font-medium text-center text-white relative z-20">
+
+      <h6 className=" pt-4 md:text-3xl text-xl sm:text-2xl font-medium text-center text-white relative z-20">
         Apsara Bishwokarma /
-        <span className="font-normal text-emerald-400">
+        <span className="font-medium text-emerald-400">
           {" "}
           Frontend Developer
         </span>
@@ -32,10 +36,20 @@ export default function PortfolioShowcase() {
         {/* Radial Gradient to prevent sharp edges */}
         <div className="absolute inset-0 bg-slate-950 w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
-      <p className="md:text-l text-l lg:text-l font-normal text-center text-white relative z-20 max-w-lg mx-auto">
-        I am Passionate about creating visually appealing websites and mobile
-        apps.
+
+      <p className="md:text-l font-preahvihear text-sm font-normal text-center text-white relative z-20 max-w-lg mx-auto ">
+        Innovative and Motivated Individual , Passionate about creating visually
+        appealing websites and mobile apps.
       </p>
+
+      <div className="flex pt-8 flex-wrap items-center justify-center  mb-4 -z-10">
+        <FaHtml5 className="text-5xl text-red-500 mr-2 " />
+        <FaCss3Alt className="text-5xl text-blue-500 mr-2 " />
+        <FaJs className="text-5xl text-yellow-500 mr-2 " />
+        <FaReact className="text-5xl text-blue-300 mr-2 " />
+        <FaFigma className="text-5xl text-indigo-300 mr-1" />
+        <FaJava className="text-5xl text-orange-700 " />
+      </div>
     </div>
   );
 }
