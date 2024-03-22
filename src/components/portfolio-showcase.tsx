@@ -2,10 +2,11 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 export default function PortfolioShowcase() {
   return (
-    <div className="h-[30rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h6 className="md:text-4xl text-xl lg:text-3xl font-medium text-center text-white relative z-20">
+    <div className="h-[40rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <img src="/nobgkti.png" width={250} height={250} alt="kti"></img>
+      <h6 className=" pt-2 md:text-4xl text-xl lg:text-3xl font-medium text-center text-white relative z-20">
         Apsara Bishwokarma /
-        <span className="font-normal"> Frontend Developer</span>
+        <span className="font-normal text-purple-600"> Frontend Developer</span>
       </h6>
 
       <div className="w-[60rem] h-10 relative">
@@ -30,7 +31,7 @@ export default function PortfolioShowcase() {
       </div>
       <p className="md:text-l text-l lg:text-l font-normal text-center text-white relative z-20 max-w-lg mx-auto">
         I am Passionate about creating visually appealing websites and mobile
-        apps
+        apps.
       </p>
     </div>
   );

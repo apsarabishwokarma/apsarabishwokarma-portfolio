@@ -7,7 +7,7 @@ export function ProjectsGrid() {
   return (
     <>
       <div className="flex max-w-7xl mx-auto  w-full items-center justify-between">
-        <h1 className="text-white text-xl font-normal">Latest Projects</h1>
+        <h1 className="text-white text-xl font-normal"> Latest Projects</h1>
         <Button>
           <GitHubLogoIcon className="mr-2 h-4 w-4" />
           View My Github

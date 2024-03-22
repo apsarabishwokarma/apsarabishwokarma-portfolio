@@ -9,12 +9,14 @@ export default function MyPortfolio() {
       <div>
         <NavbarDemo />
       </div>
+
       <div>
         <PortfolioShowcase />
       </div>
       <div className="relative">
         <ProjectsGrid />
       </div>
+
       <Footer />
     </>
   );
