@@ -1,12 +1,17 @@
 import { SparklesCore } from "@/components/ui/sparkles";
 
-import { FaCss3Alt, FaFigma, FaHtml5, FaJava, FaReact } from "react-icons/fa";
-import { FaJs } from "react-icons/fa6";
-import { SiFlutter } from "react-icons/si";
+import {
+  SiCss3,
+  SiFigma,
+  SiFlutter,
+  SiHtml5,
+  SiJavascript,
+  SiReact,
+} from "react-icons/si";
 
 export default function PortfolioShowcase() {
   return (
-    <div className="h-[50rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[48rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <img src="/nobgkti.png" width={250} height={250} alt="kti"></img>
 
       <h6 className=" pt-4 md:text-4xl text-xl sm:text-2xl font-medium text-center text-white relative z-20">
@@ -44,13 +49,12 @@ export default function PortfolioShowcase() {
       </p>
 
       <div className="flex pt-10 flex-wrap items-center justify-center  mb-4 -z-10">
-        <FaHtml5 className="text-5xl text-red-500 mr-2" />
-        <FaCss3Alt className="text-5xl text-blue-500 mr-2" />
-        <FaJs className="text-5xl text-yellow-500 mr-2" />
-        <FaReact className="text-5xl text-blue-300 mr-2" />
-        <FaFigma className="text-5xl text-indigo-300 mr-1" />
-        <SiFlutter className="text-5xl text-blue-400 mr-2" />
-        <FaJava className="text-5xl text-orange-700 " />
+        <SiHtml5 className="text-5xl text-red-500 mr-2" />
+        <SiCss3 className="text-5xl text-blue-400 mr-2" />
+        <SiJavascript className="text-5xl text-yellow-500 mr-2" />
+        <SiReact className="text-5xl text-blue-600 mr-2" />
+        <SiFigma className="text-5xl text-pink-500 mr-2" />
+        <SiFlutter className="text-5xl text-blue-500 mr-2" />
       </div>
     </div>
   );
