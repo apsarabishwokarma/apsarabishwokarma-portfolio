@@ -1,3 +1,5 @@
+import Logo from "../icons/logo.icon";
+
 export default function Footer() {
   return (
     <footer className="pt-6">
@@ -7,9 +9,9 @@ export default function Footer() {
           <div className="flex items-center gap-x-6 text-gray-400 mt-6">
             <a href="mailto:apsara@gmail.com">
               <svg
-                className="w-6 h-6 hover:text-gray-500 duration-150"
+                className="w-8 h-8 -mr-3 hover:text-gray-500 duration-150"
                 fill="none"
-                viewBox="0 0 48 48"
+                viewBox="0 0 48 49"
               >
                 <g clip-path="url(#a)">
                   <path
@@ -25,7 +27,7 @@ export default function Footer() {
               </svg>
             </a>
 
-            <a href="">
+            <a href="https://www.facebook.com/apsarabishwokarma">
               <svg
                 className="w-6 h-6 hover:text-gray-500 duration-150"
                 fill="none"
@@ -44,7 +46,7 @@ export default function Footer() {
                 </defs>
               </svg>
             </a>
-            <a href="">
+            <a href="https://www.twitter.com/apsarabishwokarma">
               <svg
                 className="w-6 h-6 hover:text-gray-500 duration-150"
                 fill="none"
@@ -63,7 +65,7 @@ export default function Footer() {
                 </defs>
               </svg>
             </a>
-            <a href="">
+            <a href="https://github.com/apsarabiswokarma">
               <svg
                 className="w-6 h-6 hover:text-gray-500 duration-150"
                 fill="none"
@@ -84,7 +86,7 @@ export default function Footer() {
                 </defs>
               </svg>
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/apsara_bishwakarma">
               <svg
                 className="w-6 h-6 hover:text-gray-500 duration-150"
                 fill="currentColor"
@@ -101,6 +103,7 @@ export default function Footer() {
                 </defs>
               </svg>
             </a>
+            <Logo className="w-8 h-8 stroke-white md:hidden block" />
           </div>
         </div>
       </div>

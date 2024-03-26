@@ -6,7 +6,7 @@ import { SiFlutter } from "react-icons/si";
 
 export default function PortfolioShowcase() {
   return (
-    <div className="h-[55rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
+    <div className="h-[50rem] w-full flex flex-col items-center justify-center overflow-hidden rounded-md">
       <img src="/nobgkti.png" width={250} height={250} alt="kti"></img>
 
       <h6 className=" pt-4 md:text-4xl text-xl sm:text-2xl font-medium text-center text-white relative z-20">

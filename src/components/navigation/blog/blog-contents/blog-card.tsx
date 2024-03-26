@@ -3,44 +3,49 @@ import Image from "next/image";
 
 export type BlogCardProps = {
   img: string;
-  PostDate: string;
-  BlogName: string;
-  BlogDetails: string;
+  date: string;
+  blogName: string;
+  blogDetails: string;
+  readTime?: string;
+  blogContent: string;
 };
 
 export function BlogCard({
   img,
-  PostDate,
-  BlogName,
-  BlogDetails,
+  date: PostDate,
+  blogName,
+  blogDetails,
+  readTime,
   className,
 }: BlogCardProps & { className?: string }) {
   return (
     <>
       <div className={className}>
-        <figure className="w-full overflow-hidden rounded-md ">
+        <figure className="w-full overflow-hidden rounded-md">
           <Image
             src={img}
-            alt={BlogName}
+            alt={blogName}
             height={350}
             width={350}
-            className="h-64 object-cover"
+            className="h-64 w-full object-cover"
             quality={100}
           />
         </figure>
-        <div className=" space-y-1 text-sm">
-          <p className="  mt-4 text-xs font-normal text-white">{PostDate}</p>
-          <h3 className=" my-[6px] text-sm font-medium text-white leading-none">
-            {BlogName}
+        <div className=" space-y-2 ">
+          <h3 className=" my-[6px] text-base font-medium text-white leading-none">
+            {blogName}
           </h3>
-          <p className=" mb-4 text-xs  font-normal text-white">{BlogDetails}</p>
+          <p className="  mt-4 text-sm font-normal text-white">
+            {PostDate} &#124; {readTime}
+          </p>
+          <p className=" mb-4 text-sm  font-normal text-white">{blogDetails}</p>
         </div>
-        <Button>
+        <Button className="mt-2">
           Read more
           <svg
-            className="-mr-1 ml-2 h-4 w-4"
+            className="-mr-1 ml-1 h-3 w-4"
             fill="currentColor"
-            viewBox="0 0 20 20"
+            viewBox="0 0 18 18"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
