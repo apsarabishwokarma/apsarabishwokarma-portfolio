@@ -1,0 +1,53 @@
+# HTML and CSS Basic Roadmap
+
+## Introduction
+
+HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are fundamental technologies for building websites. HTML provides the structure and content of a web page, while CSS enhances its appearance and layout.
+
+## Roadmap
+
+### 1. HTML Basics
+
+- Learn the basic structure of HTML documents.
+- Understand HTML elements, tags, and attributes.
+- Practice creating different types of content such as headings, paragraphs, lists, and links.
+
+### 2. CSS Basics
+
+- Understand the role of CSS in styling web pages.
+- Learn about CSS syntax, selectors, properties, and values.
+- Practice applying styles to HTML elements to change their appearance.
+
+### 3. Layout and Positioning
+
+- Explore different layout techniques such as floats, flexbox, and CSS Grid.
+- Understand how to position elements on a web page using CSS positioning properties.
+
+### 4. Responsive Design
+
+- Learn about responsive design principles and techniques.
+- Understand media queries and how to create styles for different screen sizes.
+- Practice building layouts that adapt to various devices and screen resolutions.
+
+### 5. CSS Frameworks
+
+- Explore popular CSS frameworks like Bootstrap, Foundation, or Bulma.
+- Learn how to use pre-built components and styles to speed up development.
+- Understand the pros and cons of using CSS frameworks in your projects.
+
+### 6. Project-based Learning
+
+- Start building small projects to apply your HTML and CSS skills.
+- Create a personal portfolio website or a simple landing page.
+- Experiment with different design patterns and techniques.
+
+## Additional Resources
+
+- [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/docs/Web)
+- [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [Codecademy HTML & CSS Course](https://www.codecademy.com/learn/learn-html-css)
+
+## Conclusion
+
+Learning HTML and CSS is an essential step for anyone interested in web development.
