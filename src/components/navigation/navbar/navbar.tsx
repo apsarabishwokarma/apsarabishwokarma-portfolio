@@ -43,7 +43,7 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
         <Link href="/#projects">
           <MenuItem setActive={setActive} active={active} item="Portfolio">
-            <div className="  text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
+            <div className=" md:grid hidden text-sm  grid-cols-1 md:grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="BooKNook-Book Shop"
                 href="https://algochurn.com"
@@ -74,7 +74,7 @@ function Navbar({ className }: { className?: string }) {
         </Link>
         <Link href="/#blog">
           <MenuItem setActive={setActive} active={active} item="Blogs">
-            <div className="  text-sm grid  md:grid-cols-2 grid-cols-1 gap-10 p-4">
+            <div className=" md:grid hidden text-sm   md:grid-cols-2 grid-cols-1 gap-10 p-4">
               <ProductItem
                 title="Javascript Projects"
                 href="/javaScriptprojects.png"
