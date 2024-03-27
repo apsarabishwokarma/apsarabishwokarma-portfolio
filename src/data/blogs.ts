@@ -36,7 +36,7 @@ export const blogs: BlogCardProps[] = [
     readTime: "10",
   },
   {
-    slug: "artificial",
+    slug: "artificial-intelligence",
     img: "https://img-new.cgtrader.com/items/3003470/e8f748ff02/large/artificial-intelligence-abstract-graphics-for-websites-ai-3d-model-obj.jpg",
     date: "22/03/2023",
     blogName: "Artificial Intelligence",
