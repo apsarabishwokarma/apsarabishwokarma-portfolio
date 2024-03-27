@@ -20,22 +20,17 @@ function Blog() {
         </Button>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-4 py-4 w-full max-w-7xl mx-auto">
-        {blogs.map(
-          ({ img, slug, date, blogName, blogDetails, blogContent }) => (
-            <BlogCard
-              slug={slug}
-              key={blogName}
-              img={img}
-              blogName={blogName}
-              date={date}
-              blogDetails={blogDetails}
-              readTime={`${Math.round(
-                blogContent.split(" ").length * (1 / 120)
-              )} min to read`}
-              blogContent=""
-            />
-          )
-        )}
+        {blogs.map(({ img, slug, date, blogName, blogDetails, readTime }) => (
+          <BlogCard
+            slug={slug}
+            key={blogName}
+            img={img}
+            blogName={blogName}
+            date={date}
+            blogDetails={blogDetails}
+            readTime={`${readTime} min to read`}
+          />
+        ))}
       </div>
     </>
   );

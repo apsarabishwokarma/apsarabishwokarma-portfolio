@@ -9,7 +9,6 @@ export type BlogCardProps = {
   blogName: string;
   blogDetails: string;
   readTime?: string;
-  blogContent: string;
 };
 
 export function BlogCard({

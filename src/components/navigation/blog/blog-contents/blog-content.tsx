@@ -1,34 +1,33 @@
-import Image from "next/image";
-import { BlogCardProps } from "./blog-card";
+"use client";
 
-export default function BlogContent({
-  img,
-  date,
-  blogName,
-  blogDetails,
-  blogContent,
-}: BlogCardProps) {
+import { blogs } from "@/data/blogs";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+export default function BlogContent() {
+  const pathname = usePathname();
+  const blog = blogs.find((b) => pathname.includes(b.slug));
+
+  if (!blog) {
+    return <></>;
+  }
+
+  const { img, date, blogName, blogDetails, readTime } = blog;
   return (
-    <div className="flex items-center justify-center">
-      <div key={blogName}>
-        <h3 className="my-[6px]  text-base font-medium text-white leading-none">
-          {blogName}
-        </h3>
-        <p className="mt-4 text-sm font-normal text-white">
-          {date} &#124; {blogDetails}
-        </p>
-        <figure className="w-full overflow-hidden rounded-md">
-          <Image
-            src={img}
-            alt={blogName}
-            height={300}
-            width={400}
-            className="h-64 w-full object-cover"
-            quality={100}
-          />
-        </figure>
-        <p className="mt-4 text-sm font-normal text-white">{blogContent}</p>
-      </div>
-    </div>
+    <>
+      <p className="mt-10 text-lg font-normal text-white">
+        {date} &#124; {readTime} min to read
+      </p>
+      <figure className="w-full overflow-hidden rounded-md">
+        <Image
+          src={img}
+          alt={blogName}
+          height={500}
+          width={1000}
+          className="w-full h-full object-cover"
+          quality={100}
+        />
+      </figure>
+    </>
   );
 }
