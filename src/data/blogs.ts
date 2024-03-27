@@ -16,7 +16,7 @@ export const blogs: BlogCardProps[] = [
     blogName: "Books: Our Trusted Friends",
     blogDetails:
       "Books have a unique ability to foster empathy and compassion within us. ",
-    readTime: "10",
+    readTime: "12",
   },
   {
     slug: "planting-pleasures",
@@ -25,10 +25,10 @@ export const blogs: BlogCardProps[] = [
     blogName: "Planting Pleasures: Joy of Gardening ",
     blogDetails:
       "Share the joy of transforming outdoor and indoor spaces into vibrant gardens.",
-    readTime: "10",
+    readTime: "5",
   },
   {
-    slug: "roadmap",
+    slug: "roadmap-webdevelopment",
     img: "https://img-c.udemycdn.com/course/480x270/3906220_be65_2.jpg",
     date: "02/09/2024",
     blogName: "Roadmap for Web-Development",

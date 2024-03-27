@@ -18,12 +18,12 @@ export default function BlogContent() {
       <p className="mt-10 text-lg font-normal text-white">
         {date} &#124; {readTime} min to read
       </p>
-      <figure className="w-full overflow-hidden rounded-md">
+      <figure className="w-full overflow-hidden rounded-md aspect-video">
         <Image
           src={img}
           alt={blogName}
-          height={500}
-          width={1000}
+          height={900 / 2}
+          width={1600 / 2}
           className="w-full h-full object-cover"
           quality={100}
         />
