@@ -7,6 +7,7 @@ import {
   ProductItem,
 } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useState } from "react";
 
 export function NavbarDemo() {
@@ -40,7 +41,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div className={cn("fixed top-10 inset-x-0 w-full z-50", className)}>
       <Menu setActive={setActive}>
-        <a href="">
+        <Link href="/#projects">
           <MenuItem setActive={setActive} active={active} item="Portfolio">
             <div className="  text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
               <ProductItem
@@ -53,7 +54,7 @@ function Navbar({ className }: { className?: string }) {
                 title="ShopHubE-commerce Site"
                 href="https://tailwindmasterkit.com"
                 src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                description="Production ready Tailwind css components for your next project"
+                description="E-commerce buy what you want "
               />
 
               <ProductItem
@@ -70,8 +71,8 @@ function Navbar({ className }: { className?: string }) {
               />
             </div>
           </MenuItem>
-        </a>
-        <a href="">
+        </Link>
+        <Link href="/#blog">
           <MenuItem setActive={setActive} active={active} item="Blogs">
             <div className="  text-sm grid  md:grid-cols-2 grid-cols-1 gap-10 p-4">
               <ProductItem
@@ -100,8 +101,8 @@ function Navbar({ className }: { className?: string }) {
               />
             </div>
           </MenuItem>
-        </a>
-        <a>
+        </Link>
+        <Link href="/">
           <MenuItem setActive={setActive} active={active} item="Connect">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/hobby">Linkedin</HoveredLink>
@@ -110,7 +111,7 @@ function Navbar({ className }: { className?: string }) {
               <HoveredLink href="/enterprise">Facebook</HoveredLink>
             </div>
           </MenuItem>
-        </a>
+        </Link>
       </Menu>
     </div>
   );

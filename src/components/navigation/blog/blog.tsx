@@ -5,7 +5,7 @@ import { BlogCard } from "./blog-contents/blog-card";
 
 function Blog() {
   return (
-    <>
+    <div id="blog">
       <p className=" mt-8 max-w-7xl  mb-4 mx-auto  w-full  text-neutral-400">
         blogs
       </p>
@@ -32,7 +32,7 @@ function Blog() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

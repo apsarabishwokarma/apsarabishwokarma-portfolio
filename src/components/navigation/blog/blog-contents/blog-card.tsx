@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export type BlogCardProps = {
   slug: string;
@@ -20,9 +24,14 @@ export function BlogCard({
   className,
   slug,
 }: BlogCardProps & { className?: string }) {
+  const router = useRouter();
+
   return (
     <>
-      <div className={className}>
+      <div
+        className={cn(className, "cursor-pointer")}
+        onClick={() => router.push(`/blog/${slug}`)}
+      >
         <figure className="w-full overflow-hidden rounded-md">
           <Image
             src={img}

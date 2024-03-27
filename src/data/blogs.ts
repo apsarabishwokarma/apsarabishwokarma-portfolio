@@ -11,7 +11,7 @@ export const blogs: BlogCardProps[] = [
   },
   {
     slug: "books-our",
-    img: "https://t3.ftcdn.net/jpg/04/79/12/94/360_F_479129405_2ItSaOfgDJn8gsAtzmElw65yxLFRZe2s.jpg",
+    img: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     date: "02/02/2024",
     blogName: "Books: Our Trusted Friends",
     blogDetails:
@@ -20,7 +20,7 @@ export const blogs: BlogCardProps[] = [
   },
   {
     slug: "planting-pleasures",
-    img: "https://static.vecteezy.com/system/resources/thumbnails/003/356/915/small_2x/csr-concept-and-business-planting-saplings-of-trees-photo.JPG",
+    img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     date: "02/02/2024",
     blogName: "Planting Pleasures: Joy of Gardening ",
     blogDetails:
@@ -29,7 +29,7 @@ export const blogs: BlogCardProps[] = [
   },
   {
     slug: "roadmap-webdevelopment",
-    img: "https://img-c.udemycdn.com/course/480x270/3906220_be65_2.jpg",
+    img: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     date: "02/09/2024",
     blogName: "Roadmap for Web-Development",
     blogDetails: "Learn Web development step by step",
@@ -37,10 +37,18 @@ export const blogs: BlogCardProps[] = [
   },
   {
     slug: "artificial-intelligence",
-    img: "https://img-new.cgtrader.com/items/3003470/e8f748ff02/large/artificial-intelligence-abstract-graphics-for-websites-ai-3d-model-obj.jpg",
+    img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     date: "22/03/2023",
     blogName: "Artificial Intelligence",
     blogDetails: "Widely popular Artificial Intelligence",
+    readTime: "10",
+  },
+  {
+    slug: "github",
+    img: "https://images.unsplash.com/photo-1618401479427-c8ef9465fbe1?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    date: "22/03/2023",
+    blogName: "Github",
+    blogDetails: "Widely popular Source code management",
     readTime: "10",
   },
 ];
