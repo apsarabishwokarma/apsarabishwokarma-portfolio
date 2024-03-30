@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { blogs } from "@/data/blogs";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { BlogCard } from "./blog-contents/blog-card";
 import BlogShowcase from "./blog-contents/blog-showcase";
 
@@ -16,23 +17,27 @@ function Blog() {
           {" "}
           &darr; Featured Blogs
         </h1>
-        <Button className="">
-          <ArrowRight className="mr-2 h-4 w-4 " />
-          View More
-        </Button>
+        <Link href="/blog">
+          <Button className="">
+            <ArrowRight className="mr-2 h-4 w-4 " />
+            View More
+          </Button>
+        </Link>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-4 py-4 w-full max-w-7xl mx-auto">
-        {blogs.map(({ img, slug, date, blogName, blogDetails, readTime }) => (
-          <BlogCard
-            slug={slug}
-            key={blogName}
-            img={img}
-            blogName={blogName}
-            date={date}
-            blogDetails={blogDetails}
-            readTime={`${readTime} min to read`}
-          />
-        ))}
+        {blogs
+          .slice(0, 3)
+          .map(({ img, slug, date, blogName, blogDetails, readTime }) => (
+            <BlogCard
+              slug={slug}
+              key={blogName}
+              img={img}
+              blogName={blogName}
+              date={date}
+              blogDetails={blogDetails}
+              readTime={`${readTime} min to read`}
+            />
+          ))}
       </div>
     </div>
   );

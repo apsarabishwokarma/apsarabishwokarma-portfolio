@@ -102,13 +102,36 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
         </Link>
-        <Link href="/">
+        <Link href="/#connect">
           <MenuItem setActive={setActive} active={active} item="Connect">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/hobby">Linkedin</HoveredLink>
-              <HoveredLink href="/individual">Email</HoveredLink>
-              <HoveredLink href="/team">Instagram</HoveredLink>
-              <HoveredLink href="/enterprise">Facebook</HoveredLink>
+              <HoveredLink
+                href="https://www.linkedin.com/in/apsarabishwokarma/"
+                target="_blank"
+              >
+                Linkedin
+              </HoveredLink>
+              <HoveredLink href="mailto:apsara@gmail.com" target="_blank">
+                Email
+              </HoveredLink>
+              <HoveredLink
+                href="https://www.instagram.com/apsara_bishwakarma"
+                target="_blank"
+              >
+                Instagram
+              </HoveredLink>
+              <HoveredLink
+                href="https://www.facebook.com/apsarabishwokarmaa"
+                target="_blank"
+              >
+                Facebook
+              </HoveredLink>
+              <HoveredLink
+                href="https://www.twitter.com/apsarabishwokarma"
+                target="_blank"
+              >
+                Twitter
+              </HoveredLink>
             </div>
           </MenuItem>
         </Link>

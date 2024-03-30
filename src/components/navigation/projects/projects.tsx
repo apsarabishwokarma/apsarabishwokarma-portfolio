@@ -16,10 +16,12 @@ export function ProjectsGrid() {
             {" "}
             &darr; Featured Projects
           </h1>
-          <Button className="">
-            <GitHubLogoIcon className="mr-2 h-4 w-4 " />
-            View My Github
-          </Button>
+          <Link href="https://github.com/apsarabiswokarma" target="_blank">
+            <Button className="">
+              <GitHubLogoIcon className="mr-2 h-4 w-4 " />
+              View My Github
+            </Button>
+          </Link>
         </div>
         <div className="h-screen py-4 w-full">
           <LayoutGrid cards={cards} />
