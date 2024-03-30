@@ -11,7 +11,7 @@ import Logo from "../icons/logo.icon";
 
 export default function Footer() {
   return (
-    <div id="#connect">
+    <div id="connect">
       <footer className="pt-6">
         <div className="max-w-screen-x mx-auto px-4 md:px-8">
           <div className="mt-1 py-10 border-t border-gray-700 items-center justify-between sm:flex">
