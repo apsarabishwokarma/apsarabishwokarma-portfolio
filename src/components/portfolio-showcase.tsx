@@ -7,6 +7,7 @@ import {
   SiHtml5,
   SiJavascript,
   SiReact,
+  SiTailwindcss,
 } from "react-icons/si";
 
 export default function PortfolioShowcase() {
@@ -53,6 +54,7 @@ export default function PortfolioShowcase() {
         <SiCss3 className="text-5xl text-blue-400 mr-2" />
         <SiJavascript className="text-5xl text-yellow-500 mr-2" />
         <SiReact className="text-5xl text-blue-600 mr-2" />
+        <SiTailwindcss className="text-5xl text-blue-600 mr-2" />
         <SiFigma className="text-5xl text-pink-500 mr-2" />
         <SiFlutter className="text-5xl text-blue-500 mr-2" />
       </div>
