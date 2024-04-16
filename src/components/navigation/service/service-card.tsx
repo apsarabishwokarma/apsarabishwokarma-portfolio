@@ -1,7 +1,7 @@
 "use client";
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { FaBlogger, FaCamera, FaCode, FaMobile, FaUikit } from "react-icons/fa";
+import { FaBlogger, FaCamera, FaCode, FaMobile } from "react-icons/fa";
 
 export function ServiceCardHoverEffect() {
   const projects = [
@@ -26,13 +26,7 @@ export function ServiceCardHoverEffect() {
         "Creating engaging and SEO-friendly blog posts tailored to your audience and industry niche.",
       link: "https://netflix.com",
     },
-    {
-      icon: <FaUikit size={40} />,
-      title: "UI/UX Design",
-      description:
-        "Capturing stunning photographs that showcase your products, events, or lifestyle in the best light.",
-      link: "https://meta.com",
-    },
+
     {
       icon: <FaCamera size={40} />,
       title: "Photography",
