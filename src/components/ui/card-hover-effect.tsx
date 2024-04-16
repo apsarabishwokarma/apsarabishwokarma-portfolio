@@ -8,6 +8,7 @@ export const HoverEffect = ({
   className,
 }: {
   items: {
+    icon: React.ReactNode;
     title: string;
     description: string;
     link: string;
@@ -17,44 +18,44 @@ export const HoverEffect = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
-        className
-      )}
-    >
-      {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <Card>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </Card>
-        </Link>
-      ))}
-    </div>
+    <section className="text-white py-40 ">
+      <h1 className=" text-xl font-normal"> &darr; Services</h1>
+      <div className={cn("grid grid-cols-1 md:grid-cols-4  py-10", className)}>
+        {items.map((item, idx) => (
+          <Link
+            href={item?.link}
+            key={item?.link}
+            className="relative group  block p-2 h-full w-full"
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === idx && (
+                <motion.span
+                  className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.15 },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+
+            <Card>
+              <CardIcon>{item.icon}</CardIcon>
+              <CardTitle>{item.title}</CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 };
 
@@ -68,7 +69,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        " bg-black shadow-md flex flex-col  rounded-2xl h-full w-full p-4 overflow-hidden border border-green-800 dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
@@ -78,6 +79,23 @@ export const Card = ({
     </div>
   );
 };
+
+export const CardIcon = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn("flex items-center justify-center text-white", className)}
+    >
+      {children}
+    </div>
+  );
+};
+
 export const CardTitle = ({
   className,
   children,
@@ -86,7 +104,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <h4
+      className={cn(
+        "text-zinc-100 font-bold text-center tracking-wide text-xl m-3",
+        className
+      )}
+    >
       {children}
     </h4>
   );
@@ -101,7 +124,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "text-zinc-400 tracking-wide text-center leading-relaxed text-sm",
         className
       )}
     >
