@@ -82,20 +82,23 @@ const SkeletonThree = () => {
   return (
     <>
       <div>
-        <p className="font-bold text-4xl text-white">Travel Companion</p>
+        <p className="font-bold text-4xl text-white">Javascript Projects</p>
         <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          There are many friends waiting for you to travel with them.A travel
-          companion app assists travelers in planning and organizing their trips
-          and mostly finding their travel friends. It offers functionalities
-          such as itinerary creation, flight and hotel booking, local attraction
-          recommendations, navigation assistance, and real-time travel updates.
+          {" "}
+          A collection of web development projects on HTML, CSS, and JavaScript
+          from beginner to advanced
         </p>
       </div>
-      <Button>
-        <GitHubLogoIcon className="mr-2 h-4 w-4" />
-        Github
-      </Button>
+      <Link
+        href="https://github.com/apsarabiswokarma/WebDevelopment-Roadmap"
+        target="_blank"
+      >
+        <Button>
+          <GitHubLogoIcon className="mr-2 h-4 w-4" />
+          Github
+        </Button>
+      </Link>
     </>
   );
 };
