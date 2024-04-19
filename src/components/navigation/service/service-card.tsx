@@ -16,14 +16,14 @@ export function ServiceCardHoverEffect() {
       icon: <FaMobile size={40} />,
       title: "App Development",
       description:
-        "Building native and cross-platform mobile applications for iOS and Android platforms with frameworks like React Native or Flutter.",
+        "Building cross-platform mobile applications for iOS and Android platforms with frameworks like Flutter.",
       link: "https://github.com/apsarabiswokarma/BookNook-App-Flutter",
     },
     {
       icon: <FaBlogger size={40} />,
       title: "Blog Posting",
       description:
-        "Creating engaging and SEO-friendly blog posts tailored to your audience and industry niche.",
+        "Creating engaging and SEO-friendly blog posts tailored to your audience and industry.",
       link: "/#blog",
     },
 

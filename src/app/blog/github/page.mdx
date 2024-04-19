@@ -1,0 +1,142 @@
+````markdown
+# GitHub Commands Cheat Sheet
+
+GitHub offers a variety of commands to manage repositories, branches, commits, and more. Here's a cheat sheet to help you navigate GitHub efficiently.
+
+### Create a New Repository
+
+```bash
+git init
+```
+````
+
+### Clone an Existing Repository
+
+```bash
+git clone <repository-url>
+```
+
+### Add Remote Repository
+
+```bash
+git remote add origin <repository-url>
+```
+
+## Branch Operations
+
+### Create a New Branch
+
+```bash
+git checkout -b <branch-name>
+```
+
+### Switch Branch
+
+```bash
+git checkout <branch-name>
+```
+
+### List Branches
+
+```bash
+git branch
+```
+
+### Delete Branch
+
+```bash
+git branch -d <branch-name>
+```
+
+## Commit Changes
+
+### Stage Changes
+
+```bash
+git add .
+```
+
+### Commit Changes
+
+```bash
+git commit -m "Commit message"
+```
+
+### Push Changes
+
+```bash
+git push origin <branch-name>
+```
+
+## Pull Request
+
+### Create Pull Request
+
+```bash
+gh pr create --base <base-branch> --head <head-branch>
+```
+
+### List Pull Requests
+
+```bash
+gh pr list
+```
+
+### Merge Pull Request
+
+```bash
+gh pr merge <pull-request-number>
+```
+
+## Repository Collaboration
+
+### Add Collaborator
+
+```bash
+gh repo collaborator add <username>
+```
+
+### Fork Repository
+
+```bash
+gh repo fork
+```
+
+## Miscellaneous
+
+### Check Repository Status
+
+```bash
+git status
+```
+
+### View Commit History
+
+```bash
+git log
+```
+
+### Undo Changes
+
+```bash
+git checkout -- <file>
+```
+
+### Undo Last Commit
+
+```bash
+git reset HEAD~1
+```
+
+### Ignore Files
+
+```bash
+touch .gitignore
+```
+
+This cheat sheet covers some of the most commonly used GitHub commands. Refer to the GitHub documentation for more advanced commands and options.
+
+```
+
+You can save this content into a `.mdx` file and then add it to your GitHub repository. This Markdown file provides a quick reference for GitHub commands, making it easier to manage your repositories and collaborate with others.
+```

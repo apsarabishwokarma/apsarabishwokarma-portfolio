@@ -16,19 +16,19 @@ const ContactMe = () => {
               Feel free to contact me for any inquiries or collaborations.
               Always available for freelancing if the right project comes along.
             </p>
-            <ul className="space-y-4">
+            <ul className="space-y-4 items-center justify-center">
               <a href="https://www.google.com/maps/place/Tukuche/@28.7334974,83.6443616,12z/data=!3m1!4b1!4m6!3m5!1s0x39be062808f5a387:0xc37123e14b6bc478!8m2!3d28.7768018!4d83.570964!16s%2Fm%2F04q3tlq?entry=ttu">
                 <li className="flex items-center space-x-2">
-                  <FaLocationDot size={20} color="gray" />
+                  <FaLocationDot size={20} color="gray" className="mr-2" />
                   <span>Thasang-01 , Tukuche Mustang , Nepal</span>
                 </li>
               </a>
               <li className="flex items-center space-x-2">
-                <MdOutlineMailOutline size={20} color="gray" />
+                <MdOutlineMailOutline size={20} color="gray" className="mr-2" />
                 <span>apsarabk94@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2">
-                <FaPhone size={20} color="gray" />
+                <FaPhone size={20} color="gray" className="mr-2" />
                 <span>+977 9867625026</span>
               </li>
             </ul>
