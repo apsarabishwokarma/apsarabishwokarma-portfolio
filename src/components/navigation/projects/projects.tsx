@@ -44,10 +44,12 @@ const SkeletonOne = () => {
           booking, budget tracking, and communication tools.
         </p>
       </div>
-      <Button>
-        <GitHubLogoIcon className="mr-2 h-4 w-4" />
-        Github
-      </Button>
+      <Link href="https://github.com/Roopaish/evento" target="_blank">
+        <Button>
+          <GitHubLogoIcon className="mr-2 h-4 w-4" />
+          Github
+        </Button>
+      </Link>
     </>
   );
 };
@@ -64,7 +66,10 @@ const SkeletonTwo = () => {
           payment processing, and doorstep delivery.
         </p>
       </div>
-      <Link href="https://github.com/apsarabiswokarma">
+      <Link
+        href="https://github.com/apsarabiswokarma/ecommerce-shophub"
+        target="_blank"
+      >
         <Button>
           <GitHubLogoIcon className="mr-2 h-4 w-4" />
           Github
@@ -110,10 +115,15 @@ const SkeletonFour = () => {
         </p>
       </div>
 
-      <Button>
-        <GitHubLogoIcon className="mr-2 h-4 w-4" />
-        Github
-      </Button>
+      <Link
+        href="https://github.com/apsarabiswokarma/BookNook-App-Flutter"
+        target="_blank"
+      >
+        <Button>
+          <GitHubLogoIcon className="mr-2 h-4 w-4" />
+          Github
+        </Button>
+      </Link>
     </>
   );
 };

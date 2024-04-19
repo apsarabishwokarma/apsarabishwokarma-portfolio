@@ -49,7 +49,7 @@ export default function PortfolioShowcase() {
         appealing websites and mobile apps.
       </p>
 
-      <div className="flex pt-10 flex-wrap items-center justify-center  mb-4 -z-10">
+      <div className="grid grid-cols-4 md:grid-cols-7 gap-2 pt-10 justify-center mb-4 -z-10">
         <SiHtml5 className="text-5xl text-red-500 mr-2" />
         <SiCss3 className="text-5xl text-blue-400 mr-2" />
         <SiJavascript className="text-5xl text-yellow-500 mr-2" />
