@@ -151,7 +151,7 @@ const cards = [
     content: <SkeletonThree />,
     className: "col-span-1",
     thumbnail:
-      "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?",
+      "https://images.unsplash.com/photo-1597239451147-f163967b8581?",
   },
   {
     id: 4,
