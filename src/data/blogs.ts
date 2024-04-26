@@ -43,12 +43,13 @@ export const blogs: BlogCardProps[] = [
     readTime: "12",
   },
   {
-    slug: "planting-pleasures",
-    img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    date: "02/02/2024",
-    blogName: "Planting Pleasures: Joy of Gardening ",
+    slug: "frontend-developer-preparation",
+    img: "https://images.unsplash.com/photo-1620632889724-f1ddc7841c40?",
+    date: "04/25/2024",
+    blogName:
+      "Frontend Developer Interview Preparation: Essential Tips and Resources",
     blogDetails:
-      "Share the joy of transforming outdoor and indoor spaces into vibrant gardens.",
-    readTime: "5",
+      "Get ready for your frontend developer interviews with these essential tips and resources.",
+    readTime: "7",
   },
 ];
