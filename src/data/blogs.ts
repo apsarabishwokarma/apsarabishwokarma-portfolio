@@ -49,7 +49,7 @@ export const blogs: BlogCardProps[] = [
     blogName:
       "Frontend Developer Interview Preparation: Essential Tips and Resources",
     blogDetails:
-      "Get ready for your frontend developer interviews with these essential tips and resources.",
-    readTime: "7",
+      "Get ready for your frontend developer interviews with these essential tips and resources.HTML,CSS,JS",
+    readTime: "10",
   },
 ];
