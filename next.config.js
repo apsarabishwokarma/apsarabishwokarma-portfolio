@@ -10,7 +10,7 @@ const nextConfig = {
       },
     ],
   },
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  pageExtensions: ["js", "jsx", "mdx", "md", "ts", "tsx"],
 };
 
 module.exports = withMDX(nextConfig);
