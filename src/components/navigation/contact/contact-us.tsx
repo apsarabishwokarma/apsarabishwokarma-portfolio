@@ -1,8 +1,46 @@
+"use client";
+import { contactSchema } from "@/lib/validations/contact";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaPhone } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { toast } from "sonner";
+import { z } from "zod";
 
 const ContactMe = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<z.infer<typeof contactSchema>>();
+
+  function onSubmit(values: z.infer<typeof contactSchema>) {
+    setIsLoading(true);
+    fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(values),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        toast.success(
+          data?.message ?? "Email has been sent. I will soon get back to you."
+        );
+      })
+      .catch((error) => {
+        toast.error(error?.message ?? "Failed to send email.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
   return (
     <section id="contact-me" className="py-12">
       <p className="mt-6 max-w-7xl mb-8 mx-auto w-full text-neutral-400">
@@ -17,12 +55,10 @@ const ContactMe = () => {
               Always available for freelancing if the right project comes along.
             </p>
             <ul className="space-y-4 items-center justify-center">
-              <a href="https://www.google.com/maps/place/Tukuche/@28.7334974,83.6443616,12z/data=!3m1!4b1!4m6!3m5!1s0x39be062808f5a387:0xc37123e14b6bc478!8m2!3d28.7768018!4d83.570964!16s%2Fm%2F04q3tlq?entry=ttu">
-                <li className="flex items-center space-x-2">
-                  <FaLocationDot size={20} color="gray" className="mr-2" />
-                  <span>Thasang-01 , Tukuche Mustang , Nepal</span>
-                </li>
-              </a>
+              <li className="flex items-center space-x-2">
+                <FaLocationDot size={20} color="gray" className="mr-2" />
+                <span>Thasang-01 , Tukuche Mustang , Nepal</span>
+              </li>
               <li className="flex items-center space-x-2">
                 <MdOutlineMailOutline size={20} color="gray" className="mr-2" />
                 <span>apsarabk94@gmail.com</span>
@@ -38,32 +74,37 @@ const ContactMe = () => {
             <h2 className="text-2xl font-semibold mb-4 text-white">
               Contact Form
             </h2>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-1 gap-4">
                 <input
                   type="text"
                   placeholder="Full Name"
+                  {...register("name")}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none bg-transparent text-white"
                 />
                 <input
                   type="email"
                   placeholder="Email Address"
+                  {...register("email")}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none bg-transparent text-white"
                 />
                 <input
                   type="text"
                   placeholder="Subject"
+                  {...register("subject")}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none bg-transparent text-white"
                 />
                 <textarea
                   placeholder="Message"
+                  {...register("body")}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none bg-transparent text-white"
                 ></textarea>
                 <button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full border bg-transparent border-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-300"
                 >
-                  Send Message
+                  {isLoading ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>
