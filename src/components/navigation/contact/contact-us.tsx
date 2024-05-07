@@ -55,18 +55,37 @@ const ContactMe = () => {
               Always available for freelancing if the right project comes along.
             </p>
             <ul className="space-y-4 items-center justify-center">
-              <li className="flex items-center space-x-2">
-                <FaLocationDot size={20} color="gray" className="mr-2" />
-                <span>Thasang-01 , Tukuche Mustang , Nepal</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <MdOutlineMailOutline size={20} color="gray" className="mr-2" />
-                <span>apsarabk94@gmail.com</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <FaPhone size={20} color="gray" className="mr-2" />
-                <span>+977 9867625026</span>
-              </li>
+              <div>
+                <a
+                  href="https://www.google.com/maps/place/Tukuche/"
+                  target="_blank"
+                >
+                  <li className="flex items-center space-x-2">
+                    <FaLocationDot size={20} color="gray" className="mr-2" />
+                    <span>Thasang-01 , Tukuche Mustang , Nepal</span>
+                  </li>
+                </a>
+              </div>
+              <div>
+                <a href="mailto:apsarabk94@gmail.com" target="_blank">
+                  <li className="flex items-center space-x-2">
+                    <MdOutlineMailOutline
+                      size={20}
+                      color="gray"
+                      className="mr-2"
+                    />
+                    <span>apsarabk94@gmail.com</span>
+                  </li>
+                </a>
+              </div>
+              <div>
+                <a href="tel:977+ 9867625026" target="_blank">
+                  <li className="flex items-center space-x-2">
+                    <FaPhone size={20} color="gray" className="mr-2" />
+                    <span>+977 9867625026</span>
+                  </li>
+                </a>
+              </div>
             </ul>
           </div>
 
