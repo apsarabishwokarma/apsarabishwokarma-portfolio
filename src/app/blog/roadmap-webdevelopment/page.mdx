@@ -1,55 +1,955 @@
-# 1.HTML CSS and Javascript Basic Roadmap
-
-## Introduction
-
-HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are fundamental technologies for building websites. HTML provides the structure and content of a web page, while CSS enhances its appearance and layout.
-
-## Roadmap
+## HTML CSS and Javascript Basic Roadmap
 
 ### 1. HTML Basics
 
-- Learn the basic structure of HTML documents.
-- Understand HTML elements, tags, and attributes.
-- Practice creating different types of content such as headings, paragraphs, lists, and links.
-
 ### 2. CSS Basics
-
-- Understand the role of CSS in styling web pages.
-- Learn about CSS syntax, selectors, properties, and values.
-- Practice applying styles to HTML elements to change their appearance.
 
 ### 3. Layout and Positioning
 
-- Explore different layout techniques such as floats, flexbox, and CSS Grid.
-- Understand how to position elements on a web page using CSS positioning properties.
-
 ### 4. Responsive Design
-
-- Learn about responsive design principles and techniques.
-- Understand media queries and how to create styles for different screen sizes.
-- Practice building layouts that adapt to various devices and screen resolutions.
 
 ### 5. CSS Frameworks
 
-- Explore popular CSS frameworks like Bootstrap, Foundation, or Bulma.
-- Learn how to use pre-built components and styles to speed up development.
-- Understand the pros and cons of using CSS frameworks in your projects.
+### 6. Javascript Basics
 
-### 6. Project-based Learning
+### 7. Project-based Learning
 
-- Start building small projects to apply your HTML and CSS skills.
-- Create a personal portfolio website or a simple landing page.
-- Experiment with different design patterns and techniques.
+### 8. Javascript Advanced
 
-## Additional Resources
+### 9. Projects
+
+```
+
+```
+
+# HTML Learning
+
+HTML stands for Hyper Text Markup Language for creating Web pages that describes the structure of a Web page.
+HTML elements tell the browser how to display the content.
+
+### HTML Document Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+```
+
+All HTML documents must start with a document type declaration:
+The `<!DOCTYPE html>` declaration defines the HTML version, indicating that this document is an HTML5 document.
+
+The `<html>` element is the root element of an HTML page that wraps the entire HTML content.
+
+The `<head>` element contains meta information about the HTML page (e.g., title, links to stylesheets).
+
+The `<title>` element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab).
+
+The `<body>` element contains the actual content of the webpage. I.e. It is a container for
+all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+
+### Imports (script, style...)
+
+#### a. Script :
+
+The `<script>` element is used to embed or reference JavaScript code in an HTML document.
+Example: <script src="script.js"></script>.
+
+#### b. Style :
+
+The `<style>` element is used to define styles directly in an HTML document or link to an external CSS file.
+Example: `<link rel="stylesheet" href="styles.css">`.
+
+### Html Comments
+
+`<!-- html comments-->`
+
+### Html Tags
+
+HTML uses tags to define and structure content.A browser does not display the HTML tags,
+but uses them to determine how to display the document.
+
+An HTML element is defined by a start tag, some content, and an end tag:
+
+`<tagname>` Content goes here... `</tagname>`
+
+Html is not case sensitive.`<head>`=`<HEAD>`
+
+## 1. Text Markup:
+
+Here are some common text-related tags:
+
+- `<h1>` to `<h6>`: Headings (from largest to smallest).
+- `<p>`: Paragraph.
+- `<strong>` or `<b>`: Important or Bold text.
+- `<em>` or `<i>`: Emphasized or Italic text.
+- `<u>`: Underlined text.
+- `<br>`: Line break.
+- `<hr>`: Horizontal line to separate text using horizontal ruler.
+- `<mark>`: Marked or highlighted text
+- `<small>`: Smaller text
+- `<big>`: bigger text
+- `<del> `: Deleted text, strike a line through deleted text
+- `<ins> `: Inserted text,underline inserted text
+- `<sub>` : Subscript text, like H2O
+- `<sup>` : Superscript text
+- `<abbr>`: Defines an abbreviation or acronym like "HTML", "CSS".
+- `<address>` : Defines contact information for the author/owner of a document like email address,physical address,phone number,etc.
+- `<bdo>` : stands for Bi-Directional Override, used to override the current text direction `<bdo dir="rtl">`
+- `<blockquote>` : Defines a section that is quoted from another source
+- `<cite> `: Defines the title of a work
+- `<q>` : Defines a short inline quotation
+- `<pre>` : to display text as it is without ignoring spaces and next lines
+
+### HTML Headings
+
+Heading tags in HTML are used to define headings of a document or a section and to display text importance.
+They range from `<h1>` to` <h6>`, with `<h1>` being the highest (or most important) level and `<h6> `being the lowest.
+
+### Heading Tags
+
+- `<h1>`: The main heading or title of a document.
+- `<h2>`: A secondary heading, typically used for sections within the main content.
+- `<h3>`: A sub-section heading under an `<h2>` heading.
+- `<h4>`: A heading for sub-sections under an `<h3>` heading.
+- `<h5>`: A heading for sub-sections under an `<h4>` heading.
+- `<h6>`: The least important heading, used for sub-sections under an `<h5>` heading.
+
+### Example
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heading Tags Example</title>
+  </head>
+  <body>
+    <h1>Main Heading</h1>
+    <h2>Sub Heading Level 1</h2>
+    <h3>Sub Heading Level 2</h3>
+    <h4>Sub Heading Level 3</h4>
+    <h5>Sub Heading Level 4</h5>
+    <h6>Sub Heading Level 5</h6>
+  </body>
+</html>
+```
+
+## 2. Links , Navigation and Images:
+
+- `<a href="url">Link Text</a>`: Creates a hyperlink.
+- `<img src="image_url" alt="Description">`: Embeds an image.
+
+  #### Anchor tag :
+
+  HTML links are defined with the `<a>` tag
+  Used to add links to your page.The link's destination is specified in the href attribute.
+
+  ```html
+  <a href="https://google.com> Google</a>
+  <a href="/nextto.html">next </a>
+
+  ```
+
+- first one is is called absolute link.
+- second one is called relative link.
+
+##### Navigation:
+
+Navigation can be achieved using various elements like
+`<nav>`, `<ul>`,` <ol>`, and `<li>` for lists, creating menus and navigation bars.
+
+#### Image tag :
+
+HTML images are defined with the `<img> `tag. used to add to image to your pages.
+The source file (src), alternative text (alt), width, and height are provided as attributes.
+
+- src : Specifies the path(URL) to the image
+- alt : Specifies an alternate text for the image
+
+```html
+<img src="google.jpg" alt="google.com" width="104" height="142" />
+<img src="/image.jpg" alt="my-image" width="104" height="142" />
+```
+
+## 3.Lists:
+
+- `<ul>`: Unordered list.
+- `<ol>`: Ordered list.
+- `<li>`: List item.
+- `<dl>`: Defines a description list.
+- `<dt>`: Defines a term in a description list.
+- `<dd>`: Describes the term in a description list.
+
+### Unordered List (`<ul>`):
+
+Represents an unordered list where each item is marked with bullets by default.
+An unordered list starts with the `<ul>` tag. Each list item starts with the `<li>` tag.
+
+```html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+```
+
+### Ordered List (`<ol>`):
+
+Represents an ordered list where each item is marked with numbers by default.
+An ordered list starts with the `<ol> `tag. Each list item starts with the `<li>` tag.
+
+```html
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>
+```
+
+#### HTML Description Lists
+
+HTML also supports description lists.
+A description list is a list of terms, with a description of each term.
+
+The `<dl>` tag defines the description list, the `<dt>` tag defines the term (name),
+and the `<dd> `tag describes each term:
+
+```html
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+```
+
+#### Nested Lists
+
+Lists can be nested inside each other to create sub-lists.
+
+```html
+
+    <title>Nested List Example</title>
+  </head>
+  <body>
+    <h1>Nested List</h1>
+    <ul>
+      <li>First item
+        <ul>
+          <li>First sub-item</li>
+          <li>Second sub-item</li>
+        </ul>
+      </li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ul>
+  </body>
+</html>
+
+```
+
+## 4.Tables:
+
+used to arrange data into rows and columns.
+
+- `<table>`: Creates a table.
+- `<tr>`: Table row.
+- `<td>`: Table data (cell).
+- `<th>`: Table header.
+- `<caption>` : Defines a table caption
+- `<colgroup>`: Specifies a group of one or more columns in a table for formatting,styling columns of a table
+- `<col>` : Specifies column properties for each column within a `<colgroup>` element
+- `<thead>` : Groups the header content in a table
+- `<tbody>` : Groups the body content in a table
+- `<tfoot>` : Groups the footer content in a table
+- `<th colspan="2">` : To make a cell span over multiple columns
+- `<th rowspan="2">` : To make a cell span over multiple rows
+
+```html
+<table>
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+  </tr>
+</table>
+
+<!-- another eg: -->
+
+<table>
+  <tr>
+    <th colspan="2">Person 1</th>
+    <th>Person 2</th>
+    <th>Person 3</th>
+  </tr>
+  <tr>
+    <td>Astria</td>
+    <td>Apsara</td>
+    <td>Aurora</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>21</td>
+    <td>22</td>
+  </tr>
+</table>
+
+<!-- another Example -->
+
+<html>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Empty Colgroups</h2>
+    <p>
+      Add "empty" col elements that represents the columns before the columns
+      you want to style:
+    </p>
+
+    <table style="width: 100%;">
+      <colgroup>
+        <col span="3" />
+        <col span="2" style="background-color: pink" />
+      </colgroup>
+      <tr>
+        <th>MON</th>
+        <th>TUE</th>
+        <th>WED</th>
+        <th>THU</th>
+        <th>FRI</th>
+        <th>SAT</th>
+        <th>SUN</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>28</td>
+      </tr>
+    </table>
+  </body>
+</html>
+```
+
+## 5.forms
+
+An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+
+### `<form>` Element
+
+The`<form`> element is a container for different types of input elements, such as: text fields, checkboxes,
+radio buttons, submit buttons, etc. and it defines how the form data will be sent.
+
+**Attributes :**
+
+- `action`: Specifies the URL where the form data should be sent.
+
+  ```html
+  <form action="/submit-form"></form>
+  ```
+
+- `method`: Specifies the HTTP method to be used when submitting the form (`GET` or `POST`).
+
+  ```html
+  <form action="/submit-form" method="post"></form>
+  ```
+
+- `enctype`: Specifies how the form data should be encoded when submitting it to the server
+  (e.g., `application/x-www-form-urlencoded`, `multipart/form-data` for file uploads).
+
+  ```html
+  <form
+    action="/submit-form"
+    method="post"
+    enctype="multipart/form-data"
+  ></form>
+  ```
+
+### `<input>` Element
+
+The `<input>` tag in HTML is used to create interactive controls
+within a html form that allows users to enter data.
+
+Basic Attributes of the `<input>` Tag
+
+- type: Specifies the type of input control to display.
+- name: Specifies the name of the form control and is used as the key when the form data is submitted to the server.
+- value: Specifies the initial value of the input control.
+- placeholder: Provides a short hint that describes the expected value of the input field.
+- required: Indicates that the input field must be filled out before submitting the form.
+- disabled: Disables the input control, preventing user interaction.
+- readonly: Makes the input field read-only.
+- maxlength: Specifies the maximum number of characters allowed in the input field.
+
+#### Input Elements
+
+Various input elements can be used within a form to collect user data.
+`<input>` element can be displayed in many ways depending on the` type` attribute
+
+#### a. Text Input (`<input type="text">`)
+
+Used for single-line text input.
+
+```html
+<input type="text" name="username" placeholder="Enter your username" required />
+```
+
+#### b. Password Input (`<input type="password">`)
+
+Used for entering passwords.
+
+```html
+<input
+  type="password"
+  name="password"
+  placeholder="Enter your password"
+  required
+/>
+```
+
+#### c. Email Input (`<input type="email">`)
+
+Used for email addresses.
+
+```html
+<input type="email" name="email" placeholder="Enter your email" required />
+```
+
+#### d. Number Input (`<input type="number">`)
+
+Used for numeric input.
+
+```html
+<input type="number" name="age" min="1" max="100" required />
+```
+
+#### e. Date Input (`<input type="date">`)
+
+Used for selecting dates.
+
+```html
+<input type="date" name="birthdate" required />
+```
+
+#### f. Radio Buttons (`<input type="radio">`)
+
+Used for selecting one option from multiple choices.
+
+```html
+<label><input type="radio" name="gender" value="male" /> Male</label>
+<label><input type="radio" name="gender" value="female" /> Female</label>
+```
+
+#### g. Checkboxes (`<input type="checkbox">`)
+
+Used for selecting multiple options.
+
+```html
+<label
+  ><input type="checkbox" name="subscribe" value="newsletter" /> Subscribe to
+  newsletter</label
+>
+```
+
+#### h. File Input (`<input type="file">`)
+
+Used for file uploads.
+
+```html
+<input type="file" name="profilePicture" />
+```
+
+#### i. Hidden Input (`<input type="hidden">`)
+
+Used for storing hidden data that should be submitted with the form.
+
+```html
+<input type="hidden" name="userid" value="12345" />
+```
+
+#### j. Color Input (`<input type="color">`)
+
+Used for selecting colors.
+
+```html
+<input type="color" name="favcolor" />
+```
+
+#### k. Range Input (`<input type="range">`)
+
+Used for selecting a value from a range.
+
+```html
+<input type="range" name="points" min="0" max="10" />
+```
+
+#### l. Submit Button (`<input type="submit">`)
+
+Used to submit the form.
+
+```html
+<input type="submit" value="Submit" />
+```
+
+#### m. Reset Button (`<input type="reset">`)
+
+Used to reset the form fields to their initial values.
+
+```html
+<input type="reset" value="Reset" />
+```
+
+#### n. Button (`<input type="button">`)
+
+Used to define a clickable button (can be used with JavaScript).
+
+```html
+<input type="button" value="Click me" onclick="alert('Button clicked!')" />
+```
+
+### Other Form Elements
+
+#### Textarea (`<textarea>`)
+
+Used for multi-line text input.
+
+```html
+<textarea
+  name="comments"
+  rows="4"
+  cols="50"
+  placeholder="Enter your comments"
+></textarea>
+```
+
+#### Select (`<select>`) and Option (`<option>`)
+
+Used for drop-down lists.
+
+```html
+<select name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+```
+
+### Labels (`<label>`)
+
+Used to define labels for input elements.
+The `<label>` element can be associated with an `<input>` element in two ways:
+
+1.Using the for attribute:
+
+The for attribute in the `<label>` tag should match the id of the corresponding `<input>` element.
+
+```html
+<label for="username">Username:</label>
+<input
+  type="text"
+  id="username"
+  name="username"
+  placeholder="Enter your username"
+/>
+```
+
+2.Wrapping the `<input>` element:
+
+The` <input>` element can be nested inside the `<label>` element.
+
+```html
+<label
+  >Username:
+  <input type="text" name="username" placeholder="Enter your username"
+/></label>
+```
+
+### Fieldset (`<fieldset>`) and Legend (`<legend>`)
+
+Used to group related elements in a form and provide a caption for the group.
+
+```html
+<fieldset>
+  <legend>Personal Information</legend>
+  <label for="fname">First Name:</label>
+  <input
+    type="text"
+    id="fname"
+    name="fname"
+    placeholder="Enter your first name"
+  /><br /><br />
+  <label for="lname">Last Name:</label>
+  <input
+    type="text"
+    id="lname"
+    name="lname"
+    placeholder="Enter your last name"
+  /><br /><br />
+</fieldset>
+```
+
+Example of a form with various input types and labels:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Label Example</title>
+  </head>
+  <body>
+    <form action="/submit" method="post">
+      <!-- Text Input with Label -->
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Enter your username"
+        required
+      /><br /><br />
+
+      <!-- Password Input with Label -->
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        required
+      /><br /><br />
+
+      <!-- Email Input with Label -->
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      /><br /><br />
+
+      <!-- Number Input with Label -->
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        min="1"
+        max="100"
+        required
+      /><br /><br />
+
+      <!-- Date Input with Label -->
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" required /><br /><br />
+
+      <!-- Color Input with Label -->
+      <label for="favcolor">Favorite Color:</label>
+      <input type="color" id="favcolor" name="favcolor" /><br /><br />
+
+      <!-- Radio Buttons with Labels -->
+      <label>Gender:</label>
+      <label for="male"
+        ><input type="radio" id="male" name="gender" value="male" /> Male</label
+      >
+      <label for="female"
+        ><input type="radio" id="female" name="gender" value="female" />
+        Female</label
+      ><br /><br />
+
+      <!-- Checkbox with Label -->
+      <label for="subscribe"
+        ><input
+          type="checkbox"
+          id="subscribe"
+          name="subscribe"
+          value="newsletter"
+        />
+        Subscribe to newsletter</label
+      ><br /><br />
+
+      <!-- File Input with Label -->
+      <label for="profilePicture">Profile Picture:</label>
+      <input
+        type="file"
+        id="profilePicture"
+        name="profilePicture"
+      /><br /><br />
+
+      <!-- Range Input with Label -->
+      <label for="points">Points:</label>
+      <input
+        type="range"
+        id="points"
+        name="points"
+        min="0"
+        max="10"
+      /><br /><br />
+
+      <!-- Submit and Reset Buttons -->
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>
+```
+
+The `for` attribute of the `<label>` tag should be equal to the `id` attribute of the `<input>` element to bind them together.
+
+### 6. Semantic tag Elements:
+
+Semantic elements = elements with a meaning about the structure and content of a document.
+Semantic tags provide information about the content they enclose,making more accessible and Enhance SEO.
+clearly describes its meaning to both the browser and the developer. For Eg:
+
+- `<header>`: Defines a header for a document or section.
+- `<nav>`: Defines a set of navigation links.
+- `<section>`: Defines a section in a document.
+- `<article>`: Defines an independent, self-contained content.
+- `<aside>`: Defines content aside from the main content.
+- `<footer>`: Defines a footer for a document or section.
+- `<main>`: Defines the main content of a document.
+- `<figure>`: Specifies self-contained content, like illustrations, diagrams, or photos.
+- `<figcaption>`: Provides a caption for a `<figure>` element.
+- `<mark>`: Highlights text.
+- `<time>`: Represents a specific time.
+  Semantic elements to structure content semantically.
+
+### 7.Non-Semantic Elements:
+
+Non-semantic tags are often used for styling and layout purposes.
+They do not convey the meaning or structure of the content they enclose.For eg:
+
+`<div>`
+`<span>`
+`<b>`
+`<i>`
+`<font>`
+`<br>`
+`<hr>`
+
+### Block and inline Elements
+
+Every HTML element has a default display value, depending on what type of element it is.
+
+#### Block Elements:
+
+Block-level elements typically start on a new line and take up the full width of their container.
+(stretches out to the left and right as far as it can).
+
+Examples include: `<div>, <p>, <h1> to <h6>, <ul>, <ol>, <li>,` etc.
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <p style="border: 1px solid black">paragraph</p>
+    <div style="border: 1px solid black">div</div>
+
+    <p>
+      The P and the DIV elements are both block elements, and they will always
+      start on a new line and take up the full width available (stretches out to
+      the left and right as far as it can).
+    </p>
+  </body>
+</html>
+```
+
+### inline Elements:
+
+An inline element does not start on a new line.
+It only takes up as much width as necessary.
+Examples include:`<span>, <a>, <strong>, <em>, <img>,<button>,<input>` etc.
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      This is an inline span
+      <span style="border: 1px solid black">Span</span> element inside a
+      paragraph.
+    </p>
+
+    <p>
+      The SPAN element is an inline element, and will not start on a new line
+      and only takes up as much width as necessary.
+    </p>
+  </body>
+</html>
+```
+
+### div,Span
+
+#### div
+
+The`<div>`element is by default a block element, It starts on a new line and takes up the full width available.
+`<div>` is container often used to group larger sections of HTML elements together.
+Can contain other block-level and inline elements.
+
+```html
+<div>
+  <h1>Title</h1>
+  <p>This is a paragraph inside a div container.</p>
+</div>
+```
+
+#### span
+
+The `<span>` element is an inline element that is used to style parts of text or group small portions of content.
+It does not start on a new line and only takes up as much width as necessary.
+Can contain other inline elements but cannot contain block-level elements.
+
+```html
+<html>
+  <head>
+    <style>
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      This is a paragraph with a
+      <span class="highlight">highlighted text</span> inside it.
+    </p>
+  </body>
+</html>
+```
+
+### Class and Id
+
+#### class
+
+The HTML class attribute is used to specify a class for an HTML element.The class name is case sensitive.
+Multiple HTML elements can share the same class. Classes are used by CSS and JavaScript to select and access specific elements.
+Different HTML elements can point to the same class name.
+HTML elements can belong to more than one class.
+To define multiple classes, separate the class names with a space, e.g.` <div class="city main">.`
+The element will be styled according to all the classes specified.
+
+```html
+<div class="city">
+  <h2>London</h2>
+  <p>London is the capital of England.</p>
+</div>
+
+<div class="city">
+  <h2 class="cityname">Paris</h2>
+  <p class="cityname">Paris is the capital of France.</p>
+</div>
+
+<div class="city main">
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+```
+
+### Id
+
+The HTML id attribute is used to specify a unique id for an HTML element.
+You cannot have more than one element with the same id in an HTML document.
+The id name is case sensitive
+
+```html
+<div>
+  <h1 id="myHeader">My Cities</h1>
+  <h2 id="C4">Chapter 4</h2>
+</div>
+```
+
+#### Difference Between Class and ID
+
+A class name can be used by multiple HTML elements,
+while an id name must only be used by one HTML element within the page
+
+### Iframes
+
+An HTML iframe is used to display a web page within a web page.
+The HTML `<iframe> `tag specifies an inline frame.An inline frame is used to embed
+external content into your web pages.
+`<iframe src="url" title="description"></iframe>`
+
+```html
+<body>
+  <h1>Responsive Embedded Video</h1>
+  <div class="iframe-container">
+    <iframe
+      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+      width="560"
+      height="315"
+      title="YouTube Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+</body>
+```
+
+- src: URL of the embedded content.
+- width and height: Dimensions of the iframe.
+- title: Title for accessibility.
+- frameborder: Border around the iframe.
+- allow: Permissions for the iframe content.
+- allowfullscreen: Allows fullscreen mode.
+- loading: Lazy loading for performance.
+
+### Additional Resources
 
 - [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/docs/Web)
 - [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
 - [CSS-Tricks](https://css-tricks.com/)
 - [Codecademy HTML & CSS Course](https://www.codecademy.com/learn/learn-html-css)
-
-## Conclusion
-
-Learning HTML and CSS is an essential step for anyone interested in web development.
-
-# 2.React Basic Roadmap
