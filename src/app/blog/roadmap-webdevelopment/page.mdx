@@ -58,7 +58,7 @@ all the visible contents, such as headings, paragraphs, images, hyperlinks, tabl
 #### a. Script :
 
 The `<script>` element is used to embed or reference JavaScript code in an HTML document.
-Example: <script src="script.js"></script>.
+Example: `<script src="script.js"></script>.`
 
 #### b. Style :
 
@@ -172,6 +172,9 @@ The source file (src), alternative text (alt), width, and height are provided as
 
 - src : Specifies the path(URL) to the image
 - alt : Specifies an alternate text for the image
+
+The alt attribute provides alternative information for an image if a user cannot view it.
+This can be due to connectivity issues, browser limitations, HTTP errors,
 
 ```html
 <img src="google.jpg" alt="google.com" width="104" height="142" />
@@ -946,6 +949,468 @@ external content into your web pages.
 - allow: Permissions for the iframe content.
 - allowfullscreen: Allows fullscreen mode.
 - loading: Lazy loading for performance.
+
+# CSS LEARNING
+
+CSS stands for Cascading Style Sheet that is used to style the HTML document.
+It controls the color, font, spacing, layout, and overall visual appearance of web pages.
+
+### CSS Syntax
+
+A CSS consists of a selector and a declaration block.
+
+- #### Selector: This specifies the HTML element we want to style.
+- #### Declaration Block: This contains one or more declarations separated by semicolons.
+  Each declaration includes a property and a value, separated by a colon and declaration
+  blocks are surrounded by curly braces.
+
+```html
+p {color: blue; font-size: 16px;}
+```
+
+In this example:
+
+- p is the selector (it selects all `<p>` elements).
+- color and font-size are properties.
+- blue and 16px are values.
+
+### CSS Selectors
+
+CSS selectors are used to "find" (or select) the HTML elements we want to style.
+CSS selectors can be divided into these five main categories. Let’s go through each category with explanations and examples.
+
+#### 1. Simple Selectors
+
+Simple selectors select elements based on their name, id, or class.
+
+- **
+  CSS element Selector**: Selects HTML elements based on the element name.
+
+  ```css
+  p {
+    color: red;
+  }
+  ```
+
+- **Class Selector**: Selects all elements with a specific class attribute.
+  To select elements with a specific class, write a period (.) character, followed by the class name.
+
+  ```css
+  .intro {
+    font-size: 20px;
+  }
+  ```
+
+- **ID Selector**: Selects an specific element with a specific ID attribute.
+  To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+  ```css
+  #header {
+    background-color: yellow;
+  }
+  ```
+
+- **Universal Selector(`*`)**: Selects all HTML elements on the page.
+
+  ```css
+  * {
+    margin: 0;
+    padding: 0;
+    color: blue;
+  }
+  ```
+
+- **Grouping Selector**: Selects all the HTML elements with the same style definitions.
+
+Here,in the css code ( h1, h2, and p elements have the same style definitions):
+
+```css
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+p {
+  text-align: center;
+  color: red;
+}
+```
+
+It will be better to group the selectors, to minimize the code.
+To group selectors, separate each selector with a comma.
+
+```css
+h1,
+h2,
+p {
+  text-align: center;
+  color: red;
+}
+```
+
+#### 2. Combinator Selectors
+
+Combinator selectors select elements based on the relationship between them.
+
+- **Descendant Selector**: Selects all elements that are descendants of a specified element.
+
+  ```css
+  div p {
+    color: blue;
+  }
+  ```
+
+- **Child Selector**: Selects all elements that are direct children of a specified element.
+
+  ```css
+  div > p {
+    color: green;
+  }
+  ```
+
+- **Adjacent Sibling Selector**: Selects an element that is the next sibling of a specified element.
+
+  ```css
+  h1 + p {
+    margin-top: 0;
+  }
+  ```
+
+- **General Sibling Selector**: Selects all elements that are siblings of a specified element.
+  ```css
+  h1 ~ p {
+    color: purple;
+  }
+  ```
+
+#### 3. Pseudo-Class Selectors
+
+Pseudo-class selectors select elements based on a certain state.
+
+- **:hover**: Selects elements when you mouse over them.
+
+  ```css
+  a:hover {
+    color: red;
+  }
+  ```
+
+- **:focus**: Selects elements when they are focused.
+
+  ```css
+  input:focus {
+    border-color: blue;
+  }
+  ```
+
+- **:nth-child(n)**: Selects elements based on their position in a group of siblings.
+
+  ```css
+  li:nth-child(2) {
+    background-color: lightgray;
+  }
+  ```
+
+- **:first-child**: Selects the first child of its parent.
+  ```css
+  p:first-child {
+    font-weight: bold;
+  }
+  ```
+
+#### 4. Pseudo-Element Selectors
+
+Pseudo-element selectors select and style a part of an element.
+
+- **::before**: Inserts content before the content of an element.
+
+  ```css
+  p::before {
+    content: "Note: ";
+    font-weight: bold;
+  }
+  ```
+
+- **::after**: Inserts content after the content of an element.
+
+  ```css
+  p::after {
+    content: " End.";
+    font-weight: bold;
+  }
+  ```
+
+- **::first-letter**: Selects the first letter of an element.
+
+  ```css
+  p::first-letter {
+    font-size: 2em;
+    color: red;
+  }
+  ```
+
+- **::first-line**: Selects the first line of an element.
+  ```css
+  p::first-line {
+    font-weight: bold;
+  }
+  ```
+
+#### 5. Attribute Selectors
+
+Attribute selectors select elements based on an attribute or attribute value.
+
+- **[attribute]**: Selects elements with a specific attribute.
+
+  ```css
+  a[target] {
+    color: blue;
+  }
+  ```
+
+- **[attribute=value]**: Selects elements with a specific attribute value.
+
+  ```css
+  a[target="_blank"] {
+    color: green;
+  }
+  ```
+
+- **[attribute^=value]**: Selects elements with an attribute value that starts with a specified value.
+
+  ```css
+  a[href^="https"] {
+    font-weight: bold;
+  }
+  ```
+
+- **[attribute$=value]**: Selects elements with an attribute value that ends with a specified value.
+
+  ```css
+  a[href$=".pdf"] {
+    color: red;
+  }
+  ```
+
+- **[attribute*=value]**: Selects elements with an attribute value that contains a specified value.
+  ```css
+  a[href*="example"] {
+    text-decoration: underline;
+  }
+  ```
+
+### Ways to Insert CSS
+
+- Inline CSS
+- Internal CSS
+- External CSS
+
+#### a. Inline CSS
+
+Adding CSS directly to an HTML element using the style attribute.
+It is used to apply a unique style for a single element.
+
+```css
+
+
+<p style="color: blue;">This is a blue paragraph.</p>
+```
+
+#### b. Internal CSS
+
+Adding CSS within a `<style> `tag in the `<head>` section of your HTML document.
+
+```css
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <p>This is a blue paragraph.</p>
+</body>
+```
+
+#### c. External CSS
+
+create an external CSS file and link it to your HTML document using the
+`<link>` tag inside the head section.
+An external style sheet must be saved with a .css extension.
+
+```css
+/* in html file index.html */
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p>This is a blue paragraph.</p>
+</body>
+</html>
+
+```
+
+```css
+/* an external css file style.css */
+p {
+  color: blue;
+}
+```
+
+##### Cascading Order
+
+Here number one has the highest priority:
+
+- Inline style (inside an HTML element)
+- External and internal style sheets (in the head section)
+- Browser default
+  So, an inline style has the highest priority, and will override external and internal styles and browser defaults.
+
+### CSS Comments
+
+A CSS comment is placed inside the `<style> `element,
+and starts with / and ends with /
+
+```css
+p {
+  color: red; /* Set text color to red */
+}
+```
+
+### CSS Colors
+
+Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.
+
+#### a. Named Colors
+
+using Predefined color names
+
+```css
+body {
+  background-color: lightblue;
+}
+h1 {
+  color: navy;
+}
+p {
+  color: tomato;
+}
+```
+
+#### b. RGB Value
+
+An RGB color value represents RED, GREEN, and BLUE light sources.
+In CSS, a color can be specified as an RGB value, using this formula:
+rgb(red, green, blue)
+Each parameter (red, green, and blue) defines the intensity of the color between 0 and 255.
+
+For example,
+
+- rgb(255, 0, 0) is displayed as red.
+
+- To display black, set all color parameters to 0, like this: rgb(0, 0, 0).
+
+- To display white, set all color parameters to 255, like this: rgb(255, 255, 255).
+
+```css
+body {
+  background-color: rgb(173, 216, 230); /* light blue */
+}
+h1 {
+  color: rgb(0, 0, 128); /* navy */
+}
+p {
+  color: rgb(255, 99, 71); /* tomato */
+}
+```
+
+#### c. RGBA Value
+
+RGBA color values are an extension of RGB color values with an alpha channel
+alpha channel- which specifies the opacity for a color.
+
+An RGBA color value is specified with:
+
+rgba(red, green, blue, alpha)
+
+The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all).
+
+```css
+body {
+  background-color: rgba(173, 216, 230, 0.5); /* light blue with 50% opacity */
+}
+h1 {
+  color: rgba(0, 0, 128, 1); /* navy with full opacity */
+}
+p {
+  color: rgba(255, 99, 71, 0.7); /* tomato with 70% opacity */
+}
+```
+
+#### d. Hexadecimal (Hex) Values
+
+A hexadecimal color is specified with: #RRGGBB, where the RR (red), GG (green) and BB (blue) hexadecimal integers specify the components of the color.
+starting with a `# `followed by 3 or 6 hex digits.#FFF is the same as #FFFFFF (white).
+Where rr (red), gg (green) and bb (blue) are hexadecimal values between 00 and ff (same as decimal 0-255).
+To display black, set all values to 00, like this: #000000.
+To display white, set all values to ff, like this: #ffffff.
+
+```css
+body {
+  background-color: #add8e6; /* light blue */
+}
+h1 {
+  color: #000080; /* navy */
+}
+p {
+  color: #ff6347; /* tomato */
+}
+```
+
+#### e. HSL Values
+
+HSL stands for Hue, Saturation, and Lightness. Hue is represented as an angle (0-360 degrees),
+saturation and lightness are percentages.
+
+```css
+body {
+  background-color: hsl(195, 53%, 79%); /* light blue */
+}
+h1 {
+  color: hsl(240, 100%, 25%); /* navy */
+}
+p {
+  color: hsl(9, 100%, 64%); /* tomato */
+}
+```
+
+#### f. HSLA Values
+
+HSLA is similar to HSL but includes an alpha value for opacity.
+
+```css
+body {
+  background-color: hsla(195, 53%, 79%, 0.5); /* light blue with 50% opacity */
+}
+h1 {
+  color: hsla(240, 100%, 25%, 1); /* navy with full opacity */
+}
+p {
+  color: hsla(9, 100%, 64%, 0.7); /* tomato with 70% opacity */
+}
+```
+
+### Css backgrounds
 
 ### Additional Resources
 
