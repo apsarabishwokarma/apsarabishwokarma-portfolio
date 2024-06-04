@@ -1412,6 +1412,480 @@ p {
 
 ### Css backgrounds
 
+- #### background-color: Sets the background color of an element
+
+```css
+div {
+  background-color: green;
+  opacity: 0.3;
+}
+div {
+  background-color: rgba(
+    0,
+    128,
+    0,
+    0.3
+  ); /* Green background with 30% opacity */
+}
+```
+
+- #### background-image: Sets image as background of an element
+
+```css
+body {
+  background-image: url("background.jpg");
+}
+```
+
+### CSS Background Repeat and Position
+
+By default, the background-image property repeats an image both horizontally and vertically.
+Some images should be repeated only horizontally or vertically.
+
+- #### background-repeat :
+
+  values:
+
+  - repeat: The background image will be repeated both vertically and horizontally (default).
+  - repeat-x: The background image will be repeated only horizontally.
+  - repeat-y: The background image will be repeated only vertically.
+  - no-repeat: The background image will not be repeated.
+
+  #### CSS background-repeat: no-repeat
+
+  ```css
+  body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+  }
+  ```
+
+  - #### background-position :
+
+    Specifies the starting position of a background image
+
+    Values:
+
+- Keywords: left, right, top, bottom, center
+- Percentages: 50% 50%
+- Length values: 10px 20px
+
+```css
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+```
+
+- ### 5. Background Size
+  The background-size property specifies the size of the background image.
+
+Values:
+
+- cover: Scale the image to cover the entire container, possibly cutting off parts of the image.
+- contain: Scale the image to fit inside the container, maintaining aspect ratio.
+- Length values: 100px 200px
+- Percentages: 50% 100%
+
+- ### CSS background-attachment
+
+  The background-attachment property specifies whether the background image should scroll
+  or be fixed (will not scroll with the rest of the page).
+
+  Values:
+
+- scroll: The background image will scroll with the page (default).
+- fixed: The background image will be fixed in the viewport.
+- local: The background image will scroll with the element’s contents
+
+Specify that the background image should be fixed:
+
+```css
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+```
+
+Specify that the background image should scroll with the rest of the page:
+
+```css
+body {
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+}
+```
+
+### CSS background - Shorthand property
+
+To shorten the code, it is also possible to specify all the background properties in one single property.
+This is called a shorthand property.
+
+Instead of writing:
+
+```css
+body {
+  background-color: #ffffff;
+  background-image: url("img_tree.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+```
+
+we can use the shorthand property background:
+
+```css
+body {
+  background: #ffffff url("img_tree.png") no-repeat right top;
+}
+```
+
+When using the shorthand property the order of the property values is:
+
+- background-color
+- background-image
+- background-repeat
+- background-attachment
+- background-position
+  It does not matter if one of the property values is missing, as long as the other ones are in this order.
+
+- ### 8. Background Gradient
+
+  CSS gradients allow you to create smooth transitions between two or more specified colors.
+  There are two main types of gradients: linear and radial.
+
+  - Linear Gradient Example:
+
+  ```css
+  body {
+    background: linear-gradient(to right, red, yellow);
+  }
+  ```
+
+  - Radial Gradient Example:
+
+  ```css
+  body {
+    background: radial-gradient(circle, red, yellow, green);
+  }
+  ```
+
+### CSS Border
+
+CSS borders are used to define the borders around HTML elements.
+
+CSS borders are used to define the borders around HTML elements. You can control the width, style, and color of borders. There are various properties to define borders in CSS. Let's explore these properties in detail with examples.
+
+### 1. Border Style
+
+The `border-style` property specifies the style of the border.
+It can have up to four values for the top, right, bottom, and left sides.
+
+- `none`: No border
+- `solid`: A solid border
+- `dotted`: A dotted border
+- `dashed`: A dashed border
+- `double`: A double border
+- `groove`: A 3D grooved border
+- `ridge`: A 3D ridged border
+- `inset`: A 3D inset border
+- `outset`: A 3D outset border
+- `hidden`: A hidden border
+
+**Example:**
+
+```css
+div {
+  border-style: solid;
+}
+```
+
+```css
+p.dotted {
+  border-style: dotted;
+}
+p.dashed {
+  border-style: dashed;
+}
+p.solid {
+  border-style: solid;
+}
+p.double {
+  border-style: double;
+}
+p.groove {
+  border-style: groove;
+}
+p.ridge {
+  border-style: ridge;
+}
+p.inset {
+  border-style: inset;
+}
+p.outset {
+  border-style: outset;
+}
+p.none {
+  border-style: none;
+}
+p.hidden {
+  border-style: hidden;
+}
+p.mix {
+  border-style: dotted dashed solid double;
+}
+```
+
+### 2. Border Width
+
+The `border-width` property sets the width of the border.
+
+**Example:**
+
+```css
+div {
+  border-width: 2px;
+}
+```
+
+It can have up to four values for the top, right, bottom, and left sides.
+
+```css
+p.one {
+  border-style: solid;
+  border-width: 5px 20px; /* 5px top and bottom, 20px on the sides */
+}
+
+p.two {
+  border-style: solid;
+  border-width: 20px 5px; /* 20px top and bottom, 5px on the sides */
+}
+
+p.three {
+  border-style: solid;
+  border-width: 25px 10px 4px 35px; /* 25px top, 10px right, 4px bottom and 35px left */
+}
+```
+
+### 3. Border Color
+
+The `border-color` property sets the color of the border.
+
+**Example:**
+
+```css
+div {
+  border-color: red;
+}
+```
+
+It can have up to four values for the top, right, bottom, and left sides.
+
+```css
+p.one {
+  border-style: solid;
+  border-color: red green blue yellow; /* red top, green right, blue bottom and yellow left */
+}
+```
+
+### 4. Border Shorthand
+
+The `border` property is a shorthand for setting the style, width, and color of the border in a single declaration.
+
+**Example:**
+
+```css
+div {
+  border: 2px solid red;
+}
+```
+
+### 5. Border Radius
+
+The `border-radius` property is used to round the corners of the border.
+
+**Example:**
+
+```css
+div {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+```
+
+### 6. Individual Border Sides
+
+You can set the border for individual sides using the following properties:
+
+- `border-top`
+- `border-right`
+- `border-bottom`
+- `border-left`
+
+**Example:**
+
+```css
+div {
+  border-top: 2px solid red;
+  border-right: 4px dashed green;
+  border-bottom: 2px solid blue;
+  border-left: 4px dotted yellow;
+}
+```
+
+If the border-style property has four values:
+
+- border-style: dotted solid double dashed;
+  - top border is dotted
+  - right border is solid
+  - bottom border is double
+  - left border is dashed
+
+If the border-style property has two values:
+
+- border-style: dotted solid;
+  - top and bottom borders are dotted
+  - right and left borders are solid
+
+If the border-style property has one value:
+
+- border-style: dotted;
+  - all four borders are dotted
+
+### 7. Border Collapse
+
+The `border-collapse` property is used with table elements to specify whether table borders should collapse into a single border or be separated.
+
+**Values:**
+
+- `collapse`: Borders are collapsed into a single border.
+- `separate`: Borders are separated (default).
+
+**Example:**
+
+```css
+table {
+  border-collapse: collapse;
+}
+```
+
+### 8. Outline
+
+The `outline` property is similar to the border property but does not take up space, does not affect layout and can have different offsets.
+
+**Example:**
+
+```css
+div {
+  outline: 2px solid red;
+}
+```
+
+### CSS margin and padding
+
+- Margin: Creates space around elements, outside of any defined borders.
+- Padding: Creates space around the content inside an element, within any defined borders.
+
+#### Margins
+
+The margin property controls the space outside the border of an element.
+Margins can be set for each side of an element (top, right, bottom, left),
+or they can be set using the shorthand property.
+
+#### Tip: Negative values are allowed.
+
+Auto Margin:
+the browser calculates the margin
+
+```css
+div {
+  width: 50%;
+  margin: auto;
+}
+```
+
+value is commonly used for centering elements horizontally within their container.
+
+Individual Margin Properties:
+
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+```css
+div {
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+```
+
+Shorthand Property:
+
+```css
+margin: [top] [right] [bottom] [left];
+
+div {
+  margin: 20px 15px 20px 15px;
+}
+```
+
+#### Paddings
+
+The padding property controls the space inside the border of an element, around the content.
+Padding can also be set for each side of an element (top, right, bottom, left),
+or it can be set using the shorthand property.
+
+#### Tip: Negative values are allowed.
+
+Individual Padding Properties:
+
+- padding-top
+- padding-right
+- padding-bottom
+- padding-left
+
+```css
+div {
+  padding-top: 20px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+```
+
+Shorthand Property:
+
+```css
+padding: [top] [right] [bottom] [left];
+div {
+  padding: 20px 15px 20px 15px;
+}
+```
+
+Margin and Padding Shorthand Notation
+
+```css
+/* One value: */
+margin: 20px; /* All four sides will have 20px margin */
+padding: 15px; /* All four sides will have 15px padding */
+```
+
+```css
+/* Four values: */
+margin: 20px 10px 5px 15px; /* Top 20px, right 10px, bottom 5px, left 15px */
+padding: 15px 5px 10px 20px; /* Top 15px, right 5px, bottom 10px, left 20px */
+```
+
+## SASS LEARNING
+
 ### Additional Resources
 
 - [Mozilla Developer Network (MDN) Web Docs](https://developer.mozilla.org/en-US/docs/Web)
