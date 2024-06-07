@@ -1575,6 +1575,73 @@ When using the shorthand property the order of the property values is:
   }
   ```
 
+### CSS BOX MODEL
+
+The CSS box model is a fundamental concept in web design and layout, defining how elements are structured and spaced on a web page.
+The CSS box model is a box that wraps around every HTML element. I.e Every HTML element can be thought of as a rectangular box, and
+the box model describes how the element's size and spacing are determined by its content, padding, border, and margin.
+
+- Content : The innermost part of the box where the text and images appear.The dimensions of the content area can be set using the width and height properties.
+- Padding : The space between the content and the border, which adds space inside the box.The padding is transparent.
+- Border : The line around the padding and content.It can be styled using the border, border-width, border-style, and border-color properties.
+- Margin : The outermost space, which separates the element from other adjacent elements on the page.The margin is transparent.
+
+![CSS BOX MODEL](https://www.washington.edu/accesscomputing/webd2/student/unit3/images/boxmodel.gif)
+
+#### Important:
+
+When you set the width and height properties of an element with CSS, you just set the width and height of the `content area`.
+To calculate the total width and height of an element, we must also include the padding and borders.
+
+```css
+div {
+  width: 320px;
+  height: 50px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+```
+
+This `<div>` element will have a total width of 350px and a total height of 80px.
+
+Here is the calculation:
+
+#### 320px (width of content area)
+
+- 20px (left padding + right padding)
+- 10px (left border + right border)
+
+  = 350px (total width) 50px (height of content area)
+
+#### 50px (height of content area)
+
+- 20px (top padding + bottom padding)
+- 10px (top border + bottom border)
+
+  = 80px (total height)
+
+- The total width of an element should be calculated like this:
+
+  Total element width = width + left padding + right padding + left border + right border
+
+- The total height of an element should be calculated like this:
+
+  Total element height = height + top padding + bottom padding + top border + bottom border
+
+#### Note:
+
+The margin property also affects the total space that the box will take up on the page,
+but the margin is not included in the actual size of the box.
+The box's total width and height stops at the border.
+
+Here are some common CSS properties used to define the box model:
+
+- Content : width, height
+- Padding : padding, padding-top, padding-right, padding-bottom, padding-left
+- Border : border, border-width, border-style, border-color, border-top, border-right, border-bottom, border-left
+- Margin : margin, margin-top, margin-right, margin-bottom, margin-left
+
 ### CSS Border
 
 CSS borders are used to define the borders around HTML elements.
@@ -1684,6 +1751,7 @@ div {
 }
 ```
 
+Values: Supports named colors, hex values, RGB/RGBA, HSL/HSLA, inherit, and currentColor.
 It can have up to four values for the top, right, bottom, and left sides.
 
 ```css
@@ -1774,17 +1842,129 @@ table {
 }
 ```
 
-### 8. Outline
+### CSS Outline
 
-The `outline` property is similar to the border property but does not take up space, does not affect layout and can have different offsets.
+An outline is a line drawn outside the element's border.Unlike border,outlines
+do not take up space and can be used to highlight elements without affecting their size or position.
+
+![CSS Outline](https://www.jquery-az.com/wp-content/uploads/2019/12/27.0_1-css-outline-border.png)
+
+#### Outline Style
+
+The `outline-style` property specifies the style of the outline, and can have one of the following values:
+
+- dotted:Defines a dotted outline
+- dashed : Defines a dashed outline
+- solid : Defines a solid outline
+- double : Defines a double outline
+- groove : Defines a 3D grooved outline
+- ridge : Defines a 3D ridged outline
+- inset : Defines a 3D inset outline
+- outset : Defines a 3D outset outline
+- none : Defines no outline
+- hidden : Defines a hidden outline
+
+```css
+p.dotted {
+  outline-style: dotted;
+}
+p.dashed {
+  outline-style: dashed;
+}
+p.solid {
+  outline-style: solid;
+}
+p.double {
+  outline-style: double;
+}
+p.groove {
+  outline-style: groove;
+}
+p.ridge {
+  outline-style: ridge;
+}
+p.inset {
+  outline-style: inset;
+}
+p.outset {
+  outline-style: outset;
+}
+```
+
+#### outline-width
+
+The `outline-width` specifies the thickness of the outline surrounding an element.
+
+can be set using predefined values:
+
+- thin: A predefined thin outline width.
+- medium: A predefined medium outline width (default).
+- thick: A predefined thick outline width.
+- Length values: You can specify a specific width using units like px, em, rem, etc.
+
+#### outline color
+
+The` outline-color` property is used to set the color of the outline.
 
 **Example:**
 
 ```css
 div {
-  outline: 2px solid red;
+  outline-color: gray;
 }
 ```
+
+Values:
+Supports named colors, hex values, RGB/RGBA, HSL/HSLA, inherit, and currentColor.
+
+#### Shorthand Property
+
+The outline shorthand property can be used to set the outline-width, outline-style(required), and outline-color in a single declaration.
+
+```css
+selector {
+  outline: width style color;
+}
+```
+
+Example:
+
+```css
+div {
+  outline: 3px solid orange;
+}
+```
+
+#### outline-offset
+
+`outline-offset` Specifies the distance between the outline and the border or edge of an element.
+
+Syntax
+
+```css
+selector {
+  outline-offset: value;
+}
+```
+
+Accepted Values
+
+- Length values: Can be specified using units like px, em, rem, %, etc.
+
+```css
+.box {
+  outline: 2px solid blue;
+  outline-offset: 10px;
+}
+```
+
+- Negative values: Moves the outline closer to or even inside the element.
+  ```css
+  .box {
+    outline: 2px solid red;
+    outline-offset: -5px;
+  }
+  ```
 
 ### CSS margin and padding
 
@@ -1884,7 +2064,1502 @@ margin: 20px 10px 5px 15px; /* Top 20px, right 10px, bottom 5px, left 15px */
 padding: 15px 5px 10px 20px; /* Top 15px, right 5px, bottom 10px, left 20px */
 ```
 
-## SASS LEARNING
+### CSS Height and Width
+
+Sets the height and width of an element.
+specifies the dimensions of an elements, whether they are block-level or inline-level elements.
+
+```css
+selector {
+  height: value;
+  width: value;
+}
+```
+
+Value Types:
+
+- Auto: The default value. The browser calculates the height and width.
+- Length Units : px, em, rem, etc.
+- Percentage : Relative to the parent element’s dimensions.
+- initial : Sets the height/width to its default value
+- inherit : The height/width will be inherited from its parent value
+- Viewport Units: vw (viewport width), vh (viewport height), vmin, vmax.
+
+#### Tip :
+
+The height and width properties do not include padding, borders, or margins!
+They set the height/width of the area inside the padding, border, and margin of the element!
+
+```css
+div {
+  height: 200px;
+  width: 50%;
+}
+```
+
+This sets the`div` element to a height of 200 pixels and a width of 50% of its parent element's width.
+
+#### Minimum and Maximum Dimensions
+
+You can use the min-width, max-width, min-height, and max-height properties to set limits on the dimensions of an element.
+
+- The max-width property is used to set the maximum width of an element.
+- The max-height property is used to set the maximum height of an element.
+
+If we for some reason use both the width property and the max-width property on the same element,
+and the value of the width property is larger than the max-width property;
+the max-width property will be used (and the width property will be ignored).
+
+#### using viewport Units:
+
+```css
+.fullscreen {
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* 100% of the viewport height */
+  background-color: lightgreen;
+}
+```
+
+#### Responsive Design
+
+When designing for different screen sizes,percentages and
+viewport units are often used to create responsive layouts.
+
+```css
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.responsive-box {
+  width: 100%;
+  height: auto; /* Adjusts height automatically based on content */
+}
+```
+
+Example:
+
+```css
+div {
+  width: 50%;
+  min-width: 200px;
+  max-width: 600px;
+  height: 300px;
+  min-height: 100px;
+  max-height: 500px;
+}
+```
+
+This ensures that the div will have a width between 200px and 600px, and a height between 100px and 500px,
+regardless of other size settings.
+
+### CSS Text
+
+CSS provides several properties to style text, control the appearance, alignment, spacing, decoration and
+transformation.
+
+### Text Color
+
+`color` property is used to specify the color of the text.
+Supports named colors, hex values, RGB/RGBA, HSL/HSLA, inherit, and currentColor.
+
+```css
+color: value;
+```
+
+- **Example**:
+
+```css
+p {
+  color: red; /* Named color */
+}
+```
+
+#### background Color
+
+```css
+h1 {
+  background-color: black;
+  color: white;
+}
+```
+
+### Text Alignment
+
+`text-align `property is used to set the horizontal alignment of a text.
+
+```css
+text-align: left | right | center | justify;
+```
+
+left alignment is default,meaning text direction is left-to-right,
+and right alignment means text direction is right-to-left
+justify alignment means each line has equal width (like in newspapers and magazines).
+
+- **Example**:
+
+```css
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: left;
+}
+
+h3 {
+  text-align: right;
+}
+
+h4 {
+  text-align: justify;
+}
+```
+
+#### Text Align Last
+
+The `text-align-last` property specifies how to align the last line of a text.
+
+Example
+Align the last line of text in three `<p>` elements:
+
+```css
+p.a {
+  text-align-last: right;
+}
+
+p.b {
+  text-align-last: center;
+}
+
+p.c {
+  text-align-last: justify;
+}
+```
+
+#### Text Direction
+
+`direction` property in CSS specifies the text direction/writing direction of the content within an element.
+
+```css
+selector {
+  direction: ltr | rtl;
+}
+```
+
+- ltr: Left to right (default). Common for languages like English, French, German, etc.
+- rtl: Right to left. Common for languages like Arabic, Hebrew, etc.
+
+#### Bidirectional Text Support
+
+Text containing both left-to-right and right-to-left elements.
+for this `unicode-bidi` property is used with following values:
+
+- normal: Default behavior.
+- embed: Embeds the element in the specified direction, making it isolated from its surroundings.
+- bidi-override: Forcibly overrides the text direction within the element.
+
+The unicode-bidi property works with the direction property to handle the directionality of text.
+
+### Text Decoration
+
+#### Text-decoration-line
+
+`text-decoration-line` property sets the kind of decoration line(s) that are added to the text.
+
+```css
+text-decoration-line: none | underline | overline | line-through | blink;
+```
+
+- none: No decoration is added.
+- underline: Adds an underline beneath the text.
+- overline: Adds a line above the text.
+- line-through: Adds a line through the middle of the text.
+- blink: Makes the text blink (deprecated and not recommended for use).
+  All links in HTML are underlined by default.
+
+#### text-decoration-color
+
+`text-decoration-color` property is used to set the color of the decoration line.
+Supports named colors, hex values, RGB/RGBA, HSL/HSLA, inherit, and currentColor.
+
+```css
+p.color {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+```
+
+#### text-decoration-style
+
+`text-decoration-style` property is used to set the style of the decoration line.
+(solid, dotted, dashed, wavy, double).
+
+```css
+p.style {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+```
+
+#### text-decoration-thickness
+
+`text-decoration-thickness` property is used to set the thickness of the decoration line.
+
+```css
+p.thickness {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+```
+
+#### The Shorthand Property
+
+The text-decoration property is a shorthand property for:
+
+- text-decoration-line (required)
+- text-decoration-color (optional)
+- text-decoration-style (optional)
+- text-decoration-thickness (optional)
+
+```css
+p {
+  text-decoration-line: underline;
+  text-decoration-color: red;
+  text-decoration-style: double;
+  text-decoration-thickness: 5px;
+}
+/* instead of above  code use the following shorthand property code */
+p {
+  text-decoration: underline red double 5px;
+}
+```
+
+### Text Transformation
+
+`text-transform` property is used to specify uppercase and lowercase letters in a text or
+capitalize the first letter of each word.i.e. it controls the capitalization of text
+
+```css
+text-transform: none | capitalize | uppercase | lowercase;
+```
+
+- **Example**:
+
+```css
+p.uppercase {
+  text-transform: uppercase;
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+p.capitalize {
+  text-transform: capitalize;
+}
+```
+
+#### Text Spacing
+
+- text-indent
+- letter-spacing
+- line-height
+- word-spacing
+- white-space
+
+### Text Indentation
+
+`text-indent` property is used to specify the indentation of the first line of a text
+
+```css
+text-indent: value;
+```
+
+- **Example**:
+
+```css
+p {
+  text-indent: 50px;
+}
+```
+
+### Letter Spacing
+
+` letter-spacing` property is used to specify the space between the characters in a text.
+
+```css
+letter-spacing: value;
+```
+
+- **Example**:
+
+```css
+p {
+  letter-spacing: 2px;
+}
+
+h2 {
+  letter-spacing: -2px;
+}
+```
+
+### Word Spacing
+
+`word-spacing `property is used to specify the space between the words in a text.
+
+```css
+word-spacing: value;
+```
+
+- **Example**:
+
+```css
+p {
+  word-spacing: 10px;
+}
+```
+
+### Text Shadow
+
+```css
+text-shadow: h-shadow v-shadow blur-radius color;
+```
+
+- **Example**:
+
+```css
+h1 {
+  text-shadow: 2px 2px 5px gray;
+}
+```
+
+### Line Height
+
+`line-height` property is used to specify the space between lines above and below text
+
+```css
+line-height: value;
+```
+
+- **Example**:
+
+```css
+p {
+  line-height: 1.5;
+}
+```
+
+### Text Overflow
+
+```css
+text-overflow: clip | ellipsis | string;
+```
+
+- **Example**:
+
+```css
+div {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
+
+### White Space
+
+`white-space` property specifies how white-space inside an element is handled.
+
+```css
+white-space: normal | nowrap | pre | pre-line | pre-wrap;
+```
+
+Values
+
+- normal : Default behavior for most elements. Useful for regular text content. Text wraps to fit the container.
+- nowrap : Useful for creating single-line text fields or preventing text wrapping in buttons or navigation bars. Text continues on the same line until a `<br>` tag or line break is encountered.
+- pre: White space is preserved by the browser. Text does not wrap unless explicit line breaks are added. text are displayes as written in code without ignoring space,tabs.Useful for displaying preformatted text, such as code blocks.
+- pre-line : Sequences of white space are collapsed into a single space. Same like pre but Text wraps to fit the container.
+- pre-wrap : White space is preserved by the browser. Text wraps to fit the container.Great for chat messages or poetry.
+
+- **Example**:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>White Space Example</title>
+    <style>
+      .normal {
+        white-space: normal;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .nowrap {
+        white-space: nowrap;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .pre {
+        white-space: pre;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .pre-line {
+        white-space: pre-line;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      .pre-wrap {
+        white-space: pre-wrap;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="normal">
+      This is an example text with multiple spaces. This is a new line.
+    </div>
+    <div class="nowrap">
+      This is an example text with multiple spaces. This is a new line.
+    </div>
+    <div class="pre">
+      This is an example text with multiple spaces. This is a new line.
+    </div>
+    <div class="pre-line">
+      This is an example text with multiple spaces. This is a new line.
+    </div>
+    <div class="pre-wrap">
+      This is an example text with multiple spaces. This is a new line.
+    </div>
+  </body>
+</html>
+```
+
+### Vertical Alignment
+
+```css
+vertical-align: baseline | sub | super | top | text-top | middle | bottom |
+  text-bottom | length | percentage;
+```
+
+- **Example**:
+
+```css
+img {
+  vertical-align: middle;
+}
+```
+
+#### Text Shadow
+
+`text-shadow` property adds shadow effect to text.
+
+```Css
+h1 {
+  text-shadow: 2px 2px;
+}
+h2 {
+  text-shadow: 2px 2px red;
+}
+h3 {
+  text-shadow: 2px 2px 5px red;
+  /* add a blur effect (5px) to the shadow */
+}
+h4 {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+```
+
+### Font Properties (Related to Text Styling)
+
+#### Font Family
+
+`font-family` property sets typeface to be used for text.
+
+```css
+font-family: "font1", "font2", ...;
+```
+
+- **Example**:
+
+```css
+p {
+  font-family: "Arial", "Helvetica", sans-serif;
+}
+```
+
+##### Tip
+
+It is very important to always use fallback fonts.
+This means that you should add a list of similar "backup fonts" in the font-family property.
+If the first font does not work, the browser will try the next one, and the next one, and so on.
+
+#### Font Size
+
+`font-size` property sets the size of the font.
+
+```css
+font-size: value;
+```
+
+- **Example**:
+
+```css
+selector {
+  font-size: 16px; /* Can also use em, rem, %, etc. */
+}
+```
+
+#### Responsive Font Size
+
+The text size can be set with a vw unit, which means the "viewport width".
+
+```css
+<h1 style="font-size:10vw">Hello World</h1>
+```
+
+Viewport is the browser window size. 1vw = 1% of viewport width.
+If the viewport is 50cm wide, 1vw is 0.5cm.
+
+#### Font Style
+
+`font-style `property sets the style of the font (e.g., italic or oblique).
+
+```css
+font-style: normal | italic | oblique;
+```
+
+- **Example**:
+
+```css
+p {
+  font-style: italic;
+}
+```
+
+#### Font Weight
+
+`font-weight` property sets the thickness of the font.
+
+```css
+font-weight: normal | bold | bolder | lighter | number;
+```
+
+- **Example**:
+
+```css
+p {
+  font-weight: bold;
+  /* Can also use numeric values like 400, 700, etc. */
+}
+```
+
+#### Font Variant
+
+`font-variant` property specifies whether or not a text should be displayed in a small-caps font.
+
+```css
+font-variant: normal | small-caps;
+```
+
+In a small-caps font, all lowercase letters are converted to uppercase letters.
+However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+
+- **Example**:
+
+```css
+p {
+  font-variant: small-caps;
+}
+```
+
+#### Use Google Fonts
+
+Just add a special style sheet link in the` <head>` section and then refer to the font in the CSS.
+
+```css
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+}
+</style>
+</head>
+```
+
+#### Use Multiple Google Fonts
+
+To use multiple Google fonts, just separate the font names with a pipe character (|), like this:
+
+```css
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+<style>
+h1.a {font-family: "Audiowide", sans-serif;}
+h1.b {font-family: "Sofia", sans-serif;}
+h1.c {font-family: "Trirong", serif;}
+</style>
+</head>
+```
+
+#### Font Shorthand
+
+The `font` property is a shorthand property for:
+
+- font-style
+- font-variant
+- font-weight
+- font-size/line-height(required)
+- font-family(required)
+
+```css
+font: font-style font-variant font-weight font-size/line-height font-family;
+```
+
+- **Example**:
+
+```css
+p.a {
+  font: 20px Arial, sans-serif;
+}
+p.b {
+  font: italic small-caps bold 16px/1.5 "Arial", sans-serif;
+}
+```
+
+### CSS List
+
+CSS provides several properties for styling HTML lists.
+These properties allow to control the appearance of both ordered `(<ol>)` and
+unordered `(<ul>)` lists, as well as their items `(<li>)`
+
+#### 1. list-style-type
+
+The list-style-type property specifies the type of marker (bullet or number) to be used for list items.
+
+Values:
+disc: The default marker for unordered lists (a filled circle).
+circle: An unfilled circle.
+square: A filled square.
+none: No marker.
+decimal: The default marker for ordered lists (numbers).
+decimal-leading-zero: Numbers with leading zeros (01, 02, 03, etc.).
+lower-roman: Lowercase Roman numerals (i, ii, iii, etc.).
+upper-roman: Uppercase Roman numerals (I, II, III, etc.).
+lower-alpha: Lowercase letters (a, b, c, etc.).
+upper-alpha: Uppercase letters (A, B, C, etc.).
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Style Type Example</title>
+    <style>
+        .disc {
+            list-style-type: disc;
+        }
+        .circle {
+            list-style-type: circle;
+        }
+        .square {
+            list-style-type: square;
+        }
+        .decimal {
+            list-style-type: decimal;
+        }
+        .lower-roman {
+            list-style-type: lower-roman;
+        }
+    </style>
+</head>
+<body>
+    <ul class="disc">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ul class="circle">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ul class="square">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ol class="decimal">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <ol class="lower-roman">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+</body>
+</html>
+
+```
+
+#### 2. list-style-image
+
+`list-style-image` property specifies an image as the list item marker.
+
+```Css
+
+<head>
+    <title>List Style Image Example</title>
+    <style>
+        .custom-marker {
+            list-style-image: url('marker.png'); /* Replace 'marker.png' with your image URL */
+        }
+    </style>
+</head>
+<body>
+    <ul class="custom-marker">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+</html>
+
+```
+
+#### 3. list-style-position
+
+The list-style-position property specifies the position of the list-item markers (bullet points).
+
+Values:
+
+- outside: The marker is outside the list item (default).
+- inside: The marker is inside the list item.
+
+```css
+
+<head>
+    <title>List Style Position Example</title>
+    <style>
+        .outside {
+            list-style-position: outside;
+        }
+        .inside {
+            list-style-position: inside;
+        }
+    </style>
+</head>
+<body>
+    <ul class="outside">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ul class="inside">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+</html>
+
+
+```
+
+#### Shorthand List Property
+
+The `list-style` property is a shorthand for setting
+
+- list-style-type,
+- list-style-position, and
+- list-style-image in one declaration.
+
+```css
+selector {
+  list-style: list-style-type list-style-position list-style-image;
+}
+```
+
+Example:
+
+````css
+ .custom-list {
+  list-style: square inside url('marker.png');
+}
+
+ ```
+ #### Note
+ the list also has default margin and padding.`list-style-type:none` property can also be
+ used to remove the markers/bullets.
+
+ ```css
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+```
+
+#### Styling List With Colors
+
+```css
+ol {
+  background: #ff9999;
+  padding: 20px;
+}
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+
+ol li {
+  background: #ffe5e5;
+  color: darkred;
+  padding: 5px;
+  margin-left: 35px;
+}
+
+ul li {
+  background: #cce5ff;
+  color: darkblue;
+  margin: 5px;
+}
+```
+
+
+### CSS Tables
+CSS provides several properties for styling HTML tables.
+These properties allow to control the appearance of able elements, such as borders, padding, text alignment, and more.
+
+### CSS Properties for Tables
+
+#### 1. `border`
+
+The `border` property is used to set the borders for the table, rows, and cells.
+
+```css
+table, th, td {
+  border: 1px solid black;
+}
+```
+
+#### 2. `border-collapse`
+
+The `border-collapse` property specifies whether table borders should be collapsed into a single border or separated as in standard HTML.
+
+```css
+table {
+  border-collapse: collapse;
+}
+```
+Example
+```css
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td, th {
+  border: 1px solid pink;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+<h2>Let the table borders collapse</h2>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  <tr>
+    <td>Apsara/td>
+    <td>Astriya</td>
+  </tr>
+  <tr>
+    <td>Bishwokarma</td>
+    <td>Sunar</td>
+  </tr>
+</table>
+</body>
+</html>
+```
+
+#### 3.Table Style
+
+ - `padding`
+
+The `padding` property adds padding inside the table cells.
+
+```css
+th, td {
+  padding: 10px;
+}
+```
+- Horizontal Dividers
+Add the border-bottom property to <th> and <td> for horizontal dividers:
+```css
+th, td {
+  border-bottom: 1px solid red;
+}
+```
+- Hoverable Table
+Use the :hover selector on `<tr>` to highlight table rows on mouse over
+```css
+tr:hover {background-color: blue;}
+```
+- Striped Tables
+For zebra-striped tables, use the nth-child() selector and add a background-color to all even (or odd) table rows:
+```Css
+tr:nth-child(even)
+ {background-color: black;}
+
+ ```
+
+
+#### 4. `text-align`
+
+The `text-align` property sets the horizontal alignment of text in the table cells.
+
+```css
+th, td {
+  text-align: left; /* Can be left, center, or right */
+}
+```
+
+#### 5. `width` and `height`
+
+The `width` and height property sets the width and height of the table and its cells.
+
+```css
+table {
+  width: 100%;
+}
+th, td {
+  width: 33%; /* Distribute columns evenly */
+
+}
+ th {
+  height: 70px;
+}
+```
+ #### 6. Table Color
+It specifies the background color and text color of elements in table.
+`background-color` property Sets the background color for the table, rows, or cells.
+
+here, The example below specifies the background color and text color of <th> elements:
+```css
+th {
+  background-color: #f2f2f2;
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+```
+-`background-color`
+
+The `background-color` property sets the background color for the table, rows, or cells.
+
+```css
+th {
+  background-color: #f2f2f2;
+}
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+```
+
+#### 7. `caption-side`
+The `caption-side` property sets the position of the table caption.
+
+```css
+caption {
+  caption-side: top; /* Can be top or bottom */
+}
+```
+
+#### Additional CSS Properties for Advanced Styling
+
+- border-spacing: Specifies the distance between the borders of adjacent cells.
+```css
+table {
+  border-spacing: 10px;
+}
+```
+- empty-cells: Controls whether or not to display borders and background on empty cells.
+```css
+table {
+  empty-cells: show; /* Can be hide or show */
+}
+```
+
+table-layout: Sets the algorithm used to lay out the table cells, rows, and columns.
+
+```css
+table {
+  table-layout: fixed; /* Can be auto or fixed */
+}
+```
+
+#### CSS Responsive Table
+
+A responsive table will display a horizontal scroll bar if the screen is too small to display the full content.
+- Wrap in a div with overflow-x: auto: Simple and effective, adds a horizontal scrollbar for overflow content.
+- Use CSS media queries: Adjust the table layout for different screen sizes, especially for mobile devices.
+- Use Flexbox: For a more complex layout, though it's less semantically correct for tabular data.
+
+1. Wrapping the Table in a Div with Overflow
+One of the simplest methods is to wrap the table in a div with overflow-x: auto.
+This method adds a horizontal scroll bar to the table when it's too wide for its container.
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Table</title>
+    <style>
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* Minimum width to demonstrate scrolling */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                    <th>Header 3</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+
+                </tr>
+                <tr>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                    <td>Data 7</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+```
+2. Using CSS Media Queries
+Another approach involves using CSS media queries to adjust the table's layout for different screen sizes.
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Table with Media Queries</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                display: none;
+            }
+            tr {
+                margin-bottom: 15px;
+            }
+            td {
+                display: block;
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Header 1">Data 1</td>
+                <td data-label="Header 2">Data 2</td>
+                <td data-label="Header 3">Data 3</td>
+
+            </tr>
+            <tr>
+                <td data-label="Header 1">Data 5</td>
+                <td data-label="Header 2">Data 6</td>
+                <td data-label="Header 3">Data 7</td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+```
+
+3. Responsive Table with Flexbox
+Using Flexbox for table layout is another method, though it involves more complex CSS and may not be semantically correct for tabular data. Here’s an example:
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Table with Flexbox</title>
+    <style>
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .table-row {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #ddd;
+        }
+        .table-cell {
+            flex: 1;
+            padding: 8px;
+            text-align: left;
+        }
+        .table-header {
+            background-color: #f2f2f2;
+        }
+
+        @media screen and (max-width: 600px) {
+            .table-row {
+                flex-direction: column;
+                border: none;
+            }
+            .table-cell {
+                padding-left: 50%;
+                position: relative;
+                text-align: right;
+                border-bottom: 1px solid #ddd;
+            }
+            .table-cell::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 15px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <div class="table-row table-header">
+            <div class="table-cell">Header 1</div>
+            <div class="table-cell">Header 2</div>
+            <div class="table-cell">Header 3</div>
+
+        </div>
+        <div class="table-row">
+            <div class="table-cell" data-label="Header 1">Data 1</div>
+            <div class="table-cell" data-label="Header 2">Data 2</div>
+            <div class="table-cell" data-label="Header 3">Data 3</div>
+
+        </div>
+        <div class="table-row">
+            <div class="table-cell" data-label="Header 1">Data 5</div>
+            <div class="table-cell" data-label="Header 2">Data 6</div>
+            <div class="table-cell" data-label="Header 3">Data 7</div>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+
+### CSS display-CSS Layout
+
+It specifies the display behavior (the type of rendering box) of an element.
+`display` property has following various values:
+
+
+
+#### 1. `block`
+A block-level element starts on a new line and takes up the full width available.
+
+```css
+div {
+  display: block;
+}
+```
+
+#### 2. `inline`
+An inline element does not start on a new line and only takes up as much width as necessary.
+
+```css
+span {
+  display: inline;
+}
+```
+
+#### 3. `inline-block`
+An inline-block element is similar to an inline element, but it can have a width and height.
+
+```css
+div {
+  display: inline-block;
+}
+```
+
+#### 4. `none`
+The element is completely removed from the document layout.
+
+```css
+div {
+  display: none;
+}
+```
+
+#### 5. `flex`
+A flex container that enables a flex context for all its direct children.
+
+```css
+div {
+  display: flex;
+}
+```
+
+#### 6. `inline-flex`
+An inline flex container that enables a flex context for all its direct children but behaves like an inline element.
+
+```css
+div {
+  display: inline-flex;
+}
+```
+
+#### 7. `grid`
+A grid container that enables a grid context for all its direct children.
+
+```css
+div {
+  display: grid;
+}
+```
+
+#### 8. `inline-grid`
+An inline grid container that enables a grid context for all its direct children but behaves like an inline element.
+
+```css
+div {
+  display: inline-grid;
+}
+```
+
+#### 9. `table`
+A table element, behaving like a `<table>` element.
+
+```css
+div {
+  display: table;
+}
+```
+
+#### 10. `table-row`
+A table row element, behaving like a `<tr>` element.
+
+```css
+div {
+  display: table-row;
+}
+```
+
+#### 11. `table-cell`
+A table cell element, behaving like a `<td>` element.
+
+```css
+div {
+  display: table-cell;
+}
+```
+
+#### 12. `list-item`
+A list item element, behaving like a `<li>` element.
+
+```css
+div {
+  display: list-item;
+}
+```
+
+### Example Usage of Various Display Properties
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display Property</title>
+    <style>
+        .block {
+            display: block;
+            background-color: lightblue;
+            margin: 10px 0;
+        }
+        .inline {
+            display: inline;
+            background-color: lightgreen;
+            margin: 10px;
+        }
+        .inline-block {
+            display: inline-block;
+            background-color: lightcoral;
+            margin: 10px;
+        }
+        .none {
+            display: none;
+        }
+        .flex {
+            display: flex;
+            background-color: lightgoldenrodyellow;
+            margin: 10px 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: lightpink;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">Block Element</div>
+    <span class="inline">Inline Element</span>
+    <span class="inline">Inline Element</span>
+    <div class="inline-block">Inline-Block Element</div>
+    <div class="inline-block">Inline-Block Element</div>
+    <div class="flex">
+        <div>Flex Item 1</div>
+        <div>Flex Item 2</div>
+        <div>Flex Item 3</div>
+    </div>
+    <div class="grid">
+        <div>Grid Item 1</div>
+        <div>Grid Item 2</div>
+    </div>
+    <div class="none">This element is hidden with display: none</div>
+</body>
+</html>
+```
+
+### Summary
+
+- **`block`**: Full-width, starts on a new line.
+- **`inline`**: Only takes up as much width as necessary, does not start on a new line.
+- **`inline-block`**: Behaves like an inline element but with block element properties (width, height).
+- **`none`**: Removes the element from the document flow.
+- **`flex`**: Creates a flex container for flexible layouts.
+- **`inline-flex`**: Behaves like `flex` but acts as an inline element.
+- **`grid`**: Creates a grid container for grid-based layouts.
+- **`inline-grid`**: Behaves like `grid` but acts as an inline element.
+- **`table`**: Behaves like a table element.
+- **`table-row`**: Behaves like a table row element.
+- **`table-cell`**: Behaves like a table cell element.
+- **`list-item`**: Behaves like a list item element.
+
+These properties are essential for creating various types of layouts in web design.
+
+
+
+
+
+
+
+
+
+
+### SASS LEARNING
+
+Sass is CSS pre-processor that reduces the repetition of CSS.
+
+```Sass
+/* Define standard variables and values for website */
+$bgcolor: lightblue;
+$textcolor: darkblue;
+$fontsize: 18px;
+
+/* Use the variables */
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+}
+````
 
 ### Additional Resources
 
