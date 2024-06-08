@@ -3461,7 +3461,7 @@ div {
 - An `inline-block` element is similar to an inline element, Does not start on a new line.
 - The element takes up only as much width as it needs, like `inline`.
 - But it can have a width and height like `block`.
-
+- display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
 ```css
 div {
   background : red;
@@ -3758,11 +3758,74 @@ div.sticky {
 
 </body>
 </html>
-
-
-
-
 ```
+
+### Z- index
+
+### CSS Overflow
+
+The `overflow` property is used to control what happens to content that overflows an element's box.
+I.e. it specifies whether to clip the content or to add scrollbars when the content of an element is too big to fit in the specified area.
+
+The `overflow` property can be set to one of the following values:
+
+### Values of `overflow`
+
+1. **`visible`** (default)
+   - Content that overflows the container is not clipped and is rendered outside the element's box.
+   - This is the default behavior.
+
+   ```css
+   div {
+     overflow: visible;
+   }
+   ```
+
+2. **`hidden`**
+   - Content that overflows the container is clipped and not visible.
+   - No scrollbars are provided to view the hidden content.
+
+   ```css
+   div {
+     overflow: hidden;
+   }
+   ```
+
+3. **`scroll`**
+   - Content that overflows the container is clipped.
+   - Scrollbars are provided inside the box, allowing the user to scroll to see the hidden content.
+   - The container has scrollbars even if the content does not overflow.
+   ```css
+   div {
+     overflow: scroll;
+   }
+   ```
+Note that this will add a scrollbar both horizontally and vertically (even if you do not need it)
+4. **`auto`**
+   - Content that overflows the container is clipped.
+   - Scrollbars are provided only if necessary (i.e., if the content overflows).
+
+   ```css
+   div {
+     overflow: auto;
+   }
+   ```
+
+### Individual Overflow Properties
+
+- **`overflow-x`**: Controls the horizontal overflow.
+- **`overflow-y`**: Controls the vertical overflow.
+
+These properties allow for more granular control:
+
+```css
+div {
+  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-y: scroll; /* Show vertical scrollbar if needed */
+}
+```
+
+`overflow-wrap`	Specifies whether or not the browser can break lines with long words, if they overflow its container
 
 ### SASS LEARNING
 
