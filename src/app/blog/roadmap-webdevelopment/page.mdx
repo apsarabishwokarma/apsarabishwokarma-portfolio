@@ -2066,8 +2066,9 @@ padding: 15px 5px 10px 20px; /* Top 15px, right 5px, bottom 10px, left 20px */
 
 ### CSS Height and Width
 
-Sets the height and width of an element.
-specifies the dimensions of an elements, whether they are block-level or inline-level elements.
+- Sets the height and width of an element.
+- specifies the dimensions of an elements, whether they are block-level or inline-level elements.
+- Setting the width of a `block-level` element will prevent it from stretching out to the edges of its container.
 
 ```css
 selector {
@@ -2109,6 +2110,62 @@ You can use the min-width, max-width, min-height, and max-height properties to s
 If we for some reason use both the width property and the max-width property on the same element,
 and the value of the width property is larger than the max-width property;
 the max-width property will be used (and the width property will be ignored).
+
+```css
+div.ex1 {
+  width: 500px;
+  margin: auto;
+  border: 3px solid #73ad21;
+}
+```
+
+```css
+/* Using tailwindcss play */
+<div class="w-96 bg-red-600">div1</div>
+<span class="bg-pink-500">span1</span>
+<span class="bg-pink-900">span1</span>
+<div class="w-9 bg-red-600">div2</div>
+<span class="bg-pink-300">span3</span>
+```
+
+```css
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.ex1 {
+  width: 200px;
+  border: 3px solid #73AD21;
+}
+
+div.ex2 {
+  max-width: 400px;
+  /* width:100%; By default it wants to take 100% width */
+  min-width: 200px;
+  border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body>
+
+<h2>CSS Max-width</h2>
+
+<div class="ex1">This div element has width: 500px;</div>
+<br>
+
+<div class="ex2">This div element has max-width: 500px;</div>
+
+<p><strong>Tip:</strong> Drag the browser window to smaller than 500px wide, to see the difference between
+the two divs!</p>
+
+</body>
+</html>
+```
+
+Explanation:
+
+- The first div has a fixed width of 200 pixels.
+- The second div is flexible, adjusting its width between 200 and 400 pixels based on the browser window size.
 
 #### using viewport Units:
 
@@ -3344,78 +3401,119 @@ Using Flexbox for table layout is another method, though it involves more comple
 ### CSS display-CSS Layout
 
 It specifies the display behavior (the type of rendering box) of an element.
+i.e. `display` property in CSS is used to control how an element is displayed on the web page.
+The default display value for most elements is block or inline.
+
 `display` property has following various values:
 
 
 
 #### 1. `block`
-A block-level element starts on a new line and takes up the full width available.
+- The element takes up the full width available.
+- Starts on a new line.
+- Examples of block-level elements:
+
+- `<div>`
+- `<h1> - <h6>`
+- `<p>`
+- `<form>`
+- `<header>`
+- `<footer>`
+- `<section>`
 
 ```css
 div {
+  background : red;
   display: block;
 }
 ```
 
 #### 2. `inline`
-An inline element does not start on a new line and only takes up as much width as necessary.
+- The element takes up only as much width as it needs.
+- Does not start on a new line .
+- Examples of inline elements:
+
+- `<span>`
+- `<a>`
+- `<img>`
 
 ```css
 span {
+  background : red;
   display: inline;
 }
 ```
 
-#### 3. `inline-block`
-An inline-block element is similar to an inline element, but it can have a width and height.
+
+#### 3. `none`
+- The element is not displayed at all; the element is completely removed from the page layout.
+- It doesn't take up any space.
+- `display: none;` is commonly used with JavaScript to hide and show elements without deleting and recreating them.
 
 ```css
 div {
-  display: inline-block;
-}
-```
-
-#### 4. `none`
-The element is completely removed from the document layout.
-
-```css
-div {
+  background : red;
   display: none;
 }
 ```
 
-#### 5. `flex`
-A flex container that enables a flex context for all its direct children.
+#### 4. `inline-block`
+- An `inline-block` element is similar to an inline element, Does not start on a new line.
+- The element takes up only as much width as it needs, like `inline`.
+- But it can have a width and height like `block`.
 
 ```css
 div {
+  background : red;
+  display: inline-block;
+}
+```
+#### 5. `flex`
+- The element becomes a flex container, allowing for flexible layouts.
+- Its children (flex items) can be arranged in horizontal or vertical directions.
+- Takes up the full width available by default like block.
+- i.e Creates a flexible container for arranging children in rows and columns.
+
+
+```css
+div {
+  background : red;
   display: flex;
 }
 ```
 
 #### 6. `inline-flex`
-An inline flex container that enables a flex context for all its direct children but behaves like an inline element.
+- An `inline flex ` Behaves like `flex` but acts like an `inline` element.
+- Takes only as much width as needed, like inline.
+
 
 ```css
 div {
+  background : red;
   display: inline-flex;
 }
 ```
 
 #### 7. `grid`
-A grid container that enables a grid context for all its direct children.
+- The element becomes a grid container, enabling a grid-based layout.
+- Its children (grid items) can be placed into rows and columns.
+- Takes up the full width available by default.
+- i.e Creates a grid container for arranging children in rows and columns.
+
 
 ```css
 div {
+  background : red;
   display: grid;
 }
 ```
 
 #### 8. `inline-grid`
-An inline grid container that enables a grid context for all its direct children but behaves like an inline element.
-
+- An `inline grid` Behaves like grid but acts as an inline element.
+- Takes only as much width as needed, like inline.
 ```css
 div {
+  background : red;
   display: inline-grid;
 }
 ```
@@ -3452,6 +3550,7 @@ A list item element, behaving like a `<li>` element.
 
 ```css
 div {
+
   display: list-item;
 }
 ```
@@ -3462,8 +3561,7 @@ div {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CSS Display Property</title>
     <style>
         .block {
@@ -3517,31 +3615,154 @@ div {
 </html>
 ```
 
-### Summary
 
-- **`block`**: Full-width, starts on a new line.
-- **`inline`**: Only takes up as much width as necessary, does not start on a new line.
-- **`inline-block`**: Behaves like an inline element but with block element properties (width, height).
-- **`none`**: Removes the element from the document flow.
-- **`flex`**: Creates a flex container for flexible layouts.
-- **`inline-flex`**: Behaves like `flex` but acts as an inline element.
-- **`grid`**: Creates a grid container for grid-based layouts.
-- **`inline-grid`**: Behaves like `grid` but acts as an inline element.
-- **`table`**: Behaves like a table element.
-- **`table-row`**: Behaves like a table row element.
-- **`table-cell`**: Behaves like a table cell element.
-- **`list-item`**: Behaves like a list item element.
+### CSS Position Property
 
-These properties are essential for creating various types of layouts in web design.
+`position property` in CSS is used to specify the type of positioning method used for an element.
+It affects how the element is positioned within its container and how it interacts with other elements on the page.
+
+There are five different position values:
+- static
+- relative
+- fixed
+- absolute
+- sticky
+
+Elements are then positioned using the top, bottom, left, and right properties.
 
 
+#### position: static
+- Default value: Elements are positioned according to the normal document flow.
+- Static positioned elements are not affected by the Position properties (top, bottom, left, and right properties).
+
+```css
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.static {
+  position: static;
+  border: 3px solid #73AD21;
+}
+</style>
+</head>
+<body>
+
+<h2>position: static;</h2>
+
+<p>An element with position: static; </p>
+
+<div class="static">
+This div element has position: static;
+</div>
+
+</body>
+</html>
+
+
+
+```
+
+#### position: relative
+
+- The element is positioned relative to its original position.
+- Position properties (top, right, bottom, left) will offset the element from its original position.
+
+```css
+
+div {
+  position: relative;
+  top: 10px;  /* Moves the element 10px down from its original position */
+  left: 20px; /* Moves the element 20px to the right from its original position */
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.relative {
+  position: relative;
+  left: 30px;
+  border: 2px solid red;
+}
+</style>
+</head>
+<body>
+
+<h2>position: relative;</h2>
+
+<p>An element with position: relative;</p>
+
+<div class="relative">
+This div element has position: relative;
+</div>
+
+</body>
+</html>
+
+#### postion: absolute
+- Relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+- However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+- Position properties (top, right, bottom, left) are used to specify the position.
+```css
+div {
+  position: absolute;
+  top: 50px;   /* Moves the element 50px down from the top of the positioned ancestor */
+  left: 100px; /* Moves the element 100px to the right from the left of the positioned ancestor */
+}
+
+```
+#### position: fixed
+- Relative to the viewport: The element is positioned relative to the browser window.
+- It stays in the same place even when the page is scrolled.
+- Position properties (top, right, bottom, left) are used to specify the position.
+
+```css
+div {
+  position: fixed;
+  top: 10px;  /* Moves the element 10px down from the top of the viewport */
+  right: 0;   /* Moves the element to the right edge of the viewport */
+}
+```
+stays fixed during scrolling.
+
+#### position: sticky
+- Hybrid between relative and fixed: The element is positioned relative until a given offset position is met in the viewport(based on the user's scroll position), then it "sticks" in place like fixed.
+- i.e.Acts like relative until it reaches a specified point, then acts like fixed.
+- Position properties (top, right, bottom, left) are used to specify the sticky position.
+
+```css
+div {
+  position: sticky;
+  top: 0;  /* Sticks the element to the top of the viewport when scrolling down */
+}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4CAF50;
+}
+</style>
+</head>
+<body>
+<div class="sticky">I am sticky!</div>
+<div>
+  <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll position.</p>
+</div>
+
+</body>
+</html>
 
 
 
 
-
-
-
+```
 
 ### SASS LEARNING
 
