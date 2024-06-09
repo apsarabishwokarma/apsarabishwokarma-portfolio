@@ -3761,6 +3761,99 @@ div.sticky {
 ```
 
 ### Z- index
+When elements are positioned, they can overlap other elements.
+The z-index property controls the stack order of an element (which element should be placed in front of, or behind, the others).
+- An element with a higher `z-index` value will be positioned in front of an element with a lower `z-index` value.
+  Here's a detailed explanation:
+
+### Key Points about `z-index`
+
+1. **Only Affects Positioned Elements**: `z-index` works only on elements that have their `position` set to `relative`, `absolute`, `fixed`, or `sticky`.
+
+2. **Integer Values**: `z-index` accepts integer values (positive, negative, or zero). Higher values are stacked above lower values.
+
+3. **Default Value**: The default `z-index` value is `auto`, which means the element inherits the stacking order from its parent.
+
+4. **Stacking Context**: A stacking context is formed when an element is positioned and has a `z-index` value other than `auto`.
+ Child elements within this context are stacked according to their `z-index` values relative to the parent stacking context.
+
+### Examples of `z-index`
+
+Here is an HTML example with CSS demonstrating how `z-index` works:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS z-index Property</title>
+  <style>
+    .container {
+      position: relative;
+      height: 200px;
+      background-color: lightgray;
+    }
+    .box1 {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      z-index: 1;
+    }
+    .box2 {
+      position: absolute;
+      top: 70px;
+      left: 70px;
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+      z-index: 2;
+    }
+    .box3 {
+      position: absolute;
+      top: 90px;
+      left: 90px;
+      width: 100px;
+      height: 100px;
+      background-color: lightcoral;
+      z-index: 3;
+    }
+  </style>
+</head>
+<body>
+
+<h2>CSS z-index Property</h2>
+
+<div class="container">
+  <div class="box1">Box 1</div>
+  <div class="box2">Box 2</div>
+  <div class="box3">Box 3</div>
+</div>
+
+</body>
+</html>
+```
+
+### Explanation of the Example
+
+1. **Container**:
+   - The `container` div is relatively positioned to establish a context for the absolutely positioned child elements.
+
+2. **Box 1**:
+   - Positioned absolutely within the `container`.
+   - Has a `z-index` of `1`, so it is behind the other boxes.
+
+3. **Box 2**:
+   - Positioned absolutely within the `container`.
+   - Has a `z-index` of `2`, so it is in front of Box 1 but behind Box 3.
+
+4. **Box 3**:
+   - Positioned absolutely within the `container`.
+   - Has a `z-index` of `3`, so it is in front of both Box 1 and Box 2.
+
+
+
 
 ### CSS Overflow
 
@@ -3826,6 +3919,183 @@ div {
 ```
 
 `overflow-wrap`	Specifies whether or not the browser can break lines with long words, if they overflow its container
+
+### CSS Float
+
+The `float` property in CSS is used to position an element to the left or right of its container,
+allowing text and inline elements to wrap around it. It was commonly used for creating layouts before the
+introduction of Flexbox and Grid, but it is still useful for specific scenarios like wrapping text around images.
+
+### Values of `float`
+
+1. **`left`**
+   - The element floats to the left of its container.
+   - Text and inline elements will wrap around the right side of the floated element.
+
+   ```css
+   .float-left {
+     float: left;
+   }
+   ```
+
+2. **`right`**
+   - The element floats to the right of its container.
+   - Text and inline elements will wrap around the left side of the floated element.
+
+   ```css
+   .float-right {
+     float: right;
+   }
+   ```
+
+3. **`none`** (default)
+   - The element does not float.
+   - It remains in the normal flow of the document.
+
+   ```css
+   .no-float {
+     float: none;
+   }
+   ```
+
+4. **`inherit`**
+   - The element inherits the `float` value from its parent.
+
+   ```css
+   .inherit-float {
+     float: inherit;
+   }
+   ```
+
+### Clearing Floats
+
+When elements are floated, it can affect the layout of subsequent elements, sometimes causing them to wrap around the floated elements unintentionally. To prevent this, the `clear` property is used to specify which sides of an element should not be allowed to float elements.
+
+Values of `clear`:
+- **`left`**: No floating elements allowed on the left side.
+- **`right`**: No floating elements allowed on the right side.
+- **`both`**: No floating elements allowed on either side.
+- **`none`**: Default value, allows floating elements on both sides.
+
+```css
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.clear-both {
+  clear: both;
+}
+```
+
+### Example
+
+Here's an example demonstrating how to use the `float` and `clear` properties:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Float Property</title>
+  <style>
+    .container {
+      width: 600px;
+      border: 1px solid #000;
+      padding: 10px;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      margin: 10px;
+    }
+
+    .float-left {
+      float: left;
+      background-color: lightblue;
+    }
+
+    .float-right {
+      float: right;
+      background-color: lightgreen;
+    }
+
+    .clear-both {
+      clear: both;
+    }
+
+    .text {
+      background-color: lightgray;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>CSS Float Property</h2>
+
+<div class="container">
+  <div class="box float-left">Float Left</div>
+  <div class="box float-right">Float Right</div>
+  <div class="text">
+    This is some text that will wrap around the floated elements. It will wrap around both the floated elements on the left and right.
+  </div>
+  <div class="clear-both"></div>
+  <div class="text">
+    This text is below the cleared floats. It will not wrap around the floated elements.
+  </div>
+</div>
+
+</body>
+</html>
+```
+
+### Explanation of the Example
+
+1. **Container**:
+   - The `.container` element sets a boundary for the floated elements with a width and border.
+
+2. **Float Left**:
+   - The `.box.float-left` element floats to the left. Other content will wrap around its right side.
+
+3. **Float Right**:
+   - The `.box.float-right` element floats to the right. Other content will wrap around its left side.
+
+4. **Text Wrapping**:
+   - The `.text` element demonstrates how text wraps around floated elements. The first `.text` element wraps around the floated boxes.
+
+5. **Clearing Floats**:
+   - The `.clear-both` element clears the float on both sides, ensuring that the following content starts below the floated elements.
+
+6. **Unwrapped Text**:
+   - The second `.text` element is placed after the clearing element, so it does not wrap around the floated boxes.
+
+### Summary
+
+- **`float: left`**: Floats the element to the left of its container.
+- **`float: right`**: Floats the element to the right of its container.
+- **`float: none`**: Default value, no floating applied.
+- **`clear` property**: Used to control the wrapping of floated elements and ensure proper layout flow.
+
+The `float` property is a powerful tool for positioning elements and controlling text flow, though it's more common now to use Flexbox and Grid for complex layouts.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### SASS LEARNING
 
