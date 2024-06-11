@@ -4664,6 +4664,99 @@ Example
 </ul>
 
 ### CSS Dropdowns
+### CSS Transformation
+### CSS Transition
+### CSS Animation
+
+```html
+<div class="transform"> Transform </div>
+
+<div class="animation">Animation</div>
+
+
+<div class="media-query">Media Query</div>
+
+
+```
+```css
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.transform {
+  width: 200px;
+  height: 200px;
+  background: red;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 1s ease-in-out;
+  transform: rotateY(0deg) scale(1.2) rotateX(0deg) rotateZ(90deg) skew(10deg);
+}
+
+.animation {
+  width: 200px;
+  height: 200px;
+  background: red;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: animation-name 10s linear infinite,
+    color 1s ease-in-out alternate infinite;
+}
+
+@keyframes animation-name {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes color {
+  0% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@media (min-width: 400px) {
+  .media-query {
+    color: red;
+  }
+}
+
+@media (max-width: 400px) {
+  .media-query {
+    background: red;
+  }
+}
+
+@media (max-width: 800px) and (min-width:600px) {
+  .media-query {
+    font-size: 28px;
+  }
+}
+
+```
 
 ### SASS LEARNING
 
