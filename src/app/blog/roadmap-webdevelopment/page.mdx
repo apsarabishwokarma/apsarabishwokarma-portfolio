@@ -1088,9 +1088,56 @@ Combinator selectors select elements based on the relationship between them.
   }
   ```
 
+Selector - Example -Example description
+element element- div p -Selects all `<p> `elements inside `<div> `elements
+element>element - div > p - Selects all` <p>` elements where the parent is a` <div>` element
+element+element - div + p - Selects the first `<p> `element that are placed immediately after `<div>` elements
+element1~element2 - p ~ ul -Selects every `<ul>` element that are preceded by a `<p>` element
+
 #### 3. Pseudo-Class Selectors
 
 Pseudo-class selectors select elements based on a certain state.
+
+- Style an element when a user mouses over it
+- Style visited and unvisited links differently
+- Style an element when it gets focus
+
+Syntax
+The syntax of pseudo-classes:
+
+```css
+selector:pseudo-class {
+  property: value;
+}
+```
+
+##### Anchor Pseudo-classes
+
+Links can be displayed in different ways:
+
+Example
+
+```css
+/* unvisited link */
+a:link {
+  color: #ff0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00ff00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ff00ff;
+}
+
+/* selected link */
+a:active {
+  color: #0000ff;
+}
+```
 
 - **:hover**: Selects elements when you mouse over them.
 
@@ -1203,6 +1250,129 @@ Attribute selectors select elements based on an attribute or attribute value.
     text-decoration: underline;
   }
   ```
+
+### CSS pseudo-classes and pseudo-elements
+
+#### CSS Pseudo-classes
+
+Pseudo-classes are keywords added to selectors that specify a special state of the selected elements.
+They allow you to apply styles to elements based on their state in the document.
+
+##### Common Pseudo-classes
+
+| Selector               | Example                 | Description                                                                                              |
+| ---------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------- |
+| `:active`              | `a:active`              | Selects the active link                                                                                  |
+| `:checked`             | `input:checked`         | Selects every checked `<input>` element                                                                  |
+| `:disabled`            | `input:disabled`        | Selects every disabled `<input>` element                                                                 |
+| `:empty`               | `p:empty`               | Selects every `<p>` element that has no children                                                         |
+| `:enabled`             | `input:enabled`         | Selects every enabled `<input>` element                                                                  |
+| `:first-child`         | `p:first-child`         | Selects every `<p>` element that is the first child of its parent                                        |
+| `:first-of-type`       | `p:first-of-type`       | Selects every `<p>` element that is the first `<p>` element of its parent                                |
+| `:focus`               | `input:focus`           | Selects the `<input>` element that has focus                                                             |
+| `:hover`               | `a:hover`               | Selects links on mouse over                                                                              |
+| `:in-range`            | `input:in-range`        | Selects `<input>` elements with a value within a specified range                                         |
+| `:invalid`             | `input:invalid`         | Selects all `<input>` elements with an invalid value                                                     |
+| `:lang(language)`      | `p:lang(it)`            | Selects every `<p>` element with a lang attribute value starting with "it"                               |
+| `:last-child`          | `p:last-child`          | Selects every `<p>` element that is the last child of its parent                                         |
+| `:last-of-type`        | `p:last-of-type`        | Selects every `<p>` element that is the last `<p>` element of its parent                                 |
+| `:link`                | `a:link`                | Selects all unvisited links                                                                              |
+| `:not(selector)`       | `:not(p)`               | Selects every element that is not a `<p>` element                                                        |
+| `:nth-child(n)`        | `p:nth-child(2)`        | Selects every `<p>` element that is the second child of its parent                                       |
+| `:nth-last-child(n)`   | `p:nth-last-child(2)`   | Selects every `<p>` element that is the second child of its parent, counting from the last child         |
+| `:nth-last-of-type(n)` | `p:nth-last-of-type(2)` | Selects every `<p>` element that is the second `<p>` element of its parent, counting from the last child |
+| `:nth-of-type(n)`      | `p:nth-of-type(2)`      | Selects every `<p>` element that is the second `<p>` element of its parent                               |
+| `:only-of-type`        | `p:only-of-type`        | Selects every `<p>` element that is the only `<p>` element of its parent                                 |
+| `:only-child`          | `p:only-child`          | Selects every `<p>` element that is the only child of its parent                                         |
+| `:optional`            | `input:optional`        | Selects `<input>` elements with no "required" attribute                                                  |
+| `:out-of-range`        | `input:out-of-range`    | Selects `<input>` elements with a value outside a specified range                                        |
+| `:read-only`           | `input:read-only`       | Selects `<input>` elements with a "readonly" attribute specified                                         |
+| `:read-write`          | `input:read-write`      | Selects `<input>` elements with no "readonly" attribute                                                  |
+| `:required`            | `input:required`        | Selects `<input>` elements with a "required" attribute specified                                         |
+| `:root`                | `:root`                 | Selects the document's root element                                                                      |
+| `:target`              | `#news:target`          | Selects the current active `#news` element (clicked on a URL containing that anchor name)                |
+| `:valid`               | `input:valid`           | Selects all `<input>` elements with a valid value                                                        |
+| `:visited`             | `a:visited`             | Selects all visited links                                                                                |
+
+#### CSS Pseudo-elements
+
+Pseudo-elements are keywords added to selectors that allow you to style specific parts of an element.
+They create a virtual element that does not exist in the document tree.
+
+#### Common Pseudo-elements
+
+| Selector         | Example           | Description                                                  |
+| ---------------- | ----------------- | ------------------------------------------------------------ |
+| `::after`        | `p::after`        | Insert content after every `<p>` element                     |
+| `::before`       | `p::before`       | Insert content before every `<p>` element                    |
+| `::first-letter` | `p::first-letter` | Selects the first letter of every `<p>` element              |
+| `::first-line`   | `p::first-line`   | Selects the first line of every `<p>` element                |
+| `::marker`       | `::marker`        | Selects the markers of list items                            |
+| `::selection`    | `p::selection`    | Selects the portion of an element that is selected by a user |
+
+## Example Usage in CSS
+
+Here's an example of how to use some pseudo-classes and pseudo-elements:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-classes and Pseudo-elements</title>
+    <style>
+      a:link {
+        color: blue;
+      }
+
+      a:visited {
+        color: purple;
+      }
+
+      a:hover {
+        color: red;
+      }
+
+      a:active {
+        color: yellow;
+      }
+
+      p::first-line {
+        font-weight: bold;
+      }
+
+      p::first-letter {
+        font-size: 200%;
+        color: red;
+      }
+
+      p::after {
+        content: " [Read more]";
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://example.com">Example link</a>
+    <p>
+      This is a paragraph to demonstrate pseudo-elements. The first line is
+      bold, and the first letter is large and red.
+    </p>
+  </body>
+</html>
+```
+
+### Explanation
+
+- **Pseudo-classes**:
+  - `a:link`, `a:visited`, `a:hover`, `a:active`: Style different states of a link.
+- **Pseudo-elements**:
+  - `p::first-line`: Styles the first line of a paragraph.
+  - `p::first-letter`: Styles the first letter of a paragraph.
+  - `p::after`: Inserts content after the paragraph.
+
+These examples show how pseudo-classes and pseudo-elements can be used to add interactivity and style specific parts of an HTML document.
 
 ### Ways to Insert CSS
 
@@ -3922,7 +4092,7 @@ div {
 
 ### CSS Float
 
-The `float` property in CSS is used to position an element to the left or right of its container,
+The `float` property in CSS is used to position an element to the left or right of its container,e.g. let an image float left to the text in a container
 allowing text and inline elements to wrap around it. It was commonly used for creating layouts before the
 introduction of Flexbox and Grid, but it is still useful for specific scenarios like wrapping text around images.
 
@@ -3968,9 +4138,7 @@ introduction of Flexbox and Grid, but it is still useful for specific scenarios 
    ```
 
 ### Clearing Floats
-
-When elements are floated, it can affect the layout of subsequent elements, sometimes causing them to wrap around the floated elements unintentionally. To prevent this, the `clear` property is used to specify which sides of an element should not be allowed to float elements.
-
+`clear` property specifies what should happen with the element that is next to a floating element.
 Values of `clear`:
 - **`left`**: No floating elements allowed on the left side.
 - **`right`**: No floating elements allowed on the right side.
@@ -4075,27 +4243,427 @@ Here's an example demonstrating how to use the `float` and `clear` properties:
 6. **Unwrapped Text**:
    - The second `.text` element is placed after the clearing element, so it does not wrap around the floated boxes.
 
-### Summary
 
-- **`float: left`**: Floats the element to the left of its container.
-- **`float: right`**: Floats the element to the right of its container.
-- **`float: none`**: Default value, no floating applied.
-- **`clear` property**: Used to control the wrapping of floated elements and ensure proper layout flow.
+### CSS Layout - Horizontal & Vertical Align
+- Center elements horizontally
+##### Center Align Elements
+- To horizontally center a block element (like <div>), use margin: auto;
+Note: Center aligning has no effect if the width property is not set (or set to 100%).
 
-The `float` property is a powerful tool for positioning elements and controlling text flow, though it's more common now to use Flexbox and Grid for complex layouts.
+```
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
 
-
-
-
-
-
-
-
-
-
+```
 
 
 
+##### Center Align Text
+
+- To just center the text inside an element, use text-align: center;
+
+```css
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+```
+
+##### Center an Image
+- To center an image, set left and right margin to auto and make it into a block element.
+
+```css
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+```
+
+
+#### Left and Right Align - Using position
+
+- One method for aligning elements is to use position: absolute;
+```CSS
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+```
+#### Left and Right Align - Using float
+Another method for aligning elements is to use the float property:
+
+```CSS
+.right {
+  float: right;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+```
+
+- Center vertically.
+##### Using padding
+```css
+.center {
+  padding: 70px 0;
+  border: 3px solid green;
+}
+```
+##### Center Vertically - Using Flexbox
+```css
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+```
+
+
+To center both vertically and horizontally, use padding and text-align: center:
+```css.center {
+  padding: 70px 0;
+  border: 3px solid green;
+  text-align: center;
+}
+```
+
+CSS provides several ways to align elements both horizontally and vertically. Here's a comprehensive guide on how to achieve various alignment tasks using different CSS properties and techniques:
+
+### Horizontal Alignment
+
+#### Inline Elements
+- **Text Alignment (`text-align`)**: Aligns text within a block-level container.
+  ```css
+  .center-text {
+    text-align: center;
+  }
+  .left-text {
+    text-align: left;
+  }
+  .right-text {
+    text-align: right;
+  }
+  ```
+
+#### Block Elements
+- **Margin Auto**: Centers block elements horizontally within their parent container.
+  ```css
+  .center-block {
+    width: 50%;
+    margin: 0 auto;
+  }
+  ```
+
+#### Flexbox
+- **Flexbox**: Aligns child elements within a flex container.
+  ```css
+  .flex-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+  }
+  .space-between {
+    justify-content: space-between; /* Space between elements */
+  }
+  .space-around {
+    justify-content: space-around; /* Space around elements */
+  }
+  ```
+
+### Vertical Alignment
+
+#### Inline Elements
+- **Vertical Alignment (`vertical-align`)**: Aligns inline or inline-block elements vertically within their line box.
+  ```css
+  .middle-inline {
+    vertical-align: middle;
+  }
+  .top-inline {
+    vertical-align: top;
+  }
+  .bottom-inline {
+    vertical-align: bottom;
+  }
+  ```
+
+#### Flexbox
+- **Flexbox**: Aligns child elements vertically within a flex container.
+  ```css
+  .flex-container-vertical {
+    display: flex;
+    align-items: center; /* Center vertically */
+  }
+  .flex-start {
+    align-items: flex-start; /* Align items at the top */
+  }
+  .flex-end {
+    align-items: flex-end; /* Align items at the bottom */
+  }
+  ```
+
+#### Grid Layout
+- **CSS Grid**: Aligns items within a grid container.
+  ```css
+  .grid-container {
+    display: grid;
+    align-items: center; /* Center items vertically */
+  }
+  .align-start {
+    align-items: start; /* Align items at the top */
+  }
+  .align-end {
+    align-items: end; /* Align items at the bottom */
+  }
+  ```
+
+#### Table Cells
+- **Table Cell Vertical Alignment**: Aligns content within table cells.
+  ```css
+  table {
+    width: 100%;
+  }
+  td {
+    vertical-align: middle; /* Center content vertically */
+  }
+  ```
+
+### Centering Both Horizontally and Vertically
+
+#### Flexbox
+- **Flexbox Centering**: Centers an element both horizontally and vertically.
+  ```css
+  .flex-center {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height for demonstration */
+  }
+  ```
+
+#### Grid Layout
+- **Grid Centering**: Centers an element both horizontally and vertically.
+  ```css
+  .grid-center {
+    display: grid;
+    place-items: center; /* Center both horizontally and vertically */
+    height: 100vh; /* Full viewport height for demonstration */
+  }
+  ```
+
+#### Positioning
+- **Absolute Positioning**: Centers an element using absolute positioning.
+  ```css
+  .absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  ```
+
+### Example
+
+Here's an example demonstrating different alignment techniques:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Alignment</title>
+  <style>
+    .container {
+      border: 1px solid #000;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    .center-block {
+      width: 50%;
+      margin: 0 auto;
+      background-color: lightblue;
+      height: 50px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      background-color: lightgreen;
+    }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      background-color: lightcoral;
+    }
+
+    .grid-container {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      background-color: lightgoldenrodyellow;
+    }
+
+    .absolute-center-container {
+      position: relative;
+      height: 200px;
+      background-color: lightgray;
+    }
+
+    .absolute-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: lightblue;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Horizontal & Vertical Alignment</h2>
+
+<div class="container center-text">
+  Centered Text
+</div>
+
+<div class="container center-block">
+  Centered Block
+</div>
+
+<div class="flex-container">
+  Flexbox Centered
+</div>
+
+<div class="flex-center">
+  Flexbox Centered Both
+</div>
+
+<div class="grid-container">
+  Grid Centered Both
+</div>
+
+<div class="absolute-center-container">
+  <div class="absolute-center">
+    Absolutely Centered Both
+  </div>
+</div>
+
+</body>
+</html>
+```
+
+### Explanation
+
+1. **Text Alignment**:
+   - `.center-text`: Text is centered within the container.
+
+2. **Block Alignment**:
+   - `.center-block`: Block element is centered horizontally within the container using `margin: 0 auto;`.
+
+3. **Flexbox Centering**:
+   - `.flex-container`: Flexbox container with items centered both horizontally and vertically.
+
+4. **Flexbox Centering Both**:
+   - `.flex-center`: Flexbox container with a single element centered both horizontally and vertically.
+
+5. **Grid Centering Both**:
+   - `.grid-container`: Grid container with a single element centered both horizontally and vertically using `place-items: center;`.
+
+6. **Absolute Centering**:
+   - `.absolute-center-container` and `.absolute-center`: Element is centered both horizontally and vertically using absolute positioning and `transform`.
+
+
+### CSS Opacity / Transparency
+`opacity` is a property used to set the transparency level of an element.
+It can take a value between 0 (completely transparent) and 1 (completely opaque (default)).
+The lower the value, the more transparent:
+
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Opacity Example</title>
+  <style>
+    .opaque {
+      background-color: red;
+      opacity: 1; /* Fully opaque */
+      padding: 20px;
+      margin: 10px;
+      color: white;
+    }
+
+    .semi-transparent {
+      background-color: blue;
+      opacity: 0.5; /* 50% transparent */
+      padding: 20px;
+      margin: 10px;
+      color: white;
+    }
+
+    .transparent {
+      background-color: green;
+      opacity: 0.2; /* 80% transparent */
+      padding: 20px;
+      margin: 10px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="opaque">This is a fully opaque div.</div>
+  <div class="semi-transparent">This is a semi-transparent div.</div>
+  <div class="transparent">This is a mostly transparent div.</div>
+
+</body>
+</html>
+
+```
+
+
+.opaque: The opacity value is set to 1, meaning the div is fully opaque.
+.semi-transparent: The opacity value is set to 0.5, meaning the div is 50% transparent.
+.transparent: The opacity value is set to 0.2, meaning the div is 80% transparent.
+
+
+### Navigation Bar = List of Links
+A navigation bar is basically a list of links, so using the <ul> and <li> elements makes perfect sense:
+
+Example
+<ul>
+  <li><a href="/home">Home</a></li>
+  <li><a href="/project.">Project</a></li>
+  <li><a href="/contact">Contact</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+### CSS Dropdowns
 
 ### SASS LEARNING
 
