@@ -52,7 +52,7 @@ function Navbar({ className }: { className?: string }) {
         </Link>
 
         <Link href="/#projects">
-          <MenuItem setActive={setActive} active={active} item="Portfolio">
+          {/* <MenuItem setActive={setActive} active={active} item="Portfolio">
             <div className=" md:grid hidden text-sm  grid-cols-1 md:grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="BooKNook-Book Shop"
@@ -80,7 +80,7 @@ function Navbar({ className }: { className?: string }) {
                 description="Learn Web-Development With projects"
               />
             </div>
-          </MenuItem>
+          </MenuItem> */}
         </Link>
         <Link href="/#blog">
           <MenuItem setActive={setActive} active={active} item="Blogs">
