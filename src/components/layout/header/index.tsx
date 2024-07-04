@@ -1,11 +1,6 @@
 "use client";
 import Logo from "@/components/ui/icons/logo.icon";
-import {
-  HoveredLink,
-  Menu,
-  MenuItem,
-  ProductItem,
-} from "@/components/ui/navbar-menu";
+import { Menu, MenuItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
@@ -52,8 +47,8 @@ function Navbar({ className }: { className?: string }) {
         </Link>
 
         <Link href="/#projects">
-          {/* <MenuItem setActive={setActive} active={active} item="Portfolio">
-            <div className=" md:grid hidden text-sm  grid-cols-1 md:grid-cols-2 gap-10 p-4">
+          <MenuItem setActive={setActive} active={active} item="Portfolio">
+            {/* <div className=" md:grid hidden text-sm  grid-cols-1 md:grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="BooKNook-Book Shop"
                 href="https://algochurn.com"
@@ -79,12 +74,12 @@ function Navbar({ className }: { className?: string }) {
                 src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
                 description="Learn Web-Development With projects"
               />
-            </div>
-          </MenuItem> */}
+            </div> */}
+          </MenuItem>
         </Link>
         <Link href="/#blog">
           <MenuItem setActive={setActive} active={active} item="Blogs">
-            <div className=" md:grid hidden text-sm   md:grid-cols-2 grid-cols-1 gap-10 p-4">
+            {/* <div className=" md:grid hidden text-sm   md:grid-cols-2 grid-cols-1 gap-10 p-4">
               <ProductItem
                 title="Javascript Projects"
                 href="/javaScriptprojects.png"
@@ -109,12 +104,12 @@ function Navbar({ className }: { className?: string }) {
                 src="https://img-c.udemycdn.com/course/480x270/3906220_be65_2.jpg"
                 description="Learn Web development step by step"
               />
-            </div>
+            </div> */}
           </MenuItem>
         </Link>
         <Link href="/#connect">
           <MenuItem setActive={setActive} active={active} item="Connect">
-            <div className="flex flex-col space-y-4 text-sm">
+            {/* <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink
                 href="https://www.linkedin.com/in/apsarabishwokarma/"
                 target="_blank"
@@ -142,7 +137,7 @@ function Navbar({ className }: { className?: string }) {
               >
                 Twitter
               </HoveredLink>
-            </div>
+            </div> */}
           </MenuItem>
         </Link>
       </Menu>
