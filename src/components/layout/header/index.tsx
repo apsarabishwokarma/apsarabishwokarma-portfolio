@@ -9,13 +9,17 @@ export function Header() {
   return (
     <>
       <div className="flex px-4">
-        <Link href="/" passHref>
-          <Logo className="mt-2 w-10 h-10 stroke-white md:block hidden cursor-pointer" />
-        </Link>
+        <div className="flex">
+          <Link href="/" passHref>
+            <Logo className="mt-2 w-10 h-10 stroke-white cursor-pointer  md:block hidden " />
+          </Link>
+          <span className="relative z-10 text-white px-4 py-2 text-sm font-medium  md:block hidden   text-muted-foreground transition-colors">
+            Apsara Bishwokarma
+          </span>
+        </div>
         <div className="relative w-full flex items-center justify-center">
           <Navbar className="top-4" />
         </div>
-
         <div className="w-full max-w-max z-[51]">
           <a
             href="/apsarabishwokarmaresume.pdf"
