@@ -20,7 +20,7 @@ const source_Serif_4 = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: "Apsara Bishwokarma",
-  description: "Software Engineer/Frontend Developer",
+  description: "Software Engineer/Web Developer",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
         className={cn(
           inter.variable,
           preahvihear.variable,
-          source_Serif_4.variable
+          source_Serif_4.variable,
         )}
       >
         <Toaster richColors closeButton />

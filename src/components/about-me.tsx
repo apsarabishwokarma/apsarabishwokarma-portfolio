@@ -46,10 +46,10 @@ const PortfolioBanner = () => {
             Crafting Modern Web Experiences
           </h2>
           <p className="text-base lg:text-lg text-neutral-300 mb-4">
-            As a software engineer specializing in frontend development, I bring
+            As a software engineer specializing in Web development, I bring
             creativity and technical expertise to build responsive,
             user-friendly websites. My tools of choice include React, Tailwind
-            CSS, and modern JavaScript frameworks.
+            CSS, Next js and modern JavaScript frameworks.
           </p>
           <p className="text-base lg:text-lg text-neutral-300 mb-4">
             I believe in crafting seamless user interfaces that are both
@@ -63,7 +63,7 @@ const PortfolioBanner = () => {
           </p>
 
           <div className="mt-4 flex justify-center lg:justify-start">
-            <Link href="mailto:apsarabk94@gmail.com">
+            <Link href="mailto:apsara.devx@gmail.com">
               <button className="px-6 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hidden md:block">
                 <span>Let's Work Together &rarr; </span>
                 <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />

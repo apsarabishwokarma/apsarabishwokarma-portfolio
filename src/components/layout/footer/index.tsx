@@ -21,7 +21,7 @@ export default function Footer() {
               <div>
                 <AttributionLink></AttributionLink>
                 <div className="flex pt-5 flex-wrap items-center justify-center  mb-4">
-                  <a href="mailto:apsara@gmail.com" target="_blank">
+                  <a href="mailto:apsara.devx@gmail.com" target="_blank">
                     <SiGmail className="text-xl text-gray-500 mr-2" />
                   </a>
                   <a

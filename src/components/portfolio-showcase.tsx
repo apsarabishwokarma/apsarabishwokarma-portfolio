@@ -18,10 +18,7 @@ export default function PortfolioShowcase() {
 
       <h6 className=" pt-4 md:text-4xl text-xl sm:text-2xl font-medium text-center text-white relative z-20">
         Apsara Bishwokarma /
-        <span className="font-medium text-emerald-400">
-          {" "}
-          Frontend Developer
-        </span>
+        <span className="font-medium text-emerald-400"> Web Developer</span>
       </h6>
 
       <div className="w-[60rem] h-10 relative">
