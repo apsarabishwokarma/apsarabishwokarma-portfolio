@@ -46,7 +46,7 @@ export default function Footer() {
                   <FaLinkedin className="text-xl text-gray-500 mr-2" />
                 </a>
 
-                <a href="https://github.com/apsarabiswokarma" target="_blank">
+                <a href="https://github.com/apsarabishwokarma" target="_blank">
                   <FaGithub className="text-xl text-gray-500 mr-2" />
                 </a>
                 <a href="https://snapchat.com/apsarabiswokarma" target="_blank">

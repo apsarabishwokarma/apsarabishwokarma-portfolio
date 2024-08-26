@@ -10,7 +10,7 @@ interface Service {
 
 const Services = () => {
   return (
-    <section className="text-white py-32">
+    <section className="text-white">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-semibold text-center mb-6">My Services</h2>
         <p className="text-center text-lg mb-10">

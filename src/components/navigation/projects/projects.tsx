@@ -16,7 +16,7 @@ export function ProjectsGrid() {
             {" "}
             &darr; Featured Projects
           </h1>
-          <Link href="https://github.com/apsarabiswokarma" target="_blank">
+          <Link href="https://github.com/apsarabishwokarma" target="_blank">
             <Button className="">
               <GitHubLogoIcon className="mr-2 h-4 w-4 " />
               View My Github
@@ -39,9 +39,7 @@ const SkeletonOne = () => {
         <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
           Evento is a comprehensive event management platform that simplifies
-          the planning, coordination, and execution of events. It offers
-          features such as event scheduling, guest list management, venue
-          booking, budget tracking, and communication tools.
+          the planning, coordination, and execution of events.
         </p>
       </div>
       <Link href="https://github.com/Roopaish/evento" target="_blank">
@@ -62,12 +60,12 @@ const SkeletonTwo = () => {
         <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
           It&apos;s a E-commerce website that provide a convenient shopping
-          experience, including product browsing, comparison, reviews, secure
-          payment processing, and doorstep delivery.
+          experience, including product browsing,reviews, secure payment
+          processing.
         </p>
       </div>
       <Link
-        href="https://github.com/apsarabiswokarma/ecommerce-shophub"
+        href="https://github.com/apsarabishwokarma/ecommerce-shophub"
         target="_blank"
       >
         <Button>
@@ -91,7 +89,7 @@ const SkeletonThree = () => {
         </p>
       </div>
       <Link
-        href="https://github.com/apsarabiswokarma/WebDevelopment-Roadmap"
+        href="https://github.com/apsarabishwokarma/WebDevelopment-Roadmap"
         target="_blank"
       >
         <Button>
@@ -109,17 +107,13 @@ const SkeletonFour = () => {
         <p className="font-bold text-4xl text-white">BookNook</p>
         <p className="font-normal text-base text-white"></p>
         <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
-          BookNook is a mobile application designed for book enthusiasts to
-          discover, read, and discuss books. It provides a vast library of
-          digital books across various genres, personalized recommendations,
-          book club features, and community discussions. BookNook It&apos;s the
-          perfect application to find books as your wish ,to read ,to relax,
-          unwind, and enjoy life.
+          BookNook is a mobile application providing convenient book shopping
+          experience .
         </p>
       </div>
 
       <Link
-        href="https://github.com/apsarabiswokarma/BookNook-App-Flutter"
+        href="https://github.com/apsarabishwokarma/BookNook-App-Flutter"
         target="_blank"
       >
         <Button>
@@ -136,8 +130,7 @@ const cards = [
     id: 1,
     content: <SkeletonOne />,
     className: "md:col-span-2",
-    thumbnail:
-      "https://images.unsplash.com/photo-1510511233900-1982d92bd835?",
+    thumbnail: "https://images.unsplash.com/photo-1510511233900-1982d92bd835?",
   },
   {
     id: 2,
@@ -150,8 +143,7 @@ const cards = [
     id: 3,
     content: <SkeletonThree />,
     className: "col-span-1",
-    thumbnail:
-      "https://images.unsplash.com/photo-1597239451147-f163967b8581?",
+    thumbnail: "https://images.unsplash.com/photo-1597239451147-f163967b8581?",
   },
   {
     id: 4,

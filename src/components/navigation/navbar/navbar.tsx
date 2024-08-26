@@ -41,6 +41,14 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div className={cn("fixed top-10 inset-x-0 w-full z-50", className)}>
       <Menu setActive={setActive}>
+        <Link href="/#about-me">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item=" About me"
+          ></MenuItem>
+        </Link>
+
         <Link href="/#projects">
           <MenuItem setActive={setActive} active={active} item="Portfolio">
             <div className=" md:grid hidden text-sm  grid-cols-1 md:grid-cols-2 gap-10 p-4">

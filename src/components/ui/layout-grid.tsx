@@ -26,16 +26,16 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 ">
+    <div className="w-full h-full grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
               card.className,
-              "relative overflow-hidden cursor-pointer",
+              "relative overflow-hidden cursor-pointer group",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
                 ? "z-40 bg-white rounded-xl h-full w-full"
                 : "bg-white rounded-xl h-full w-full"
@@ -43,7 +43,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             layout
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
-            <BlurImage card={card} />
+            <BlurImage card={card} isSelected={selected?.id === card.id} />
           </motion.div>
         </div>
       ))}
@@ -59,20 +59,33 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   );
 };
 
-const BlurImage = ({ card }: { card: Card }) => {
+const BlurImage = ({
+  card,
+  isSelected,
+}: {
+  card: Card;
+  isSelected: boolean;
+}) => {
   const [loaded, setLoaded] = useState(false);
   return (
-    <Image
-      src={card.thumbnail}
-      height="500"
-      width="500"
-      onLoad={() => setLoaded(true)}
-      className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
-        loaded ? "blur-none" : "blur-md"
+    <div className="relative h-full w-full">
+      <Image
+        src={card.thumbnail}
+        height="500"
+        width="500"
+        onLoad={() => setLoaded(true)}
+        className={cn(
+          "object-cover object-top absolute inset-0 h-full w-full transition duration-200",
+          loaded ? "blur-none" : "blur-md"
+        )}
+        alt="thumbnail"
+      />
+      {!isSelected && (
+        <div className="p-4 absolute inset-0 top-full overflow-hidden group-hover:top-0 transition-all duration-300 text-white font-medium bg-gradient-to-r from-indigo-950 to-pink-900 flex justify-center items-center">
+          <span>{card.content}</span>
+        </div>
       )}
-      alt="thumbnail"
-    />
+    </div>
   );
 };
 
