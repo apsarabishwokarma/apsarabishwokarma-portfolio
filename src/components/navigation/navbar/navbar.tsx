@@ -14,9 +14,11 @@ export function NavbarDemo() {
   return (
     <>
       <div className="flex px-4">
-        <Logo className="mt-2 w-10 h-10 stroke-white md:block hidden" />
+        <Link href="/" passHref>
+          <Logo className="mt-2 w-10 h-10 stroke-white md:block hidden cursor-pointer" />
+        </Link>
         <div className="relative w-full flex items-center justify-center">
-          <Navbar className="top-4" />i
+          <Navbar className="top-4" />
         </div>
 
         <div className="w-full max-w-max z-[51]">
