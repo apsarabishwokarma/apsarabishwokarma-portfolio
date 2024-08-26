@@ -19,12 +19,11 @@ export const blogs: BlogCardProps[] = [
     readTime: "10",
   },
   {
-    slug: "books-our",
-    img: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    slug: "javascript",
+    img: "https://images.unsplash.com/photo-1667372393086-9d4001d51cf1",
     date: "02/02/2024",
-    blogName: "Books: Our Trusted Friends",
-    blogDetails:
-      "Books have a unique ability to foster empathy and compassion within us. ",
+    blogName: "Master Javascript",
+    blogDetails: "Your Path to Mastering Web Development",
     readTime: "12",
   },
   {
