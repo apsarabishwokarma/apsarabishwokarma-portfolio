@@ -43,10 +43,10 @@ const ContactMe = () => {
 
   return (
     <section id="contact-me" className="py-12">
-      <p className="mt-6 max-w-7xl mb-8 mx-auto w-full text-neutral-400">
-        contact me
-      </p>
       <div className="container mx-auto">
+        <p className="mt-6 max-w-7xl mb-8 mx-auto w-full text-neutral-400">
+          contact me
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-6 shadow-md rounded-md text-white">
             <h2 className="text-2xl font-semibold mb-4">Get In Touch</h2>

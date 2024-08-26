@@ -7,10 +7,8 @@ import BlogShowcase from "./blog-contents/blog-showcase";
 
 function Blog() {
   return (
-    <div id="blog">
-      <p className=" mt-8 max-w-7xl  mb-4 mx-auto  w-full  text-neutral-400">
-        blogs
-      </p>
+    <div id="blog" className="container mx-auto pt-20">
+      <p className="max-w-7xl  w-full  text-neutral-400">blogs</p>
       <BlogShowcase />
       <div className="flex max-w-7xl mx-auto  w-full items-center justify-between">
         <h1 className="text-white text-xl font-normal">

@@ -18,7 +18,7 @@ export const HoverEffect = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="text-white py-40 ">
+    <section className="text-white pt-32">
       <h1 className=" text-xl font-normal"> &darr; Services</h1>
       <div className={cn("grid grid-cols-1 md:grid-cols-4  py-10", className)}>
         {items.map((item, idx) => (
