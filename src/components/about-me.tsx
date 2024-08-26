@@ -40,7 +40,7 @@ const PortfolioBanner = () => {
             />
           </div>
 
-          <div className="flex flex-col justify-center lg:text-start text-center">
+          <div className="flex flex-col justify-center lg:text-start">
             <h2 className="text-3xl font-bold mb-4">
               Crafting Modern Web Experiences
             </h2>
