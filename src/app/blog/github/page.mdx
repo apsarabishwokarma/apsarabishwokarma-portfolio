@@ -124,8 +124,61 @@ git checkout -- <file>
 
 ### Undo Last Commit
 
+If you’ve committed changes in Git but haven’t pushed them yet, you have a few ways to "uncommit" depending on whether you want to keep the changes or discard them.
+
+### **1. Undo the last commit but keep the changes (soft reset)**
+
 ```bash
-git reset HEAD~1
+git reset --soft HEAD~1
+```
+
+- This will **remove the last commit** but keep your changes staged (ready to be committed again).
+
+---
+
+### **2. Undo the last commit and unstage the changes (mixed reset)**
+
+```bash
+git reset --mixed HEAD~1
+```
+
+- This removes the last commit **and unstages** the changes, but your modified files remain in your working directory.
+
+---
+
+### **3. Undo the last commit and discard all changes (hard reset)**
+
+```bash
+git reset --hard HEAD~1
+```
+
+- ⚠ **Warning:** This will **delete the commit and all changes** in the working directory. Only use this if you're sure you don't need the changes.
+
+---
+
+### **4. Undo multiple commits**
+
+If you want to undo **the last 2 commits**, replace `HEAD~1` with `HEAD~2`:
+
+```bash
+git reset --soft HEAD~2
+```
+
+(Replace `2` with however many commits you want to undo.)
+
+---
+
+### **5. If you already pushed the commit (Force Push)**
+
+If you've already pushed the commit and want to undo it:
+
+```bash
+git reset --hard HEAD~1
+git push --force
+```
+
+```bash
+ git commit --date="" -m ""
 ```
 
 ### Ignore Files
