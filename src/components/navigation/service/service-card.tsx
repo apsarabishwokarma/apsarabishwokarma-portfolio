@@ -1,7 +1,7 @@
 "use client";
 
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { FaCamera, FaDesktop, FaFigma, FaMobileAlt } from "react-icons/fa";
+import { FaBug, FaCamera, FaDesktop, FaFigma } from "react-icons/fa";
 
 export function ServiceCardHoverEffect() {
   const projects = [
@@ -12,19 +12,20 @@ export function ServiceCardHoverEffect() {
         "Crafting responsive and user-friendly websites using modern technologies like React.js, Tailwind Css.",
       link: "https://github.com/apsarabiswokarma/WebDevelopment-Roadmap",
     },
-    {
-      icon: <FaMobileAlt size={40} />,
-      title: "App Development",
-      description:
-        "Building cross-platform mobile applications for iOS and Android platforms with frameworks like Flutter.",
-      link: "https://github.com/apsarabiswokarma/BookNook-App-Flutter",
-    },
+
     {
       icon: <FaFigma size={40} />,
       title: "UI/UX Design",
       description:
         "Designing intuitive and visually appealing user interfaces that enhance user experience using figma.",
       link: "/",
+    },
+    {
+      icon: <FaBug size={40} />,
+      title: "Testing and Debugging",
+      description:
+        "Ensuring robust and error-free applications through meticulous testing and debugging practices",
+      link: "https://github.com/apsarabishwokarma",
     },
 
     {

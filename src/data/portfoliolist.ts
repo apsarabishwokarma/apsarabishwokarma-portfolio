@@ -22,7 +22,7 @@ export const categories: Category[] = [
 
 export const portfolioList: PortfolioItem[] = [
   {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio27.jpg",
+    image: "https://images.unsplash.com/photo-1636231945376-3d40fdcbc462",
     title: "Eureka-Consultancy",
     subtitle:
       "Eureka is a trusted Institution,offering top-tier study-abroad consulting for students across Nepal.",
@@ -40,7 +40,7 @@ export const portfolioList: PortfolioItem[] = [
     githubLink: "https://github.com/apsarabishwokarma/ecommerce-shophub",
   },
   {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio_4_3.png",
+    image: "https://images.unsplash.com/photo-1542546068979-b6affb46ea8f",
     title: "Javascript Projects",
     subtitle:
       "A collection of web development projects on HTML, CSS, and JavaScript from beginners to advanced",
@@ -49,7 +49,7 @@ export const portfolioList: PortfolioItem[] = [
     githubLink: "https://github.com/apsarabishwokarma/javascript-projects",
   },
   {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio21.jpg",
+    image: "https://images.unsplash.com/photo-1525113990976-399835c43838",
     title: "RealEstate-Gharsewa",
     subtitle:
       "GharSewa is a platform for managing real estate listings, facilitating property buying,selling and renting processes.",
@@ -58,7 +58,7 @@ export const portfolioList: PortfolioItem[] = [
     githubLink: "https://github.com/apsarabishwokarma/Gharsewa-RealEstate",
   },
   {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio_4_4.png",
+    image: "https://images.unsplash.com/photo-1547583073-4b4fe00854c0",
     title: " Evento Event Management Platform",
     subtitle:
       "Evento is an Event management, platform Creating,publishing Events and staffing platform.",
@@ -67,7 +67,7 @@ export const portfolioList: PortfolioItem[] = [
     githubLink: "https://github.com/Roopaish/evento",
   },
   {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio22.jpg",
+    image: "https://images.unsplash.com/photo-1587932775991-708a20af2cc2",
     title: "Photography",
     subtitle: "",
     categories: ["Cinematography"],

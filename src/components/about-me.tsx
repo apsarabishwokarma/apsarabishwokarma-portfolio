@@ -36,12 +36,12 @@ const PortfolioBanner = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
         <div className="flex justify-center ">
           <img
-            src="/profile-me.png"
+            src="/aboutimg.png"
             alt="profile-girl"
-            className="max-w-xs lg:max-w-sm h-auto rounded-lg shadow-lg"
+            className="max-w-md lg:max-w-xl h-auto rounded-lg shadow-lg"
           />
         </div>
-        <div className="text-center lg:text-left">
+        <div className="text-center lg:text-left mt-4 lg:mt-0">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Crafting Modern Web Experiences
           </h2>
