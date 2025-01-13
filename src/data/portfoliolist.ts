@@ -71,7 +71,7 @@ export const portfolioList: PortfolioItem[] = [
     title: "Photography",
     subtitle: "",
     categories: ["Cinematography"],
-    liveLink: "https://apsarabishwokarma.github.io/javascript-projects/",
-    githubLink: "https://github.com/example/photography",
+    liveLink: "https://www.instagram.com/apsara.diaries_",
+    githubLink: "https://www.instagram.com/apsara.diaries_",
   },
 ];
