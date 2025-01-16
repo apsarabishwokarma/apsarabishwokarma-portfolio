@@ -1,5 +1,5 @@
 "use client";
-import portfolioList from "@/data/portfolio-list";
+import portfolioList from "@/data/portfolio-pendinglist";
 import { useState } from "react";
 import { Button } from "../../ui/button";
 
