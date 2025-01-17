@@ -104,7 +104,7 @@ export const Portfolio = () => {
                   <img
                     src={portfolio.image}
                     alt={portfolio.title}
-                    className="w-full rounded-lg h-[400px] object-cover"
+                    className="w-full rounded-lg md:h-[400px] h-[300px] object-cover"
                   />
                   <div className="absolute left-2 right-2 bottom-2 rounded-lg bg-gray-300 bg-opacity-80 opacity-100 transition duration-300 text-center p-3 flex flex-col items-center">
                     <h5 className="text-lg font-medium mb-1">
