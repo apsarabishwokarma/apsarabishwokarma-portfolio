@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     ) {
       return NextResponse.json(
         { message: "Please setup your email and password." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -38,13 +38,13 @@ export async function POST(request: Request) {
       message: "Thank you for reaching out. I will contact you soon.",
     });
   } catch (e) {
-    NextResponse.json(
+    return NextResponse.json(
       {
         success: false,
         title: "Message not sent",
         message: "Something went wrong!",
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

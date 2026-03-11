@@ -38,9 +38,9 @@ export default function RootLayout({
         )}
       >
         <Toaster richColors closeButton />
-        <div className="fixed left-0 top-0 -z-10 h-full w-full bg-slate-950">
-          <div className="absolute bottom-0 left-[-9%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
-          <div className="absolute bottom-0 right-[-9%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+        <div className="fixed left-0 top-0 -z-10 h-full w-full bg-slate-950 transition-colors duration-300 dark:bg-[#050b12]">
+          <div className="absolute bottom-0 left-[-9%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_farthest-side,rgba(34,211,238,.2),rgba(255,255,255,0))]"></div>
+          <div className="absolute bottom-0 right-[-9%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))] dark:bg-[radial-gradient(circle_farthest-side,rgba(16,185,129,.18),rgba(255,255,255,0))]"></div>
         </div>
         <CanvasCursor></CanvasCursor>
         <div className="px-4">

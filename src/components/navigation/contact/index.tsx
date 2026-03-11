@@ -10,11 +10,8 @@ import { z } from "zod";
 
 const ContactMe = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<z.infer<typeof contactSchema>>();
+  const { register, handleSubmit, reset } =
+    useForm<z.infer<typeof contactSchema>>();
 
   function onSubmit(values: z.infer<typeof contactSchema>) {
     setIsLoading(true);
@@ -30,8 +27,9 @@ const ContactMe = () => {
       })
       .then((data) => {
         toast.success(
-          data?.message ?? "Email has been sent. I will soon get back to you."
+          data?.message ?? "Email has been sent. I will soon get back to you.",
         );
+        reset();
       })
       .catch((error) => {
         toast.error(error?.message ?? "Failed to send email.");
@@ -67,14 +65,14 @@ const ContactMe = () => {
                 </a>
               </div>
               <div>
-                <a href="mailto:apsarabk94@gmail.com" target="_blank">
+                <a href="mailto:apsara.devx@gmail.com" target="_blank">
                   <li className="flex items-center space-x-2">
                     <MdOutlineMailOutline
                       size={20}
                       color="gray"
                       className="mr-2"
                     />
-                    <span>apsarabk94@gmail.com</span>
+                    <span>apsara.devx@gmail.com</span>
                   </li>
                 </a>
               </div>

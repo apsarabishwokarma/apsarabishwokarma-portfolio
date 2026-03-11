@@ -3,9 +3,72 @@ import Logo from "@/components/ui/icons/logo.icon";
 import { Menu, MenuItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  FaCloudMoon,
+  FaMoon,
+  FaRegMoon,
+  FaStrikethrough,
+  FaSun,
+  FaWaveSquare,
+} from "react-icons/fa";
+import { MdFormatStrikethrough } from "react-icons/md";
+
+const THEME_STORAGE_KEY = "site-theme";
+const CURSOR_STORAGE_KEY = "cursor-enabled";
+const CURSOR_PREF_EVENT = "cursor-preference-change";
 
 export function Header() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isCursorEnabled, setIsCursorEnabled] = useState(true);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme !== "dark" && savedTheme !== "light") {
+      window.localStorage.setItem(THEME_STORAGE_KEY, "light");
+    }
+    const nextIsDarkMode = savedTheme === "dark";
+    setIsDarkMode(nextIsDarkMode);
+    document.documentElement.classList.toggle("dark", nextIsDarkMode);
+
+    const savedCursorPreference =
+      window.localStorage.getItem(CURSOR_STORAGE_KEY);
+    if (savedCursorPreference !== "true" && savedCursorPreference !== "false") {
+      window.localStorage.setItem(CURSOR_STORAGE_KEY, "true");
+    }
+    const nextCursorEnabled = savedCursorPreference !== "false";
+    setIsCursorEnabled(nextCursorEnabled);
+    document.dispatchEvent(
+      new CustomEvent(CURSOR_PREF_EVENT, {
+        detail: { enabled: nextCursorEnabled },
+      }),
+    );
+  }, []);
+
+  const handleThemeToggle = () => {
+    const nextIsDarkMode = !isDarkMode;
+    setIsDarkMode(nextIsDarkMode);
+    document.documentElement.classList.toggle("dark", nextIsDarkMode);
+    window.localStorage.setItem(
+      THEME_STORAGE_KEY,
+      nextIsDarkMode ? "dark" : "light",
+    );
+  };
+
+  const handleCursorToggle = () => {
+    const nextCursorEnabled = !isCursorEnabled;
+    setIsCursorEnabled(nextCursorEnabled);
+    window.localStorage.setItem(
+      CURSOR_STORAGE_KEY,
+      nextCursorEnabled ? "true" : "false",
+    );
+    document.dispatchEvent(
+      new CustomEvent(CURSOR_PREF_EVENT, {
+        detail: { enabled: nextCursorEnabled },
+      }),
+    );
+  };
+
   return (
     <>
       <div className="flex px-4">
@@ -20,17 +83,48 @@ export function Header() {
         <div className="relative w-full flex items-center justify-center">
           <Navbar className="top-4" />
         </div>
-        <div className="w-full max-w-max z-[51]">
+        <div className="w-full max-w-max z-[51] flex items-center gap-3">
           <a
-            href="/Apsarabishwokarma-resume.pdf"
+            // href="/Apsarabishwokarma-resume.pdf"
+            href="/apsarabishwokarmacv.pdf"
             target="_blank"
             className="cursor-pointer"
           >
-            <button className="px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hidden md:block">
+            <button className="h-10 px-4 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hidden md:block dark:bg-black dark:text-white dark:border-white/20">
               <span>Download CV &darr; </span>
               <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
             </button>
           </a>
+          <div className="hidden md:flex flex-col justify-between h-10 mt-4 text-emerald-400 dark:text-cyan-300 relative z-[60] pointer-events-auto">
+            <button
+              onClick={handleCursorToggle}
+              className="icon-only appearance-none bg-transparent border-0 p-0 cursor-pointer hover:opacity-80 leading-none"
+              aria-pressed={isCursorEnabled}
+              aria-label={
+                isCursorEnabled
+                  ? "Disable cursor effect"
+                  : "Enable cursor effect"
+              }
+              type="button"
+            >
+              {isCursorEnabled ? (
+                <FaStrikethrough size={14} />
+              ) : (
+                <FaWaveSquare size={14} />
+              )}
+            </button>
+            <button
+              onClick={handleThemeToggle}
+              className="icon-only appearance-none bg-transparent border-0 p-0 cursor-pointer hover:opacity-80 leading-none"
+              aria-pressed={isDarkMode}
+              aria-label={
+                isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+              }
+              type="button"
+            >
+              {isDarkMode ? <FaSun size={14} /> : <FaRegMoon size={14} />}
+            </button>
+          </div>
         </div>
       </div>
     </>

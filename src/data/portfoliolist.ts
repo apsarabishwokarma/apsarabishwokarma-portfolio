@@ -31,7 +31,7 @@ export const portfolioList: PortfolioItem[] = [
     githubLink: "https://github.com/apsarabishwokarma/consultancy-eureka",
   },
   {
-    image: "https://cdn.easyfrontend.com/pictures/portfolio/portfolio25.jpg",
+    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b",
     title: "ShopHub - Ecommerce Website",
     subtitle:
       "E-commerce platform offering a wide range of products including clothings, perfumes and electronics",
