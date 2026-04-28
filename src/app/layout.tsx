@@ -35,6 +35,7 @@ export default function RootLayout({
           inter.variable,
           preahvihear.variable,
           source_Serif_4.variable,
+          "overflow-x-hidden",
         )}
       >
         <Toaster richColors closeButton />

@@ -10,6 +10,16 @@ const CanvasCursor = () => {
   const [enabled, setEnabled] = useState(true);
 
   useEffect(() => {
+    const isTouchDevice =
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(hover: none)").matches;
+
+    if (isTouchDevice) {
+      setEnabled(false);
+      window.localStorage.setItem(CURSOR_STORAGE_KEY, "false");
+      return;
+    }
+
     const savedCursorPreference = window.localStorage.getItem(
       CURSOR_STORAGE_KEY
     );
