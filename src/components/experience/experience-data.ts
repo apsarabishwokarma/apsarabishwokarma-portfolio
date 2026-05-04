@@ -17,30 +17,19 @@ export type ExperienceCompany = {
 
 export const experienceData: ExperienceCompany[] = [
   {
-    company: "Proventus Analytics",
-    tenure: "Full-time - 1 yr 2 mos",
-    location: "Hybrid",
-    roles: [
-      {
-        title: "Associate Software Engineer",
-        date: "Aug 2025 - May 2026",
-        duration: "10 mos",
-        description:
-          "Developing and maintaining responsive frontend features using modern web technologies. Collaborating with designers and backend teams to deliver reusable UI components and API integrations.",
-        skills: "Front-End Development, HTML5 and +10 skills",
-      },
-      {
-        title: "Junior Frontend Developer",
-        date: "Apr 2025 - Aug 2025",
-        duration: "5 mos",
-        skills: "HTML5, CSS and +8 skills",
-      },
-    ],
-  },
-  {
     company: "Suvaye Technology",
     tenure: "1 yr 1 mo",
     roles: [
+      {
+        title: "Frontend Developer Intern",
+        type: "Internship",
+        date: "Sep 2023 - Dec 2023",
+        duration: "4 mos",
+        description:
+          "Converted Figma designs into responsive web pages with clean semantic HTML and CSS. Assisted in building reusable components and maintained visual consistency across screens. Supported testing, debugging, and iterative UI improvements based on team feedback.",
+        skills:
+          "Front-End Development, Figma, HTML5, CSS3, JavaScript, UI Prototyping, Wireframing, Design Handoff, Accessibility Basics, Component Reuse, Team Collaboration, Version Control, Problem Solving",
+      },
       {
         title: "Junior Frontend Developer",
         type: "Freelance",
@@ -49,14 +38,33 @@ export const experienceData: ExperienceCompany[] = [
         location: "Remote",
         description:
           "Developed responsive and user-friendly interfaces for client projects, translated UI designs into functional pages, and collaborated remotely with teams for delivery.",
-        skills: "Front-End Development, Front-end Coding and +12 skills",
+        skills:
+          "Front-End Development, Front-end Coding, HTML5, CSS3, JavaScript, React, Figma, Responsive Layouts, Cross-Browser Compatibility, UI Debugging, Git, Remote Collaboration, Client Communication, Performance Optimization",
+      },
+    ],
+  },
+  {
+    company: "Proventus Analytics",
+    tenure: "Full-time - 1 yr 2 mos",
+    location: "Hybrid",
+    roles: [
+      {
+        title: "Junior Frontend Developer",
+        date: "Apr 2025 - Aug 2025",
+        duration: "5 mos",
+        description:
+          "Built reusable UI sections and pages for product modules using React and Tailwind CSS. Collaborated with senior engineers to fix UI bugs and improve responsiveness across desktop and mobile devices. Integrated frontend screens with backend APIs and validated data handling for smooth user interactions.",
+        skills:
+          "HTML5, CSS3, JavaScript, React, Next.js, Tailwind CSS, Responsive Design, UI Implementation, Bug Fixing, Git",
       },
       {
-        title: "Frontend Developer",
-        type: "Internship",
-        date: "Sep 2023 - Dec 2023",
-        duration: "4 mos",
-        skills: "Front-End Development, Figma and +11 skills",
+        title: "Associate Software Engineer",
+        date: "Aug 2025 - May 2026",
+        duration: "10 mos",
+        description:
+          "Developing and maintaining responsive frontend features using modern web technologies. Collaborating with designers and backend teams to deliver reusable UI components and API integrations.",
+        skills:
+          "Front-End Development, HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, API Integration, Responsive Design, Git, Team Collaboration",
       },
     ],
   },
