@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import WorkExperienceTimeline from "@/components/experience/work-experience-timeline";
 
 const Shape1 = () => (
   <svg
@@ -29,12 +30,9 @@ const PortfolioBanner = () => {
       className="relative container mx-auto pt-20 pb-12 px-6 lg:px-10"
     >
       <Shape1 />
-      <p className="max-w-7xl mb-4 w-full  text-neutral-400">
-        {" "}
-        &darr; about me
-      </p>
+      <p className="max-w-7xl mb-4 w-full text-neutral-400">&darr; about me</p>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-        <div className="flex justify-center ">
+        <div className="flex justify-center">
           <img
             src="/aboutimg.png"
             alt="profile-girl"
@@ -47,31 +45,32 @@ const PortfolioBanner = () => {
           </h2>
           <p className="text-base lg:text-lg text-neutral-300 mb-4">
             As a software engineer specializing in Web development, I bring
-            creativity and technical expertise to build responsive,
-            user-friendly websites. My tools of choice include React, Tailwind
-            CSS, Next js and modern JavaScript frameworks.
+            creativity and technical expertise to build responsive, user-friendly
+            websites. My tools of choice include React, Tailwind CSS, Next js and
+            modern JavaScript frameworks.
           </p>
           <p className="text-base lg:text-lg text-neutral-300 mb-4">
-            I believe in crafting seamless user interfaces that are both
-            functional and aesthetically pleasing. Every project I work on is
-            built with attention to detail, clean code, and modern best
-            practices.
+            I believe in crafting seamless user interfaces that are both functional
+            and aesthetically pleasing. Every project I work on is built with
+            attention to detail, clean code, and modern best practices.
           </p>
           <p className="text-base lg:text-lg text-neutral-300 mb-4">
-            Let’s collaborate and bring your vision to life with a blend of
+            Let&apos;s collaborate and bring your vision to life with a blend of
             creativity and technology!
           </p>
 
           <div className="mt-4 flex justify-center lg:justify-start">
             <Link href="mailto:apsara.devx@gmail.com">
               <button className="px-6 py-2 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hidden md:block">
-                <span>Let's Work Together &rarr; </span>
-                <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+                <span>Let&apos;s Work Together &rarr; </span>
+                <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
               </button>
             </Link>
           </div>
         </div>
       </div>
+
+      <WorkExperienceTimeline />
     </section>
   );
 };
