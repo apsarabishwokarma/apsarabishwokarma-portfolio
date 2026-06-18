@@ -8,7 +8,6 @@ import {
   portfolioList,
 } from "@/data/portfoliolist";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import Link from "next/link";
 import { useState } from "react";
 
 export const Portfolio = () => {
@@ -49,12 +48,16 @@ export const Portfolio = () => {
                 {" "}
                 &darr; Featured Projects
               </h1>
-              <Link href="https://github.com/apsarabishwokarma" target="_blank">
-                <Button className="md:flex hidden">
+              <Button asChild className="md:flex hidden">
+                <a
+                  href="https://github.com/apsarabishwokarma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <GitHubLogoIcon className="mr-2 h-4 w-4" />
                   View My Github
-                </Button>
-              </Link>
+                </a>
+              </Button>
 
               {/* <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-6 text-center lg:text-start">
@@ -94,8 +97,8 @@ export const Portfolio = () => {
               } ${i % 3 === 1 && "md:mt-4 lg:mt-6"} `}
               key={i}
             >
-              <Link
-                href={portfolio.liveLink || "#"}
+              <a
+                href={portfolio.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
@@ -129,7 +132,7 @@ export const Portfolio = () => {
                     </Link> */}
                   </div>
                 </div>
-              </Link>
+              </a>
             </div>
           ))}
         </div>

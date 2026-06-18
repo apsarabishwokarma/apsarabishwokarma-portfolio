@@ -1,7 +1,8 @@
 export default function AttributionLink() {
   return (
     <a
-      href="#"
+      href="#connect"
+      aria-label="Jump to the connect section"
       className="group relative px-4 py-2 text-sm font-medium  text-muted-foreground transition-colors hover:text-nambg-namecolor"
     >
       <span className="relative z-10 text-white">Connect With Me</span>

@@ -87,6 +87,131 @@
   animation: dash 6s ease-in-out infinite alternate;
 }
 
+.coffee-mug::before,
+.coffee-mug::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.coffee-mug::before {
+  inset: 6px 8px 12px;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 236, 211, 0.95) 0 1px, transparent 1.3px),
+    radial-gradient(circle at 36% 42%, rgba(255, 236, 211, 0.95) 0 1px, transparent 1.3px),
+    linear-gradient(180deg, rgba(255, 203, 145, 0.9), rgba(176, 112, 59, 0.2));
+  opacity: 0.35;
+}
+
+.coffee-mug::after {
+  inset: 5px;
+  border: 1px solid rgba(255, 214, 166, 0.12);
+}
+
+.coffee-mug .coffee-eyes {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.coffee-mug .coffee-eye {
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: #f6d7b0;
+  box-shadow: 0 0 0 2px rgba(58, 36, 23, 0.8);
+  opacity: 0;
+  transform: translateY(2px) scale(0.6);
+}
+
+.coffee-mug .coffee-heart {
+  position: absolute;
+  top: -3px;
+  font-size: 0.7rem;
+  color: #ff8fa8;
+  opacity: 0;
+  transform: translateY(8px) scale(0.4);
+  text-shadow: 0 0 10px rgba(255, 143, 168, 0.45);
+}
+
+.coffee-mug .coffee-heart--left {
+  left: -3px;
+}
+
+.coffee-mug .coffee-heart--right {
+  right: -3px;
+}
+
+.coffee-mug--love {
+  animation: coffee-sip 760ms ease-out;
+}
+
+.coffee-mug--love .coffee-eye {
+  animation: coffee-eyes 760ms ease-out;
+}
+
+.coffee-mug--love .coffee-heart {
+  animation: coffee-heart-pop 760ms ease-out;
+}
+
+@keyframes coffee-sip {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  28% {
+    transform: translateY(-2px) scale(1.06) rotate(-4deg);
+  }
+  48% {
+    transform: translateY(1px) scale(0.98) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes coffee-eyes {
+  0%,
+  14% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.45);
+  }
+  28%,
+  76% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(3px) scale(0.4);
+  }
+}
+
+@keyframes coffee-heart-pop {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.35);
+  }
+  36% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-9px) scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-14px) scale(0.7);
+  }
+}
+
 @keyframes dash {
   from {
     stroke-dashoffset: 320;

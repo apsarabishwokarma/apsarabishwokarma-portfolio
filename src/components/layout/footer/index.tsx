@@ -1,5 +1,6 @@
 import AttributionLink from "@/components/navigation/attributeanimation";
 import Logo from "@/components/ui/icons/logo.icon";
+import CoffeeLink from "./coffee-link";
 import {
   FaFacebook,
   FaInstagram,
@@ -15,9 +16,12 @@ export default function Footer() {
     <div id="connect">
       <footer className="pt-6">
         <div className="max-w-screen-x mx-auto px-4 md:px-8">
-          <div className="mt-1 py-10 border-t border-gray-700 items-center justify-between sm:flex">
-            <p className="text-gray-300">© 2024 Apsara Bishwokarma</p>
-            <div className="flex items-center gap-x-6 text-gray-400 mt-6">
+          <div className="mt-1 flex flex-col gap-6 border-t border-gray-700 py-10 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col items-start gap-3">
+              <p className="text-gray-300">© 2024 Apsara Bishwokarma</p>
+              <CoffeeLink />
+            </div>
+            <div className="mt-0 flex items-center gap-x-6 text-gray-400">
               <div>
                 <AttributionLink></AttributionLink>
                 <div className="flex pt-5 flex-wrap items-center justify-center  mb-4">
